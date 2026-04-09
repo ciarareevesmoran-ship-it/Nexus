@@ -1,0 +1,34 @@
+{
+  "name": "UserProfile",
+  "type": "object",
+  "properties": {
+    "interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Selected subject interests"
+    },
+    "plan": {
+      "type": "string",
+      "enum": [
+        "free",
+        "premium"
+      ],
+      "default": "free"
+    },
+    "onboarding_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "learning_goals": {
+      "type": "string",
+      "description": "User's learning goals"
+    }
+  },
+  "required": [
+    "interests",
+    "plan",
+    "onboarding_completed"
+  ]
+}

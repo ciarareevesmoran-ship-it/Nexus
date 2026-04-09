@@ -5,7 +5,18 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
-// Add page imports here
+import AppLayout from './components/layout/AppLayout';
+import Dashboard from './pages/Dashboard';
+import Onboarding from './pages/Onboarding';
+import SubjectPage from './pages/SubjectPage';
+import TopicPage from './pages/TopicPage';
+import LearningContent from './pages/LearningContent';
+import CaseBuilder from './pages/CaseBuilder';
+import LiveCasePage from './pages/LiveCasePage';
+import Profile from './pages/Profile';
+import MyLearning from './pages/MyLearning';
+import CasesPage from './pages/CasesPage';
+import LiveCasesPage from './pages/LiveCasesPage';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -33,8 +44,20 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
-      {/* Add your page Route elements here */}
-      <Route path="*" element={<PageNotFound />} />
+      <Route path="/onboarding" element={<Onboarding />} />
+      <Route element={<AppLayout />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/subject/:subjectId" element={<SubjectPage />} />
+        <Route path="/subject/:subjectId/topic/:topicId" element={<TopicPage />} />
+        <Route path="/case-builder" element={<CaseBuilder />} />
+        <Route path="/live-case/:caseId" element={<LiveCasePage />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/my-learning" element={<MyLearning />} />
+        <Route path="/cases" element={<CasesPage />} />
+        <Route path="/live-cases" element={<LiveCasesPage />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Route>
+      <Route path="/learn/:subjectId/:topicId/:subtopicId" element={<LearningContent />} />
     </Routes>
   );
 };
