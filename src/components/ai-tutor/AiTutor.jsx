@@ -48,7 +48,7 @@ export default function AiTutor({ subtopicName = null }) {
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          "fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group",
+          "fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group",
           isOpen && "scale-0 opacity-0"
         )}
       >
