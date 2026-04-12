@@ -4,10 +4,6 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const INITIAL_MESSAGES = [
-  { role: 'assistant', content: "Hello! I'm your Nexus tutor. I'm here to help you understand any topic you're studying. Feel free to ask me anything — no question is too simple or too complex." },
-];
-
 const SIMULATED_RESPONSES = [
   "That's a great question! Let me break it down for you. The key idea here is that complex systems often have emergent properties — behaviours that arise from the interaction of simpler components, but cannot be predicted from those components alone.",
   "I love your curiosity! Think of it this way: every subject is like a different lens on the same reality. When you combine lenses — say, economics and psychology — you start seeing patterns that neither field can explain on its own.",
@@ -15,9 +11,16 @@ const SIMULATED_RESPONSES = [
   "You're on the right track. To deepen your understanding, I'd suggest focusing on the core principle first, then exploring how it applies in different contexts. Shall I generate a quick quiz to test your grasp?",
 ];
 
-export default function AiTutor() {
+export default function AiTutor({ subtopicName = null }) {
+  const getInitialMessage = () => {
+    if (subtopicName) {
+      return `I can see you're studying ${subtopicName}. What would you like me to explain or clarify?`;
+    }
+    return "Hello! I'm your Nexus tutor. I'm here to help you understand any topic you're studying. Feel free to ask me anything — no question is too simple or too complex.";
+  };
+
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState(INITIAL_MESSAGES);
+  const [messages, setMessages] = useState(() => [{ role: 'assistant', content: getInitialMessage() }]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
@@ -45,7 +48,7 @@ export default function AiTutor() {
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          "fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group",
+          "fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group",
           isOpen && "scale-0 opacity-0"
         )}
       >

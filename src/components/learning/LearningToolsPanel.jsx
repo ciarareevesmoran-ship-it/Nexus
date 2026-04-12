@@ -65,12 +65,19 @@ function MindMapPanel({ subtopic }) {
   );
 }
 
-export default function LearningToolsPanel({ subtopic }) {
+export default function LearningToolsPanel({ subtopic, onClose }) {
   const [activeTool, setActiveTool] = useState(null);
 
   return (
-    <div className="py-4">
-      <h3 className="font-serif text-sm font-bold px-4 mb-3 text-foreground">Learning Tools</h3>
+    <div className="py-4 flex-1">
+      <div className="flex items-center justify-between px-4 mb-4">
+        <h3 className="font-serif text-base font-bold text-foreground">Learning Tools</h3>
+        {onClose && (
+          <button onClick={onClose} className="text-muted-foreground hover:text-foreground transition-colors">
+            <span className="text-xs font-medium">Close ×</span>
+          </button>
+        )}
+      </div>
       <div className="px-3 space-y-1">
         {TOOLS.map((tool) => {
           const Icon = tool.icon;

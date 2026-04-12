@@ -3,33 +3,72 @@ import { useNavigate } from 'react-router-dom';
 import { SUBJECTS } from '@/lib/subjects';
 import { cn } from '@/lib/utils';
 import { Plus } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+
+function CaseConfirmModal({ subject1, subject2, onConfirm, onCancel }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 10 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        className="bg-background rounded-2xl border border-border shadow-xl max-w-md w-full p-8 text-center"
+      >
+        <h2 className="font-serif text-xl font-bold text-foreground mb-2">
+          Create a case with {subject1.name} and {subject2.name}?
+        </h2>
+        <p className="text-sm text-muted-foreground mb-8">
+          We'll build a cross-disciplinary learning path weaving both subjects together.
+        </p>
+        <div className="flex gap-3">
+          <Button className="flex-1 rounded-xl" onClick={onConfirm}>Yes!</Button>
+          <Button variant="outline" className="flex-1 rounded-xl" onClick={onCancel}>No, take me back</Button>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function SubjectGrid() {
   const navigate = useNavigate();
-  const [caseMode, setCaseMode] = useState(false);
-  const [selectedSubject, setSelectedSubject] = useState(null);
+  const [selectedSubjects, setSelectedSubjects] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const subject1 = SUBJECTS.find(s => s.id === selectedSubjects[0]);
+  const subject2 = SUBJECTS.find(s => s.id === selectedSubjects[1]);
+
+  const handleConfirm = () => {
+    navigate(`/case-builder?s1=${selectedSubjects[0]}&s2=${selectedSubjects[1]}`);
+    setSelectedSubjects([]);
+    setShowModal(false);
+  };
+
+  const handleCancel = () => {
+    setSelectedSubjects([]);
+    setShowModal(false);
+  };
 
   const handleClick = (subject) => {
-    if (caseMode && selectedSubject) {
-      if (subject.id !== selectedSubject) {
-        navigate(`/case-builder?s1=${selectedSubject}&s2=${subject.id}`);
-        setCaseMode(false);
-        setSelectedSubject(null);
-      }
-      return;
+    if (selectedSubjects.length === 0) {
+      navigate(`/subject/${subject.id}`);
     }
-    navigate(`/subject/${subject.id}`);
   };
 
   const handleCaseToggle = (e, subjectId) => {
     e.stopPropagation();
-    if (selectedSubject === subjectId) {
-      setCaseMode(false);
-      setSelectedSubject(null);
-    } else {
-      setCaseMode(true);
-      setSelectedSubject(subjectId);
+    if (selectedSubjects.includes(subjectId)) {
+      // Deselect this widget
+      setSelectedSubjects(prev => prev.filter(id => id !== subjectId));
+    } else if (selectedSubjects.length < 2) {
+      const next = [...selectedSubjects, subjectId];
+      setSelectedSubjects(next);
+      if (next.length === 2) setShowModal(true);
     }
   };
 
@@ -37,21 +76,31 @@ export default function SubjectGrid() {
     <div className="mb-10">
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-serif text-xl font-bold text-foreground">Subjects</h2>
-        {caseMode && (
+        {selectedSubjects.length === 1 && (
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="text-sm text-primary font-medium bg-primary/10 px-3 py-1 rounded-full"
           >
-            Select a second subject to create a case
+            Now select a second subject to combine
           </motion.span>
         )}
       </div>
+      <AnimatePresence>
+        {showModal && subject1 && subject2 && (
+          <CaseConfirmModal
+            subject1={subject1}
+            subject2={subject2}
+            onConfirm={handleConfirm}
+            onCancel={handleCancel}
+          />
+        )}
+      </AnimatePresence>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {SUBJECTS.map((subject, index) => {
           const Icon = subject.icon;
-          const isSelected = selectedSubject === subject.id;
-          const isSecondary = caseMode && !isSelected;
+          const isSelected = selectedSubjects.includes(subject.id);
+          const isSecondary = selectedSubjects.length > 0 && !isSelected;
           return (
             <motion.button
               key={subject.id}
@@ -75,7 +124,7 @@ export default function SubjectGrid() {
                     ? "bg-primary border-primary text-primary-foreground"
                     : "border-border text-muted-foreground opacity-0 group-hover:opacity-100 hover:border-primary hover:text-primary"
                 )}
-                title="Combine into a case"
+                title={isSelected ? "Deselect" : "Combine into a case"}
               >
                 <Plus className="w-3.5 h-3.5" />
               </button>

@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { SUBJECTS, SUBJECT_TOPICS, getSubtopics } from '@/lib/subjects';
 import { ChevronLeft, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
 import LearningToolsPanel from '../components/learning/LearningToolsPanel';
 import ContentDisplay from '../components/learning/ContentDisplay';
+import AiTutor from '../components/ai-tutor/AiTutor';
 
 export default function LearningContent() {
   const { subjectId, topicId, subtopicId } = useParams();
   const navigate = useNavigate();
-  const [toolsOpen, setToolsOpen] = useState(true);
+  const [toolsOpen, setToolsOpen] = useState(false);
 
   const urlParams = new URLSearchParams(window.location.search);
   const format = urlParams.get('format') || 'text';
@@ -27,18 +27,19 @@ export default function LearningContent() {
 
   return (
     <div className="h-screen flex flex-col">
-      <div className="flex items-center gap-3 px-6 py-3 border-b border-border bg-background">
+      {/* Top bar */}
+      <div className="flex items-center gap-3 px-6 py-3 border-b border-border bg-background shrink-0">
         <button onClick={() => navigate(-1)} className="text-muted-foreground hover:text-foreground transition-colors">
           <ChevronLeft className="w-5 h-5" />
         </button>
-        <div className="flex items-center gap-2 text-sm">
-          <span className="text-muted-foreground">{subject.name}</span>
+        <div className="flex items-center gap-2 text-sm overflow-hidden">
+          <span className="text-muted-foreground truncate">{subject.name}</span>
           <span className="text-muted-foreground">/</span>
-          <span className="text-muted-foreground">{topic.name}</span>
+          <span className="text-muted-foreground truncate">{topic.name}</span>
           <span className="text-muted-foreground">/</span>
-          <span className="font-medium text-foreground">{subtopic.name}</span>
+          <span className="font-medium text-foreground truncate">{subtopic.name}</span>
         </div>
-        <div className="ml-auto">
+        <div className="ml-auto shrink-0">
           <Button
             variant="ghost"
             size="sm"
@@ -46,21 +47,28 @@ export default function LearningContent() {
             className="hidden md:flex items-center gap-2 text-muted-foreground"
           >
             {toolsOpen ? <PanelLeftClose className="w-4 h-4" /> : <PanelLeftOpen className="w-4 h-4" />}
-            <span className="text-xs">Tools</span>
+            <span className="text-xs">Learning Tools</span>
           </Button>
         </div>
       </div>
 
-      <div className="flex flex-1 overflow-hidden">
-        {toolsOpen && (
-          <div className="hidden md:block w-72 border-r border-border bg-card overflow-y-auto shrink-0">
-            <LearningToolsPanel subtopic={subtopic} />
-          </div>
-        )}
+      {/* Main content + optional tools overlay */}
+      <div className="flex flex-1 overflow-hidden relative">
+        {/* Reading area */}
         <div className="flex-1 overflow-y-auto">
           <ContentDisplay subtopic={subtopic} topic={topic} subject={subject} format={format} />
         </div>
+
+        {/* Tools panel — 42% width overlay anchored to the left of the content area */}
+        {toolsOpen && (
+          <div className="hidden md:flex absolute top-0 left-0 bottom-0 w-[42%] bg-card border-r border-border shadow-xl z-30 overflow-y-auto flex-col">
+            <LearningToolsPanel subtopic={subtopic} onClose={() => setToolsOpen(false)} />
+          </div>
+        )}
       </div>
+
+      {/* AI Tutor — context-aware with current subtopic */}
+      <AiTutor subtopicName={subtopic.name} />
     </div>
   );
 }
