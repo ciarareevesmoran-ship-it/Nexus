@@ -52,19 +52,19 @@ export default function LearningContent() {
         </div>
       </div>
 
-      {/* Main content + optional tools overlay */}
-      <div className="flex flex-1 overflow-hidden relative">
-        {/* Reading area */}
-        <div className="flex-1 overflow-y-auto">
-          <ContentDisplay subtopic={subtopic} topic={topic} subject={subject} format={format} />
-        </div>
-
-        {/* Tools panel — 42% width overlay anchored to the left of the content area */}
+      {/* Main content + tools panel side by side */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Tools panel — 42% width, scrollable, pushes content */}
         {toolsOpen && (
-          <div className="hidden md:flex absolute top-0 left-0 bottom-0 w-[42%] bg-card border-r border-border shadow-xl z-30 overflow-y-auto flex-col">
+          <div className="hidden md:flex flex-col w-[42%] shrink-0 border-r border-border bg-card overflow-y-auto">
             <LearningToolsPanel subtopic={subtopic} onClose={() => setToolsOpen(false)} />
           </div>
         )}
+
+        {/* Reading area — fills remaining space */}
+        <div className="flex-1 overflow-y-auto">
+          <ContentDisplay subtopic={subtopic} topic={topic} subject={subject} format={format} />
+        </div>
       </div>
 
       {/* AI Tutor — context-aware with current subtopic */}
