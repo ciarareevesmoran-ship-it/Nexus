@@ -1,0 +1,66 @@
+{
+  "name": "LearningContent",
+  "type": "object",
+  "properties": {
+    "subject": {
+      "type": "string",
+      "description": "e.g., Chemistry"
+    },
+    "main_topic": {
+      "type": "string",
+      "description": "e.g., Atomic Structure"
+    },
+    "section_number": {
+      "type": "string",
+      "description": "e.g., 1.1, 1.2"
+    },
+    "section_title": {
+      "type": "string",
+      "description": "e.g., The Atom \u2014 Fundamental Concepts"
+    },
+    "concise_definition": {
+      "type": "string",
+      "description": "The original concise text from the source document"
+    },
+    "expanded_explanation": {
+      "type": "string",
+      "description": "AI-generated detailed explanation"
+    },
+    "key_takeaways": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI-generated bullet points of key learnings"
+    },
+    "real_world_examples": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI-generated practical examples"
+    },
+    "related_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of related vocabulary and terms"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "default": "intermediate"
+    }
+  },
+  "required": [
+    "subject",
+    "main_topic",
+    "section_title",
+    "concise_definition"
+  ]
+}
