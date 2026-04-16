@@ -17,6 +17,7 @@ import Profile from './pages/Profile';
 import MyLearning from './pages/MyLearning';
 import CasesPage from './pages/CasesPage';
 import LiveCasesPage from './pages/LiveCasesPage';
+import FullCoursePage from './pages/FullCoursePage';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -48,6 +49,7 @@ const AuthenticatedApp = () => {
       <Route element={<AppLayout />}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/subject/:subjectId" element={<SubjectPage />} />
+        <Route path="/subject/:subjectId/full-course" element={<FullCoursePage />} />
         <Route path="/subject/:subjectId/topic/:topicId" element={<TopicPage />} />
         <Route path="/case-builder" element={<CaseBuilder />} />
         <Route path="/live-case/:caseId" element={<LiveCasePage />} />
