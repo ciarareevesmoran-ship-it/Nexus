@@ -120,7 +120,7 @@ export default function ContentGenerator() {
 
   const generateForSection = async (section) => {
     const result = await base44.integrations.Core.InvokeLLM({
-      prompt: `You are an expert chemistry educator writing for a high school to early university level learning platform called Nexus.
+      prompt: `You are an expert chemistry educator writing for a beginner-to-intermediate level learning platform called Nexus.
 
 Given the following concise source definition for a chemistry section, generate rich educational content.
 
@@ -129,7 +129,13 @@ Topic: ${section.main_topic}
 Source definition: ${section.concise_definition}
 
 Generate:
-1. expanded_explanation: A clear, engaging 3–5 paragraph explanation. Use plain language but be scientifically precise. Include key equations or formulas inline (as text, not LaTeX). Explain the "why" not just the "what".
+1. expanded_explanation: A clear, engaging 3–5 paragraph explanation. Use plain language but be scientifically precise. Include key equations or formulas inline (as text, not LaTeX). Explain the "why" not just the "what". Follow these scientific accuracy rules strictly:
+   - Do NOT say "everything you can touch, see, or feel is made up of atoms" — instead say "almost everything you can touch, see, or feel is made up of atoms"
+   - When describing electrons, say they "have much less mass than protons and neutrons" — do NOT say they are "much smaller"
+   - When explaining neutral atoms, say "the number of electrons equals the number of protons, so their charges cancel out and the atom has no overall electrical charge" — do NOT say this "maintains stability"
+   - If you mention cooking as a chemistry example, say "atoms rearranging into new molecules, such as when proteins and sugars react to brown food" — do NOT say cooking involves "changes in atomic structure"
+   - If you mention rust, describe it as "atoms reacting and forming a new compound, iron oxide" — keep it as a separate example from cooking
+
 2. key_takeaways: 4–6 concise bullet points summarising the most important concepts a student must remember.
 3. real_world_examples: 3–4 concrete, relatable real-world applications or examples that make the concept tangible.
 4. related_terms: 6–10 important vocabulary terms related to this section (just the terms, no definitions).`,
