@@ -10,6 +10,20 @@
       "type": "string",
       "description": "e.g., Atomic Structure"
     },
+    "head_topic": {
+      "type": "string",
+      "enum": [
+        "Foundations of Matter",
+        "Bonding & Reactions",
+        "Energy, Rates & Equilibrium",
+        "Applied Chemistry"
+      ],
+      "description": "High-level grouping category for the subtopic"
+    },
+    "full_course_order": {
+      "type": "integer",
+      "description": "Sequential order number (1\u201315) matching the original document structure"
+    },
     "section_number": {
       "type": "string",
       "description": "e.g., 1.1, 1.2"
