@@ -18,6 +18,7 @@ import MyLearning from './pages/MyLearning';
 import CasesPage from './pages/CasesPage';
 import LiveCasesPage from './pages/LiveCasesPage';
 import FullCoursePage from './pages/FullCoursePage';
+import ContentGenerator from './pages/ContentGenerator';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -57,6 +58,7 @@ const AuthenticatedApp = () => {
         <Route path="/my-learning" element={<MyLearning />} />
         <Route path="/cases" element={<CasesPage />} />
         <Route path="/live-cases" element={<LiveCasesPage />} />
+        <Route path="/content-generator" element={<ContentGenerator />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
       <Route path="/learn/:subjectId/:topicId/:subtopicId" element={<LearningContent />} />
