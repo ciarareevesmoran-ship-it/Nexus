@@ -132,7 +132,7 @@ Generate:
 1. expanded_explanation: Write exactly 4 sections, each with a subheading followed by a paragraph of 2–4 sentences. Use plain, clear language. Be scientifically precise. Format each section as "SUBHEADING\nParagraph text." Follow this exact structure:
    - Subheading: "What is an atom?" — Paragraph: What atoms are and that they are the building blocks of matter.
    - Subheading: "The nucleus: protons and neutrons" — Paragraph: Describe protons (positive charge) and neutrons (no charge) in the nucleus. Introduce the atomic number (Z) as the number of protons, which defines the element's identity.
-   - Subheading: "A mental model" — Paragraph: Insert this exactly (you may adjust slightly for flow but keep the full meaning): "You can think of an atom as having a tiny, dense center called the nucleus, surrounded by a cloud of electrons. Unlike planets orbiting the sun, electrons do not move in fixed paths. Instead, they exist in regions where they are most likely to be found."
+   - Subheading: "A mental model" — Paragraph: Insert this exactly (you may adjust slightly for flow but keep the full meaning): "You can think of an atom as having a tiny, dense center called the nucleus, surrounded by a cloud of electrons. Unlike planets orbiting the sun, electrons do not move in fixed paths. Instead, they exist in regions where they are most likely to be found." Format this paragraph as an HTML callout box using this exact structure: <div style="border: 2px solid #800020; padding: 12px; border-radius: 8px; background-color: #faf5f7;"><strong>Mental model:</strong><br/>You can think of an atom as having a tiny, dense center called the nucleus, surrounded by a cloud of electrons. Unlike planets orbiting the sun, electrons do not move in fixed paths. Instead, they exist in regions where they are most likely to be found.</div>
    - Subheading: "Electrons, neutral atoms, and ions" — Paragraph: Describe electrons and their charge. Explain that in a neutral atom, the number of electrons equals the number of protons, so their charges cancel out and the atom has no overall electrical charge. Explain ions: cations (lost electrons, positive) and anions (gained electrons, negative).
    - Subheading: "Mass number and isotopes" — Paragraph: Define mass number (A = protons + neutrons). Give carbon-12 as an example. Briefly explain isotopes as atoms of the same element with different numbers of neutrons.
 
@@ -233,14 +233,24 @@ Generate:
                 {sampleResult.expanded_explanation.split('\n\n').map((block, i) => {
                   const lines = block.split('\n');
                   const isSubheading = lines.length > 1;
-                  return isSubheading ? (
-                    <div key={i}>
-                      <p className="font-semibold text-foreground text-sm mb-1">{lines[0]}</p>
-                      <p className="text-muted-foreground leading-relaxed">{lines.slice(1).join(' ')}</p>
-                    </div>
-                  ) : (
-                    <p key={i} className="text-muted-foreground leading-relaxed">{block}</p>
-                  );
+                  if (isSubheading) {
+                    const subheading = lines[0];
+                    const body = lines.slice(1).join(' ');
+                    const isHtml = body.trim().startsWith('<');
+                    return (
+                      <div key={i}>
+                        <p className="font-semibold text-foreground text-sm mb-1">{subheading}</p>
+                        {isHtml
+                          ? <div dangerouslySetInnerHTML={{ __html: body }} />
+                          : <p className="text-muted-foreground leading-relaxed">{body}</p>
+                        }
+                      </div>
+                    );
+                  }
+                  const isHtml = block.trim().startsWith('<');
+                  return isHtml
+                    ? <div key={i} dangerouslySetInnerHTML={{ __html: block }} />
+                    : <p key={i} className="text-muted-foreground leading-relaxed">{block}</p>;
                 })}
               </div>
             </div>
