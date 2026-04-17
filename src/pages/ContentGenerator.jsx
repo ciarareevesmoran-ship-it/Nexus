@@ -129,12 +129,18 @@ Topic: ${section.main_topic}
 Source definition: ${section.concise_definition}
 
 Generate:
-1. expanded_explanation: A clear, engaging 3–5 paragraph explanation. Use plain language but be scientifically precise. Include key equations or formulas inline (as text, not LaTeX). Explain the "why" not just the "what". Follow these scientific accuracy rules strictly:
-   - Do NOT say "everything you can touch, see, or feel is made up of atoms" — instead say "almost everything you can touch, see, or feel is made up of atoms"
-   - When describing electrons, say they "have much less mass than protons and neutrons" — do NOT say they are "much smaller"
-   - When explaining neutral atoms, say "the number of electrons equals the number of protons, so their charges cancel out and the atom has no overall electrical charge" — do NOT say this "maintains stability"
-   - If you mention cooking as a chemistry example, say "atoms rearranging into new molecules, such as when proteins and sugars react to brown food" — do NOT say cooking involves "changes in atomic structure"
-   - If you mention rust, describe it as "atoms reacting and forming a new compound, iron oxide" — keep it as a separate example from cooking
+1. expanded_explanation: Write exactly 4 paragraphs, each 2–4 sentences. Use plain, clear language. Be scientifically precise. Follow this exact structure:
+   - Paragraph 1 — Atoms and matter: What atoms are and that they are the building blocks of matter.
+   - Paragraph 2 — The nucleus (protons and neutrons): Describe protons (positive charge) and neutrons (no charge) in the nucleus. Introduce the atomic number (Z) as the number of protons, which defines the element's identity.
+   - Paragraph 3 — Electrons, neutral atoms, and ions: Describe electrons and their charge. Explain that in a neutral atom, the number of electrons equals the number of protons, so their charges cancel out and the atom has no overall electrical charge. Explain ions: cations (lost electrons, positive) and anions (gained electrons, negative).
+   - Paragraph 4 — Mass number and isotopes: Define mass number (A = protons + neutrons). Give carbon-12 as an example. Briefly explain isotopes as atoms of the same element with different numbers of neutrons.
+
+   Scientific accuracy rules (strictly enforce):
+   - Say "almost everything you can touch, see, or feel is made up of atoms" — never "everything"
+   - Say electrons "have much less mass than protons and neutrons" — never "much smaller"
+   - Say "their charges cancel out and the atom has no overall electrical charge" — never "maintains stability"
+   - If mentioning cooking: "atoms rearranging into new molecules, such as when proteins and sugars react to brown food"
+   - If mentioning rust: "atoms reacting and forming a new compound, iron oxide" — as a separate example from cooking
 
 2. key_takeaways: 4–6 concise bullet points summarising the most important concepts a student must remember.
 3. real_world_examples: 3–4 concrete, relatable real-world applications or examples that make the concept tangible.
