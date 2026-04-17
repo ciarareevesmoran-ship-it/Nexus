@@ -233,20 +233,13 @@ Generate:
                 {sampleResult.expanded_explanation.split('\n\n').map((block, i) => {
                   const lines = block.split('\n');
                   const isSubheading = lines.length > 1;
-                  if (!isSubheading) return <p key={i} className="text-muted-foreground leading-relaxed">{block}</p>;
-                  const heading = lines[0];
-                  const body = lines.slice(1).join(' ');
-                  const isMentalModel = heading.toLowerCase().includes('mental model');
-                  return isMentalModel ? (
-                    <div key={i} style={{ border: '2px solid #800020', padding: '12px', borderRadius: '8px', backgroundColor: '#faf5f7' }}>
-                      <p className="font-semibold text-sm mb-1" style={{ color: '#800020' }}>Mental model:</p>
-                      <p className="text-sm leading-relaxed" style={{ color: '#4a2030' }}>{body}</p>
+                  return isSubheading ? (
+                    <div key={i}>
+                      <p className="font-semibold text-foreground text-sm mb-1">{lines[0]}</p>
+                      <p className="text-muted-foreground leading-relaxed">{lines.slice(1).join(' ')}</p>
                     </div>
                   ) : (
-                    <div key={i}>
-                      <p className="font-semibold text-foreground text-sm mb-1">{heading}</p>
-                      <p className="text-muted-foreground leading-relaxed">{body}</p>
-                    </div>
+                    <p key={i} className="text-muted-foreground leading-relaxed">{block}</p>
                   );
                 })}
               </div>
