@@ -129,11 +129,11 @@ Topic: ${section.main_topic}
 Source definition: ${section.concise_definition}
 
 Generate:
-1. expanded_explanation: Write exactly 4 paragraphs, each 2–4 sentences. Use plain, clear language. Be scientifically precise. Follow this exact structure:
-   - Paragraph 1 — Atoms and matter: What atoms are and that they are the building blocks of matter.
-   - Paragraph 2 — The nucleus (protons and neutrons): Describe protons (positive charge) and neutrons (no charge) in the nucleus. Introduce the atomic number (Z) as the number of protons, which defines the element's identity.
-   - Paragraph 3 — Electrons, neutral atoms, and ions: Describe electrons and their charge. Explain that in a neutral atom, the number of electrons equals the number of protons, so their charges cancel out and the atom has no overall electrical charge. Explain ions: cations (lost electrons, positive) and anions (gained electrons, negative).
-   - Paragraph 4 — Mass number and isotopes: Define mass number (A = protons + neutrons). Give carbon-12 as an example. Briefly explain isotopes as atoms of the same element with different numbers of neutrons.
+1. expanded_explanation: Write exactly 4 sections, each with a subheading followed by a paragraph of 2–4 sentences. Use plain, clear language. Be scientifically precise. Format each section as "SUBHEADING\nParagraph text." Follow this exact structure:
+   - Subheading: "What is an atom?" — Paragraph: What atoms are and that they are the building blocks of matter.
+   - Subheading: "The nucleus: protons and neutrons" — Paragraph: Describe protons (positive charge) and neutrons (no charge) in the nucleus. Introduce the atomic number (Z) as the number of protons, which defines the element's identity.
+   - Subheading: "Electrons, neutral atoms, and ions" — Paragraph: Describe electrons and their charge. Explain that in a neutral atom, the number of electrons equals the number of protons, so their charges cancel out and the atom has no overall electrical charge. Explain ions: cations (lost electrons, positive) and anions (gained electrons, negative).
+   - Subheading: "Mass number and isotopes" — Paragraph: Define mass number (A = protons + neutrons). Give carbon-12 as an example. Briefly explain isotopes as atoms of the same element with different numbers of neutrons.
 
    Scientific accuracy rules (strictly enforce):
    - Say "almost everything you can touch, see, or feel is made up of atoms" — never "everything"
@@ -227,8 +227,21 @@ Generate:
         {sampleResult && (
           <div className="mt-6 space-y-4 text-sm">
             <div>
-              <p className="font-semibold text-foreground mb-1">Expanded Explanation</p>
-              <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{sampleResult.expanded_explanation}</p>
+              <p className="font-semibold text-foreground mb-2">Expanded Explanation</p>
+              <div className="space-y-4">
+                {sampleResult.expanded_explanation.split('\n\n').map((block, i) => {
+                  const lines = block.split('\n');
+                  const isSubheading = lines.length > 1;
+                  return isSubheading ? (
+                    <div key={i}>
+                      <p className="font-semibold text-foreground text-sm mb-1">{lines[0]}</p>
+                      <p className="text-muted-foreground leading-relaxed">{lines.slice(1).join(' ')}</p>
+                    </div>
+                  ) : (
+                    <p key={i} className="text-muted-foreground leading-relaxed">{block}</p>
+                  );
+                })}
+              </div>
             </div>
             <div>
               <p className="font-semibold text-foreground mb-1">Key Takeaways</p>
