@@ -238,19 +238,19 @@ Generate:
                     const body = lines.slice(1).join(' ');
                     const isHtml = body.trim().startsWith('<');
                     return (
-                      <div key={i} style={{ marginBottom: '1.5rem', fontFamily: 'Merriweather, Georgia, serif' }}>
-                        <p style={{ fontWeight: 'bold', color: '#671D2C', marginBottom: '0.5rem', fontSize: '0.95rem' }}>{subheading}</p>
+                      <div key={i}>
+                        <p className="font-semibold text-foreground text-sm mb-1">{subheading}</p>
                         {isHtml
-                          ? <div dangerouslySetInnerHTML={{ __html: body }} style={{ color: '#141414' }} />
-                          : <p style={{ color: '#141414', lineHeight: '1.75' }}>{body}</p>
+                          ? <div dangerouslySetInnerHTML={{ __html: body }} />
+                          : <p className="text-muted-foreground leading-relaxed">{body}</p>
                         }
                       </div>
                     );
                   }
                   const isHtml = block.trim().startsWith('<');
                   return isHtml
-                    ? <div key={i} style={{ marginBottom: '1.5rem', fontFamily: 'Merriweather, Georgia, serif', color: '#141414' }} dangerouslySetInnerHTML={{ __html: block }} />
-                    : <p key={i} style={{ marginBottom: '1.5rem', fontFamily: 'Merriweather, Georgia, serif', color: '#141414', lineHeight: '1.75' }}>{block}</p>;
+                    ? <div key={i} dangerouslySetInnerHTML={{ __html: block }} />
+                    : <p key={i} className="text-muted-foreground leading-relaxed">{block}</p>;
                 })}
               </div>
             </div>
