@@ -226,10 +226,10 @@ Generate:
         </Button>
 
         {sampleResult && (
-          <div className="mt-6 space-y-4 text-sm">
+          <div className="mt-6 space-y-6 font-serif text-sm" style={{ color: '#141414' }}>
             <div>
-              <p className="font-semibold text-foreground mb-2">Expanded Explanation</p>
-              <div className="space-y-4">
+              <p className="font-bold mb-3" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Expanded Explanation</p>
+              <div className="space-y-6">
                 {sampleResult.expanded_explanation.split('\n\n').map((block, i) => {
                   const lines = block.split('\n');
                   const isSubheading = lines.length > 1;
@@ -238,36 +238,36 @@ Generate:
                     const body = lines.slice(1).join(' ');
                     const isHtml = body.trim().startsWith('<');
                     return (
-                      <div key={i}>
-                        <p className="font-semibold text-foreground text-sm mb-1">{subheading}</p>
+                      <div key={i} className="space-y-2">
+                        <p className="font-bold text-sm" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>{subheading}</p>
                         {isHtml
-                          ? <div dangerouslySetInnerHTML={{ __html: body }} />
-                          : <p className="text-muted-foreground leading-relaxed">{body}</p>
+                          ? <div dangerouslySetInnerHTML={{ __html: body }} style={{ fontFamily: 'var(--font-serif)', color: '#141414' }} />
+                          : <p className="leading-relaxed" style={{ color: '#141414' }}>{body}</p>
                         }
                       </div>
                     );
                   }
                   const isHtml = block.trim().startsWith('<');
                   return isHtml
-                    ? <div key={i} dangerouslySetInnerHTML={{ __html: block }} />
-                    : <p key={i} className="text-muted-foreground leading-relaxed">{block}</p>;
+                    ? <div key={i} dangerouslySetInnerHTML={{ __html: block }} style={{ fontFamily: 'var(--font-serif)', color: '#141414' }} />
+                    : <p key={i} className="leading-relaxed" style={{ color: '#141414' }}>{block}</p>;
                 })}
               </div>
             </div>
             <div>
-              <p className="font-semibold text-foreground mb-1">Key Takeaways</p>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                {sampleResult.key_takeaways?.map((t, i) => <li key={i}>{t}</li>)}
+              <p className="font-bold mb-2" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Key Takeaways</p>
+              <ul className="list-disc list-inside space-y-2" style={{ color: '#141414' }}>
+                {sampleResult.key_takeaways?.map((t, i) => <li key={i} className="leading-relaxed">{t}</li>)}
               </ul>
             </div>
             <div>
-              <p className="font-semibold text-foreground mb-1">Real-World Examples</p>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                {sampleResult.real_world_examples?.map((e, i) => <li key={i}>{e}</li>)}
+              <p className="font-bold mb-2" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Real-World Examples</p>
+              <ul className="list-disc list-inside space-y-2" style={{ color: '#141414' }}>
+                {sampleResult.real_world_examples?.map((e, i) => <li key={i} className="leading-relaxed">{e}</li>)}
               </ul>
             </div>
             <div>
-              <p className="font-semibold text-foreground mb-1">Related Terms</p>
+              <p className="font-bold mb-2" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Related Terms</p>
               <div className="flex flex-wrap gap-2">
                 {sampleResult.related_terms?.map((t, i) => (
                   <span key={i} className="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded-full">{t}</span>
