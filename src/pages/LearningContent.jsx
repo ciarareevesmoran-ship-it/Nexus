@@ -20,6 +20,9 @@ export default function LearningContent() {
   const topic = topics.find(t => t.id === topicId);
   const subtopics = getSubtopics(topicId);
   const subtopic = subtopics.find(s => s.id === subtopicId);
+  const subtopicIndex = subtopics.findIndex(s => s.id === subtopicId);
+  const prevSubtopic = subtopicIndex > 0 ? subtopics[subtopicIndex - 1] : null;
+  const nextSubtopic = subtopicIndex < subtopics.length - 1 ? subtopics[subtopicIndex + 1] : null;
 
   if (!subject || !topic || !subtopic) {
     return <div className="p-10 text-center text-muted-foreground">Content not found.</div>;
@@ -64,6 +67,35 @@ export default function LearningContent() {
         {/* Reading area — fills remaining space */}
         <div className="flex-1 overflow-y-auto">
           <ContentDisplay subtopic={subtopic} topic={topic} subject={subject} format={format} />
+
+          {/* Bottom chapter navigation */}
+          {(prevSubtopic || nextSubtopic) && (
+            <div className="flex items-stretch rounded-none overflow-hidden mx-auto max-w-3xl mb-10 mx-6" style={{ background: '#671D2C' }}>
+              {prevSubtopic ? (
+                <button
+                  onClick={() => navigate(`/learn/${subjectId}/${topicId}/${prevSubtopic.id}?format=${format}`)}
+                  className="flex-1 flex flex-col items-start px-6 py-4 text-white hover:brightness-110 transition-all text-left"
+                >
+                  <span className="text-xs opacity-70 mb-0.5">← Previous</span>
+                  <span className="font-serif font-bold text-sm leading-snug">{prevSubtopic.name}</span>
+                </button>
+              ) : <div className="flex-1" />}
+
+              {prevSubtopic && nextSubtopic && (
+                <div className="w-px bg-white/20 self-stretch" />
+              )}
+
+              {nextSubtopic ? (
+                <button
+                  onClick={() => navigate(`/learn/${subjectId}/${topicId}/${nextSubtopic.id}?format=${format}`)}
+                  className="flex-1 flex flex-col items-end px-6 py-4 text-white hover:brightness-110 transition-all text-right"
+                >
+                  <span className="text-xs opacity-70 mb-0.5">Next →</span>
+                  <span className="font-serif font-bold text-sm leading-snug">{nextSubtopic.name}</span>
+                </button>
+              ) : <div className="flex-1" />}
+            </div>
+          )}
         </div>
       </div>
 
