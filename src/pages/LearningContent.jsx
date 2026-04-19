@@ -65,39 +65,41 @@ export default function LearningContent() {
         )}
 
         {/* Reading area — fills remaining space */}
-        <div className="flex-1 overflow-y-auto">
-          <ContentDisplay subtopic={subtopic} topic={topic} subject={subject} format={format} />
+        <div className="flex-1 overflow-y-auto flex flex-col">
+          <div className="flex-1">
+            <ContentDisplay subtopic={subtopic} topic={topic} subject={subject} format={format} />
+          </div>
+
+          {/* Bottom chapter navigation — stays within the reading column */}
+          {(prevSubtopic || nextSubtopic) && (
+            <div className="flex items-stretch shrink-0" style={{ background: '#671D2C' }}>
+              {prevSubtopic ? (
+                <button
+                  onClick={() => navigate(`/learn/${subjectId}/${topicId}/${prevSubtopic.id}?format=${format}`)}
+                  className="flex-1 flex flex-col items-start px-6 py-4 text-white hover:brightness-110 transition-all text-left"
+                >
+                  <span className="text-xs opacity-70 mb-0.5">← Previous</span>
+                  <span className="font-serif font-bold text-sm leading-snug">{prevSubtopic.name}</span>
+                </button>
+              ) : <div className="flex-1" />}
+
+              {prevSubtopic && nextSubtopic && (
+                <div className="w-px bg-white/20 self-stretch" />
+              )}
+
+              {nextSubtopic ? (
+                <button
+                  onClick={() => navigate(`/learn/${subjectId}/${topicId}/${nextSubtopic.id}?format=${format}`)}
+                  className="flex-1 flex flex-col items-end px-6 py-4 text-white hover:brightness-110 transition-all text-right"
+                >
+                  <span className="text-xs opacity-70 mb-0.5">Next →</span>
+                  <span className="font-serif font-bold text-sm leading-snug">{nextSubtopic.name}</span>
+                </button>
+              ) : <div className="flex-1" />}
+            </div>
+          )}
         </div>
       </div>
-
-      {/* Bottom chapter navigation — full width, below all content */}
-      {(prevSubtopic || nextSubtopic) && (
-        <div className="flex items-stretch shrink-0" style={{ background: '#671D2C' }}>
-          {prevSubtopic ? (
-            <button
-              onClick={() => navigate(`/learn/${subjectId}/${topicId}/${prevSubtopic.id}?format=${format}`)}
-              className="flex-1 flex flex-col items-start px-6 py-4 text-white hover:brightness-110 transition-all text-left"
-            >
-              <span className="text-xs opacity-70 mb-0.5">← Previous</span>
-              <span className="font-serif font-bold text-sm leading-snug">{prevSubtopic.name}</span>
-            </button>
-          ) : <div className="flex-1" />}
-
-          {prevSubtopic && nextSubtopic && (
-            <div className="w-px bg-white/20 self-stretch" />
-          )}
-
-          {nextSubtopic ? (
-            <button
-              onClick={() => navigate(`/learn/${subjectId}/${topicId}/${nextSubtopic.id}?format=${format}`)}
-              className="flex-1 flex flex-col items-end px-6 py-4 text-white hover:brightness-110 transition-all text-right"
-            >
-              <span className="text-xs opacity-70 mb-0.5">Next →</span>
-              <span className="font-serif font-bold text-sm leading-snug">{nextSubtopic.name}</span>
-            </button>
-          ) : <div className="flex-1" />}
-        </div>
-      )}
 
       {/* AI Tutor — context-aware with current subtopic */}
       <AiTutor subtopicName={subtopic.name} />
