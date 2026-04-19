@@ -11,7 +11,7 @@ const SIMULATED_RESPONSES = [
   "You're on the right track. To deepen your understanding, I'd suggest focusing on the core principle first, then exploring how it applies in different contexts. Shall I generate a quick quiz to test your grasp?",
 ];
 
-export default function AiTutor({ subtopicName = null }) {
+export default function AiTutor({ subtopicName = null, buttonBottom = 'bottom-6' }) {
   const getInitialMessage = () => {
     if (subtopicName) {
       return `I can see you're studying ${subtopicName}. What would you like me to explain or clarify?`;
@@ -48,7 +48,7 @@ export default function AiTutor({ subtopicName = null }) {
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          "fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group",
+          `fixed ${buttonBottom} right-6 z-40 w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group`,
           isOpen && "scale-0 opacity-0"
         )}
       >

@@ -102,7 +102,7 @@ export default function LearningContent() {
       </div>
 
       {/* AI Tutor — context-aware with current subtopic */}
-      <AiTutor subtopicName={subtopic.name} />
+      <AiTutor subtopicName={subtopic.name} buttonBottom="bottom-20" />
     </div>
   );
 }
