@@ -63,11 +63,11 @@ export default function Profile() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-10 md:py-14">
+    <div className="max-w-6xl mx-auto px-6 py-10 md:py-14">
       <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-12">Profile</h1>
 
       <div className="space-y-12">
-        {/* User Info */}
+        {/* User Info — full width */}
         <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
           <div className="flex items-center gap-5">
             <div className="w-20 h-20 rounded-full bg-[#7B2235] flex items-center justify-center ring-4 ring-[#F2E0E3]">
@@ -88,92 +88,98 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* Interests */}
-        <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
-          <div className="flex items-center gap-2.5 mb-6">
-            <BookOpen className="w-5 h-5 text-primary" />
-            <h3 className="font-serif text-2xl font-bold text-foreground">Your Interests</h3>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {SUBJECTS.map((subject) => {
-              const isSelected = profile?.interests?.includes(subject.id);
-              return (
-                <button
-                  key={subject.id}
-                  onClick={() => toggleInterest(subject.id)}
-                  className={cn(
-                    "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-all",
-                    isSelected
-                      ? "bg-[#F2E0E3] text-[#6B1F2A] border-[#F2E0E3]"
-                      : "bg-background text-foreground/70 border-[#E5DDD0] hover:border-primary/40"
-                  )}
-                >
-                  {subject.name}
-                  {isSelected && <X className="w-3 h-3" />}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Goals */}
-        <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2.5">
-              <Target className="w-5 h-5 text-primary" />
-              <h3 className="font-serif text-2xl font-bold text-foreground">Learning Goals</h3>
+        {/* Second row: Progress (left ~35%) | Interests + Goals stacked (right ~65%) */}
+        <div className="grid grid-cols-1 lg:grid-cols-[35fr_65fr] gap-8 items-start">
+          {/* Progress */}
+          <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
+            <div className="flex items-center gap-2.5 mb-6">
+              <BarChart3 className="w-5 h-5 text-primary" />
+              <h3 className="font-serif text-2xl font-bold text-foreground">Learning Progress</h3>
             </div>
-            {!editingGoals && (
-              <Button variant="ghost" size="sm" onClick={() => setEditingGoals(true)}>Edit</Button>
-            )}
-          </div>
-          {editingGoals ? (
-            <div className="space-y-3">
-              <textarea
-                value={goals}
-                onChange={(e) => setGoals(e.target.value)}
-                className="w-full h-24 p-3 rounded-lg border border-border bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/20"
-                placeholder="What do you want to learn and why?"
-              />
-              <div className="flex gap-2">
-                <Button size="sm" onClick={saveGoals}>Save</Button>
-                <Button variant="ghost" size="sm" onClick={() => { setEditingGoals(false); setGoals(profile?.learning_goals || ''); }}>Cancel</Button>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
+                <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{lessonsCompleted}</p>
+                <p className="text-xs text-muted-foreground mt-2">Lessons completed</p>
+              </div>
+              <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
+                <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{hoursStudied}</p>
+                <p className="text-xs text-muted-foreground mt-2">Hours studied</p>
+              </div>
+              <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
+                <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{casesExploredCount}</p>
+                <p className="text-xs text-muted-foreground mt-2">Cases explored</p>
               </div>
             </div>
-          ) : (
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {profile?.learning_goals || 'No learning goals set yet. Tap edit to add some.'}
-            </p>
-          )}
+          </div>
+
+          {/* Right column: Interests + Goals stacked */}
+          <div className="space-y-8">
+            {/* Interests */}
+            <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
+              <div className="flex items-center gap-2.5 mb-6">
+                <BookOpen className="w-5 h-5 text-primary" />
+                <h3 className="font-serif text-2xl font-bold text-foreground">Your Interests</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {SUBJECTS.map((subject) => {
+                  const isSelected = profile?.interests?.includes(subject.id);
+                  return (
+                    <button
+                      key={subject.id}
+                      onClick={() => toggleInterest(subject.id)}
+                      className={cn(
+                        "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-all",
+                        isSelected
+                          ? "bg-[#F2E0E3] text-[#6B1F2A] border-[#F2E0E3]"
+                          : "bg-background text-foreground/70 border-[#E5DDD0] hover:border-primary/40"
+                      )}
+                    >
+                      {subject.name}
+                      {isSelected && <X className="w-3 h-3" />}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Goals */}
+            <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-2.5">
+                  <Target className="w-5 h-5 text-primary" />
+                  <h3 className="font-serif text-2xl font-bold text-foreground">Learning Goals</h3>
+                </div>
+                {!editingGoals && (
+                  <Button variant="ghost" size="sm" onClick={() => setEditingGoals(true)}>Edit</Button>
+                )}
+              </div>
+              {editingGoals ? (
+                <div className="space-y-3">
+                  <textarea
+                    value={goals}
+                    onChange={(e) => setGoals(e.target.value)}
+                    className="w-full h-24 p-3 rounded-lg border border-border bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    placeholder="What do you want to learn and why?"
+                  />
+                  <div className="flex gap-2">
+                    <Button size="sm" onClick={saveGoals}>Save</Button>
+                    <Button variant="ghost" size="sm" onClick={() => { setEditingGoals(false); setGoals(profile?.learning_goals || ''); }}>Cancel</Button>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {profile?.learning_goals || 'No learning goals set yet. Tap edit to add some.'}
+                </p>
+              )}
+            </div>
+          </div>
         </div>
 
-        {/* Progress */}
-        <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
-          <div className="flex items-center gap-2.5 mb-6">
-            <BarChart3 className="w-5 h-5 text-primary" />
-            <h3 className="font-serif text-2xl font-bold text-foreground">Learning Progress</h3>
-          </div>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
-              <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{lessonsCompleted}</p>
-              <p className="text-xs text-muted-foreground mt-2">Lessons completed</p>
-            </div>
-            <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
-              <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{hoursStudied}</p>
-              <p className="text-xs text-muted-foreground mt-2">Hours studied</p>
-            </div>
-            <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
-              <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{casesExploredCount}</p>
-              <p className="text-xs text-muted-foreground mt-2">Cases explored</p>
-            </div>
-          </div>
+        {/* Third row: Bookmarks | My Notes (50/50) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <BookmarksSection />
+          <MyNotesSection />
         </div>
-
-        {/* Bookmarks */}
-        <BookmarksSection />
-
-        {/* My Notes */}
-        <MyNotesSection />
 
         <div className="pt-4">
           <Button
