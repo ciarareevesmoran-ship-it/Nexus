@@ -1,0 +1,40 @@
+{
+  "name": "UserBookmarks",
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string"
+    },
+    "subjectName": {
+      "type": "string"
+    },
+    "topicId": {
+      "type": "string"
+    },
+    "topicName": {
+      "type": "string"
+    },
+    "lessonId": {
+      "type": "string"
+    },
+    "lessonName": {
+      "type": "string"
+    },
+    "contextType": {
+      "type": "string",
+      "enum": [
+        "lesson",
+        "case"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "description": "Exact path to the bookmarked lesson or case"
+    }
+  },
+  "required": [
+    "contextType",
+    "url",
+    "lessonName"
+  ]
+}

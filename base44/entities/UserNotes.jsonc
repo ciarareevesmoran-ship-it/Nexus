@@ -12,7 +12,10 @@
     },
     "contextType": {
       "type": "string",
-      "enum": ["subject", "case"],
+      "enum": [
+        "subject",
+        "case"
+      ],
       "description": "Whether the note belongs to a subject lesson or a live case"
     },
     "contextId": {
@@ -24,5 +27,10 @@
       "description": "Display name of the subject or case"
     }
   },
-  "required": ["content", "contextType", "contextId", "contextName"]
+  "required": [
+    "content",
+    "contextType",
+    "contextId",
+    "contextName"
+  ]
 }
