@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const NAV_ITEMS = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/my-learning', label: 'Learning', icon: BookOpen },
-  { path: '/cases', label: 'Cases', icon: Layers },
+  { path: '/cases', label: 'Custom', icon: Layers },
   { path: '/live-cases', label: 'Live', icon: Radio },
   { path: '/profile', label: 'Profile', icon: User },
 ];

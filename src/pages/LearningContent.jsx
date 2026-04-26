@@ -72,7 +72,7 @@ export default function LearningContent() {
 
           {/* Bottom chapter navigation — stays within the reading column */}
           {(prevSubtopic || nextSubtopic) && (
-            <div className="flex items-stretch shrink-0" style={{ background: '#671D2C' }}>
+            <div className="flex items-stretch shrink-0" style={{ background: '#7B2235' }}>
               {prevSubtopic ? (
                 <button
                   onClick={() => navigate(`/learn/${subjectId}/${topicId}/${prevSubtopic.id}?format=${format}`)}

@@ -48,11 +48,11 @@ export default function AiTutor({ subtopicName = null, buttonBottom = 'bottom-6'
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          `fixed ${buttonBottom} right-6 z-40 w-14 h-14 rounded-full bg-sidebar text-sidebar-foreground shadow-editorial-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group ring-1 ring-primary/30`,
+          `fixed ${buttonBottom} right-6 z-40 w-14 h-14 rounded-full bg-[#7B2235] text-white shadow-editorial-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group ring-1 ring-white/20`,
           isOpen && "scale-0 opacity-0"
         )}
       >
-        <Sparkles className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+        <Sparkles className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
       </button>
 
       <AnimatePresence>
@@ -67,8 +67,8 @@ export default function AiTutor({ subtopicName = null, buttonBottom = 'bottom-6'
             {/* Navy header */}
             <div className="flex items-center justify-between px-6 py-5 bg-sidebar text-sidebar-foreground">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-sidebar-accent flex items-center justify-center ring-1 ring-primary/40">
-                  <Sparkles className="w-4 h-4 text-primary" />
+                <div className="w-9 h-9 rounded-lg bg-white/15 flex items-center justify-center ring-1 ring-white/30">
+                  <Sparkles className="w-4 h-4 text-white" />
                 </div>
                 <div>
                   <h3 className="font-serif text-base font-bold leading-tight">AI Tutor</h3>
