@@ -16,7 +16,7 @@ export default function AiTutor({ subtopicName = null, buttonBottom = 'bottom-6'
     if (subtopicName) {
       return `I can see you're studying ${subtopicName}. What would you like me to explain or clarify?`;
     }
-    return "Hello! I'm your Nexus tutor. I'm here to help you understand any topic you're studying. Feel free to ask me anything — no question is too simple or too complex.";
+    return "Hello. I'm your Nexus tutor — here to help you think through any idea you're studying. Ask me anything, however simple or complex.";
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -48,45 +48,51 @@ export default function AiTutor({ subtopicName = null, buttonBottom = 'bottom-6'
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          `fixed ${buttonBottom} right-6 z-40 w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group`,
+          `fixed ${buttonBottom} right-6 z-40 w-14 h-14 rounded-full bg-sidebar text-sidebar-foreground shadow-editorial-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group ring-1 ring-primary/30`,
           isOpen && "scale-0 opacity-0"
         )}
       >
-        <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+        <Sparkles className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
       </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: 300 }}
+            initial={{ opacity: 0, x: 320 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 300 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed top-0 right-0 bottom-0 z-50 w-full sm:w-[400px] bg-background border-l border-border shadow-2xl flex flex-col"
+            exit={{ opacity: 0, x: 320 }}
+            transition={{ type: 'spring', damping: 28, stiffness: 280 }}
+            className="fixed top-0 right-0 bottom-0 z-50 w-full sm:w-[420px] bg-card shadow-2xl flex flex-col"
           >
-            <div className="flex items-center justify-between px-5 py-4 border-b border-border">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+            {/* Navy header */}
+            <div className="flex items-center justify-between px-6 py-5 bg-sidebar text-sidebar-foreground">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-lg bg-sidebar-accent flex items-center justify-center ring-1 ring-primary/40">
                   <Sparkles className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-sm font-bold">AI Tutor</h3>
-                  <p className="text-xs text-muted-foreground">Always here to help</p>
+                  <h3 className="font-serif text-base font-bold leading-tight">AI Tutor</h3>
+                  <p className="text-[11px] text-sidebar-foreground/60 uppercase tracking-[0.14em] mt-0.5">
+                    Always considered
+                  </p>
                 </div>
               </div>
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-8 w-8">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="h-8 w-8 rounded-md flex items-center justify-center text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors"
+              >
                 <X className="w-4 h-4" />
-              </Button>
+              </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+            <div className="flex-1 overflow-y-auto px-6 py-6 space-y-5 bg-background">
               {messages.map((msg, i) => (
                 <div key={i} className={cn("flex", msg.role === 'user' ? "justify-end" : "justify-start")}>
                   <div className={cn(
-                    "max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed",
+                    "max-w-[88%] rounded-2xl px-4 py-3 text-[14px] leading-relaxed",
                     msg.role === 'user'
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-foreground"
+                      ? "bg-sidebar text-sidebar-foreground rounded-br-sm"
+                      : "bg-card shadow-editorial text-foreground rounded-bl-sm font-serif"
                   )}>
                     {msg.content}
                   </div>
@@ -94,18 +100,18 @@ export default function AiTutor({ subtopicName = null, buttonBottom = 'bottom-6'
               ))}
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="bg-muted rounded-2xl px-4 py-3 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: '300ms' }} />
+                  <div className="bg-card shadow-editorial rounded-2xl px-4 py-3.5 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" style={{ animationDelay: '300ms' }} />
                   </div>
                 </div>
               )}
               <div ref={messagesEndRef} />
             </div>
 
-            <div className="px-4 py-3 border-t border-border">
-              <div className="flex items-center gap-2 bg-muted rounded-xl px-3 py-2">
+            <div className="px-5 py-4 border-t border-border bg-card">
+              <div className="flex items-center gap-2 bg-muted/60 rounded-xl px-4 py-2.5">
                 <input
                   type="text"
                   value={input}
@@ -118,11 +124,14 @@ export default function AiTutor({ subtopicName = null, buttonBottom = 'bottom-6'
                   size="icon"
                   onClick={handleSend}
                   disabled={!input.trim()}
-                  className="h-8 w-8 rounded-lg shrink-0"
+                  className="h-9 w-9 rounded-lg shrink-0 bg-primary hover:bg-primary/90 text-primary-foreground"
                 >
                   <Send className="w-4 h-4" />
                 </Button>
               </div>
+              <p className="text-[10px] text-muted-foreground mt-2.5 text-center uppercase tracking-[0.14em]">
+                Powered by Nexus Intelligence
+              </p>
             </div>
           </motion.div>
         )}

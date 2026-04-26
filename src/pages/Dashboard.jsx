@@ -32,7 +32,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-8 md:py-10">
+    <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-20">
       <WelcomeHeader />
       <SubjectGrid />
       <LiveCasesSection />
