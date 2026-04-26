@@ -91,23 +91,23 @@ export default function Profile() {
         {/* Second row: Progress (left ~35%) | Interests + Goals stacked (right ~65%) */}
         <div className="grid grid-cols-1 lg:grid-cols-[35fr_65fr] gap-8 items-start">
           {/* Progress */}
-          <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
+          <div className="p-8 md:p-10 rounded-xl border border-border bg-card self-start">
             <div className="flex items-center gap-2.5 mb-6">
               <BarChart3 className="w-5 h-5 text-primary" />
               <h3 className="font-serif text-2xl font-bold text-foreground">Learning Progress</h3>
             </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
-                <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{lessonsCompleted}</p>
-                <p className="text-xs text-muted-foreground mt-2">Lessons completed</p>
+            <div className="grid grid-cols-3 gap-3">
+              <div className="text-center px-3 py-7 rounded-lg bg-[#FAF0F2]">
+                <p className="font-serif text-5xl md:text-6xl font-bold text-[#7B2235] leading-none">{lessonsCompleted}</p>
+                <p className="text-xs text-muted-foreground mt-3">Lessons completed</p>
               </div>
-              <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
-                <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{hoursStudied}</p>
-                <p className="text-xs text-muted-foreground mt-2">Hours studied</p>
+              <div className="text-center px-3 py-7 rounded-lg bg-[#FAF0F2]">
+                <p className="font-serif text-5xl md:text-6xl font-bold text-[#7B2235] leading-none">{hoursStudied}</p>
+                <p className="text-xs text-muted-foreground mt-3">Hours studied</p>
               </div>
-              <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
-                <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{casesExploredCount}</p>
-                <p className="text-xs text-muted-foreground mt-2">Cases explored</p>
+              <div className="text-center px-3 py-7 rounded-lg bg-[#FAF0F2]">
+                <p className="font-serif text-5xl md:text-6xl font-bold text-[#7B2235] leading-none">{casesExploredCount}</p>
+                <p className="text-xs text-muted-foreground mt-3">Cases explored</p>
               </div>
             </div>
           </div>
