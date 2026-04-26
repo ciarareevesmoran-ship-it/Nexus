@@ -128,14 +128,11 @@ Section: ${section.section_number} — ${section.section_title}
 Topic: ${section.main_topic}
 Source definition: ${section.concise_definition}
 
-FORMATTING RULES (apply to ALL text fields):
-- Do not use any HTML tags in your output. Use plain line breaks to separate paragraphs and sentences. Do not include <br/>, <p>, or any other HTML elements.
-
 Generate:
-1. expanded_explanation: Write exactly 4 sections, each with a subheading followed by a paragraph of 2–4 sentences. Use plain, clear language. Be scientifically precise. Format each section as "SUBHEADING\nParagraph text." Separate sections with a blank line. Follow this exact structure:
+1. expanded_explanation: Write exactly 4 sections, each with a subheading followed by a paragraph of 2–4 sentences. Use plain, clear language. Be scientifically precise. Format each section as "SUBHEADING\nParagraph text." Follow this exact structure:
    - Subheading: "What is an atom?" — Paragraph: What atoms are and that they are the building blocks of matter.
    - Subheading: "The nucleus: protons and neutrons" — Paragraph: Describe protons (positive charge) and neutrons (no charge) in the nucleus. Introduce the atomic number (Z) as the number of protons, which defines the element's identity.
-   - Subheading: "A mental model" — Paragraph: Insert this exactly (you may adjust slightly for flow but keep the full meaning): "You can think of an atom as having a tiny, dense center called the nucleus, surrounded by a cloud of electrons. Unlike planets orbiting the sun, electrons do not move in fixed paths. Instead, they exist in regions where they are most likely to be found."
+   - Subheading: "A mental model" — Paragraph: Insert this exactly (you may adjust slightly for flow but keep the full meaning): "You can think of an atom as having a tiny, dense center called the nucleus, surrounded by a cloud of electrons. Unlike planets orbiting the sun, electrons do not move in fixed paths. Instead, they exist in regions where they are most likely to be found." Format this paragraph as an HTML callout box using this exact structure: <div style="border: 2px solid #800020; padding: 12px; border-radius: 8px; background-color: #faf5f7;"><strong>Mental model:</strong><br/>You can think of an atom as having a tiny, dense center called the nucleus, surrounded by a cloud of electrons. Unlike planets orbiting the sun, electrons do not move in fixed paths. Instead, they exist in regions where they are most likely to be found.</div>
    - Subheading: "Electrons, neutral atoms, and ions" — Paragraph: Describe electrons and their charge. Explain that in a neutral atom, the number of electrons equals the number of protons, so their charges cancel out and the atom has no overall electrical charge. Explain ions: cations (lost electrons, positive) and anions (gained electrons, negative).
    - Subheading: "Mass number and isotopes" — Paragraph: Define mass number (A = protons + neutrons). Give carbon-12 as an example. Briefly explain isotopes as atoms of the same element with different numbers of neutrons.
 
@@ -231,41 +228,49 @@ Generate:
         {sampleResult && (
           <div className="mt-6 space-y-6 font-serif text-sm" style={{ color: '#141414' }}>
             <div>
-              <p className="font-bold mb-3" style={{ color: '#7B2235', fontFamily: 'var(--font-serif)' }}>Expanded Explanation</p>
+              <p className="font-bold mb-3" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Expanded Explanation</p>
               <div className="space-y-6">
                 {sampleResult.expanded_explanation.split('\n\n').map((block, i) => {
-                  const lines = block.split('\n').filter(l => l.trim());
-                  if (lines.length > 1) {
+                  const lines = block.split('\n');
+                  const isSubheading = lines.length > 1;
+                  if (isSubheading) {
                     const subheading = lines[0];
                     const body = lines.slice(1).join(' ');
+                    const isHtml = body.trim().startsWith('<');
                     return (
                       <div key={i} className="space-y-2">
-                        <p className="font-bold text-sm" style={{ color: '#7B2235', fontFamily: 'var(--font-serif)' }}>{subheading}</p>
-                        <p className="leading-relaxed whitespace-pre-line" style={{ color: '#141414' }}>{body}</p>
+                        <p className="font-bold text-sm" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>{subheading}</p>
+                        {isHtml
+                          ? <div dangerouslySetInnerHTML={{ __html: body }} style={{ fontFamily: 'var(--font-serif)', color: '#141414' }} />
+                          : <p className="leading-relaxed" style={{ color: '#141414' }}>{body}</p>
+                        }
                       </div>
                     );
                   }
-                  return <p key={i} className="leading-relaxed whitespace-pre-line" style={{ color: '#141414' }}>{block}</p>;
+                  const isHtml = block.trim().startsWith('<');
+                  return isHtml
+                    ? <div key={i} dangerouslySetInnerHTML={{ __html: block }} style={{ fontFamily: 'var(--font-serif)', color: '#141414' }} />
+                    : <p key={i} className="leading-relaxed" style={{ color: '#141414' }}>{block}</p>;
                 })}
               </div>
             </div>
             <div>
-              <p className="font-bold mb-2" style={{ color: '#7B2235', fontFamily: 'var(--font-serif)' }}>Key Takeaways</p>
+              <p className="font-bold mb-2" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Key Takeaways</p>
               <ul className="list-disc list-inside space-y-2" style={{ color: '#141414' }}>
                 {sampleResult.key_takeaways?.map((t, i) => <li key={i} className="leading-relaxed">{t}</li>)}
               </ul>
             </div>
             <div>
-              <p className="font-bold mb-2" style={{ color: '#7B2235', fontFamily: 'var(--font-serif)' }}>Real-World Examples</p>
+              <p className="font-bold mb-2" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Real-World Examples</p>
               <ul className="list-disc list-inside space-y-2" style={{ color: '#141414' }}>
                 {sampleResult.real_world_examples?.map((e, i) => <li key={i} className="leading-relaxed">{e}</li>)}
               </ul>
             </div>
             <div>
-              <p className="font-bold mb-2" style={{ color: '#7B2235', fontFamily: 'var(--font-serif)' }}>Related Terms</p>
+              <p className="font-bold mb-2" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Related Terms</p>
               <div className="flex flex-wrap gap-2">
                 {sampleResult.related_terms?.map((t, i) => (
-                  <span key={i} className="px-2 py-0.5 bg-[#F4E4E7] text-[#7B2235] text-xs rounded-full">{t}</span>
+                  <span key={i} className="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded-full">{t}</span>
                 ))}
               </div>
             </div>

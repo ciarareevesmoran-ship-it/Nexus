@@ -46,7 +46,7 @@ export default function LiveCasesSection() {
                   {liveCase.subjects.map((s) => (
                     <span
                       key={s}
-                      className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7B2235] bg-[#F4E4E7] px-2.5 py-1 rounded-sm"
+                      className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6B1F2A] bg-[#F2E0E3] px-2.5 py-1 rounded-sm"
                     >
                       {s}
                     </span>

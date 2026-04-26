@@ -19,8 +19,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 18% 12%;
 
-    /* Unified burgundy #7B2235 */
-    --primary: 348 57% 31%;
+    /* Rich burgundy #8B2A3A */
+    --primary: 350 54% 35%;
     --primary-foreground: 0 0% 100%;
 
     /* Soft warm secondary */
@@ -31,18 +31,18 @@
     --muted: 42 20% 92%;
     --muted-foreground: 28 7% 40%; /* warm grey #6B6560 */
 
-    /* Soft dusty rose accent — tinted from #7B2235 */
-    --accent: 348 35% 92%;
-    --accent-foreground: 348 57% 31%; /* unified burgundy #7B2235 */
+    /* Soft dusty rose accent #F2E0E3 */
+    --accent: 350 35% 92%;
+    --accent-foreground: 350 54% 27%; /* dark burgundy #6B1F2A */
 
     --destructive: 0 65% 48%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 42 16% 88%;
     --input: 42 16% 88%;
-    --ring: 348 57% 31%;
+    --ring: 350 54% 35%;
 
-    --chart-1: 348 57% 31%;
+    --chart-1: 350 54% 35%;
     --chart-2: 348 50% 18%;
     --chart-3: 173 45% 38%;
     --chart-4: 27 70% 60%;
@@ -50,15 +50,15 @@
 
     --radius: 0.625rem;
 
-    /* Sidebar — unified burgundy #7B2235 */
-    --sidebar-background: 348 57% 31%;
-    --sidebar-foreground: 36 18% 96%; /* soft white */
-    --sidebar-primary: 348 57% 31%; /* same unified burgundy */
+    /* Deep dark burgundy sidebar #3D1020 */
+    --sidebar-background: 348 58% 15%;
+    --sidebar-foreground: 36 18% 92%; /* soft white #F0EDE8 */
+    --sidebar-primary: 350 54% 35%; /* rich burgundy accent */
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 348 45% 26%; /* slightly darker for hover/active states only */
-    --sidebar-accent-foreground: 36 18% 96%;
-    --sidebar-border: 348 40% 38%;
-    --sidebar-ring: 348 57% 31%;
+    --sidebar-accent: 348 50% 22%;
+    --sidebar-accent-foreground: 36 18% 92%;
+    --sidebar-border: 348 40% 24%;
+    --sidebar-ring: 350 54% 35%;
   }
 
   .dark {

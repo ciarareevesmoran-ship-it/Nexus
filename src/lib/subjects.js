@@ -17,7 +17,7 @@ export const LIVE_CASES = [
     title: 'The Arctic',
     subjects: ['Social Science', 'Geology'],
     description: 'Explore how melting ice is reshaping geopolitics, ecosystems, and indigenous communities.',
-    image: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1517783999520-f068d7431571?w=600&q=80',
   },
   {
     id: 'israel-palestine',

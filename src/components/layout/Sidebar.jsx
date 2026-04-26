@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const NAV_ITEMS = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/my-learning', label: 'My Learning', icon: BookOpen },
-  { path: '/cases', label: 'Custom Cases', icon: Layers },
+  { path: '/cases', label: 'Cases', icon: Layers },
   { path: '/live-cases', label: 'Live Cases', icon: Radio },
   { path: '/profile', label: 'Profile', icon: User },
 ];
@@ -17,8 +17,8 @@ export default function Sidebar() {
     <aside className="hidden md:flex flex-col w-64 min-h-screen bg-sidebar text-sidebar-foreground">
       {/* Wordmark */}
       <div className="flex items-center gap-3 px-7 pt-8 pb-10">
-        <div className="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center ring-1 ring-white/25">
-          <span className="font-serif text-xl font-bold text-white leading-none">N</span>
+        <div className="w-10 h-10 rounded-lg bg-sidebar-accent flex items-center justify-center ring-1 ring-primary/40">
+          <span className="font-serif text-xl font-bold text-primary leading-none">N</span>
         </div>
         <span className="font-serif text-2xl font-bold tracking-tight text-sidebar-foreground">
           Nexus
@@ -48,11 +48,11 @@ export default function Sidebar() {
               )}
             >
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-white" />
+                <span className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-[#C98A96]" />
               )}
               <item.icon className={cn(
                 "w-[18px] h-[18px] transition-colors",
-                isActive ? "text-white" : "text-sidebar-foreground/70"
+                isActive ? "text-[#C98A96]" : "text-sidebar-foreground/70"
               )} />
               <span>{item.label}</span>
             </Link>
@@ -60,13 +60,13 @@ export default function Sidebar() {
         })}
       </nav>
 
-      {/* Premium card — soft contrast on burgundy sidebar */}
-      <div className="p-5 mx-4 mb-6 rounded-xl bg-white/10 border border-white/20 relative overflow-hidden backdrop-blur-sm">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+      {/* Premium card — deep burgundy with dusty rose accent */}
+      <div className="p-5 mx-4 mb-6 rounded-xl bg-[#3D1020] border border-[#C98A96]/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-24 h-24 bg-[#C98A96]/15 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
         <div className="relative">
           <div className="flex items-center gap-2 mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-white" />
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C98A96]" />
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C98A96]">
               Premium
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function Sidebar() {
           </p>
           <Link
             to="/profile"
-            className="inline-flex items-center justify-center w-full px-3 py-2 rounded-md bg-white text-[#7B2235] text-xs font-semibold hover:bg-white/90 transition-colors"
+            className="inline-flex items-center justify-center w-full px-3 py-2 rounded-md bg-[#C98A96] text-white text-xs font-semibold hover:bg-[#b87783] transition-colors"
           >
             Discover Premium
           </Link>
