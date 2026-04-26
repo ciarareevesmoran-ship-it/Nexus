@@ -5,29 +5,38 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { BookOpen, Target, BarChart3, Crown, X, LogOut } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import BookmarksSection from '../components/profile/BookmarksSection';
+import MyNotesSection from '../components/profile/MyNotesSection';
 
 export default function Profile() {
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null);
+  const [progress, setProgress] = useState(null);
   const [goals, setGoals] = useState('');
   const [editingGoals, setEditingGoals] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
-      const [me, profiles] = await Promise.all([
+      const [me, profiles, progressList] = await Promise.all([
         base44.auth.me(),
         base44.entities.UserProfile.list(),
+        base44.entities.UserProgress.list(),
       ]);
       setUser(me);
       if (profiles.length > 0) {
         setProfile(profiles[0]);
         setGoals(profiles[0].learning_goals || '');
       }
+      if (progressList.length > 0) setProgress(progressList[0]);
       setLoading(false);
     };
     loadData();
   }, []);
+
+  const lessonsCompleted = progress?.lessonsCompleted || 0;
+  const casesExploredCount = (progress?.casesExplored || []).length;
+  const hoursStudied = Math.round((lessonsCompleted * 15) / 60 * 10) / 10;
 
   const toggleInterest = async (subjectId) => {
     if (!profile) return;
@@ -144,19 +153,25 @@ export default function Profile() {
           </div>
           <div className="grid grid-cols-3 gap-4">
             <div className="text-center p-4 rounded-lg bg-muted">
-              <p className="text-2xl font-bold text-foreground">0</p>
+              <p className="text-2xl font-bold text-foreground">{lessonsCompleted}</p>
               <p className="text-xs text-muted-foreground mt-1">Lessons completed</p>
             </div>
             <div className="text-center p-4 rounded-lg bg-muted">
-              <p className="text-2xl font-bold text-foreground">0</p>
+              <p className="text-2xl font-bold text-foreground">{hoursStudied}</p>
               <p className="text-xs text-muted-foreground mt-1">Hours studied</p>
             </div>
             <div className="text-center p-4 rounded-lg bg-muted">
-              <p className="text-2xl font-bold text-foreground">0</p>
+              <p className="text-2xl font-bold text-foreground">{casesExploredCount}</p>
               <p className="text-xs text-muted-foreground mt-1">Cases explored</p>
             </div>
           </div>
         </div>
+
+        {/* Bookmarks */}
+        <BookmarksSection />
+
+        {/* My Notes */}
+        <MyNotesSection />
 
         <Button
           variant="ghost"

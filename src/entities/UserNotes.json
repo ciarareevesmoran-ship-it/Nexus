@@ -1,0 +1,28 @@
+{
+  "name": "UserNotes",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Optional short title for the note"
+    },
+    "content": {
+      "type": "string",
+      "description": "The text content of the note"
+    },
+    "contextType": {
+      "type": "string",
+      "enum": ["subject", "case"],
+      "description": "Whether the note belongs to a subject lesson or a live case"
+    },
+    "contextId": {
+      "type": "string",
+      "description": "ID of the subject or case the note belongs to"
+    },
+    "contextName": {
+      "type": "string",
+      "description": "Display name of the subject or case"
+    }
+  },
+  "required": ["content", "contextType", "contextId", "contextName"]
+}

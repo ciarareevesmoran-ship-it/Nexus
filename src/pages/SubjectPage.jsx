@@ -3,6 +3,7 @@ import { SUBJECTS, SUBJECT_TOPICS } from '@/lib/subjects';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import ResumeButton from '../components/subject/ResumeButton';
 
 export default function SubjectPage() {
   const { subjectId } = useParams();
@@ -63,6 +64,8 @@ export default function SubjectPage() {
           </motion.div>
         ))}
       </div>
+
+      <ResumeButton subjectId={subjectId} />
     </div>
   );
 }

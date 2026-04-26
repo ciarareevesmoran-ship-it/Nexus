@@ -1,0 +1,59 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "lessonsCompleted": {
+      "type": "number",
+      "default": 0,
+      "description": "Total number of lessons completed by the user"
+    },
+    "completedLessons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lessonId": { "type": "string" },
+          "lessonName": { "type": "string" },
+          "subjectId": { "type": "string" },
+          "topicId": { "type": "string" },
+          "completedAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "default": [],
+      "description": "Log of completed lessons"
+    },
+    "quizScores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "quizName": { "type": "string" },
+          "score": { "type": "number" },
+          "total": { "type": "number" },
+          "date": { "type": "string", "format": "date-time" }
+        }
+      },
+      "default": [],
+      "description": "Array of completed quiz scores"
+    },
+    "casesExplored": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caseId": { "type": "string" },
+          "caseName": { "type": "string" },
+          "openedAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "default": [],
+      "description": "Live cases the user has opened"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this progress record was last updated"
+    }
+  },
+  "required": []
+}

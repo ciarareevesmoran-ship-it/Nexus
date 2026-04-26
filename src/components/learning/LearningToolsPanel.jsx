@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Brain, Lightbulb, GitBranch } from 'lucide-react';
+import { Brain, Lightbulb, GitBranch, StickyNote } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import NotesPanel from './NotesPanel';
 
 const TOOLS = [
   { id: 'quiz', label: 'Quiz', icon: Brain, description: 'Test your understanding' },
   { id: 'flashcards', label: 'Flashcards', icon: Lightbulb, description: 'Review key concepts' },
   { id: 'mindmap', label: 'Mind Map', icon: GitBranch, description: 'Visualise connections' },
+  { id: 'notes', label: 'Notes', icon: StickyNote, description: 'Write and review your notes' },
 ];
 
 function QuizPanel({ subtopic }) {
@@ -65,7 +67,7 @@ function MindMapPanel({ subtopic }) {
   );
 }
 
-export default function LearningToolsPanel({ subtopic, onClose }) {
+export default function LearningToolsPanel({ subtopic, onClose, noteContext }) {
   const [activeTool, setActiveTool] = useState(null);
 
   return (
@@ -104,6 +106,13 @@ export default function LearningToolsPanel({ subtopic, onClose }) {
       {activeTool === 'quiz' && <QuizPanel subtopic={subtopic} />}
       {activeTool === 'flashcards' && <FlashcardsPanel subtopic={subtopic} />}
       {activeTool === 'mindmap' && <MindMapPanel subtopic={subtopic} />}
+      {activeTool === 'notes' && noteContext && (
+        <NotesPanel
+          contextType={noteContext.contextType}
+          contextId={noteContext.contextId}
+          contextName={noteContext.contextName}
+        />
+      )}
     </div>
   );
 }

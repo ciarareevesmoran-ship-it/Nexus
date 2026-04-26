@@ -1,8 +1,12 @@
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { LIVE_CASES } from '@/lib/subjects';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, BookOpen } from 'lucide-react';
+import { ChevronLeft, BookOpen, StickyNote } from 'lucide-react';
 import { motion } from 'framer-motion';
+import BookmarkButton from '../components/learning/BookmarkButton';
+import NotesPanel from '../components/learning/NotesPanel';
+import { logCaseExplored } from '@/lib/userTracking';
 
 const LIVE_CASE_DETAILS = {
   arctic: {
@@ -43,9 +47,16 @@ const LIVE_CASE_DETAILS = {
 export default function LiveCasePage() {
   const { caseId } = useParams();
   const navigate = useNavigate();
+  const [notesOpen, setNotesOpen] = useState(false);
 
   const liveCase = LIVE_CASES.find(c => c.id === caseId);
   const details = LIVE_CASE_DETAILS[caseId];
+
+  useEffect(() => {
+    if (liveCase) {
+      logCaseExplored({ caseId: liveCase.id, caseName: liveCase.title }).catch(() => {});
+    }
+  }, [liveCase]);
 
   if (!liveCase || !details) {
     return <div className="p-10 text-center text-muted-foreground">Case not found.</div>;
@@ -53,10 +64,40 @@ export default function LiveCasePage() {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-8 md:py-10">
-      <button onClick={() => navigate('/')} className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ChevronLeft className="w-4 h-4" />
-        Back to dashboard
-      </button>
+      <div className="flex items-center justify-between mb-6">
+        <button onClick={() => navigate('/')} className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <ChevronLeft className="w-4 h-4" />
+          Back to dashboard
+        </button>
+        <div className="flex items-center gap-1">
+          <button
+            onClick={() => setNotesOpen(!notesOpen)}
+            className="h-9 px-3 flex items-center gap-1.5 rounded-md text-muted-foreground hover:bg-muted transition-colors text-xs"
+          >
+            <StickyNote className="w-4 h-4" />
+            Notes
+          </button>
+          <BookmarkButton
+            variant="icon"
+            bookmark={{
+              lessonId: liveCase.id,
+              lessonName: liveCase.title,
+              contextType: 'case',
+              url: `/live-case/${liveCase.id}`,
+            }}
+          />
+        </div>
+      </div>
+
+      {notesOpen && (
+        <div className="mb-8 rounded-xl border border-border bg-card overflow-hidden">
+          <NotesPanel
+            contextType="case"
+            contextId={liveCase.id}
+            contextName={liveCase.title}
+          />
+        </div>
+      )}
 
       <div className="h-48 md:h-64 rounded-xl overflow-hidden mb-6">
         <img src={liveCase.image} alt={liveCase.title} className="w-full h-full object-cover" />
