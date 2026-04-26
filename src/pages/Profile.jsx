@@ -63,34 +63,36 @@ export default function Profile() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-8 md:py-10">
-      <h1 className="font-serif text-3xl font-bold text-foreground mb-8">Profile</h1>
+    <div className="max-w-3xl mx-auto px-6 py-10 md:py-14">
+      <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-12">Profile</h1>
 
-      <div className="space-y-6">
+      <div className="space-y-12">
         {/* User Info */}
-        <div className="p-6 rounded-xl border border-border bg-card">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="font-serif text-xl font-bold text-primary">
+        <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
+          <div className="flex items-center gap-5">
+            <div className="w-20 h-20 rounded-full bg-[#7B2235] flex items-center justify-center ring-4 ring-[#F2E0E3]">
+              <span className="font-serif text-3xl font-bold text-white">
                 {user?.full_name?.charAt(0) || 'N'}
               </span>
             </div>
             <div>
-              <h2 className="font-serif text-xl font-bold text-foreground">{user?.full_name || 'Learner'}</h2>
-              <p className="text-sm text-muted-foreground">{user?.email}</p>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground leading-tight">{user?.full_name || 'Learner'}</h2>
+              <p className="text-sm text-muted-foreground mt-1">{user?.email}</p>
             </div>
           </div>
-          <div className="flex items-center gap-2 mt-4">
-            <Crown className={cn("w-4 h-4", profile?.plan === 'premium' ? "text-primary" : "text-muted-foreground")} />
-            <span className="text-sm font-medium capitalize">{profile?.plan || 'Free'} Plan</span>
+          <div className="mt-6">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F2E0E3] text-[#6B1F2A] text-xs font-semibold uppercase tracking-wider">
+              <Crown className="w-3.5 h-3.5" />
+              {profile?.plan === 'premium' ? 'Premium' : 'Free'} Plan
+            </span>
           </div>
         </div>
 
         {/* Interests */}
-        <div className="p-6 rounded-xl border border-border bg-card">
-          <div className="flex items-center gap-2 mb-4">
+        <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
+          <div className="flex items-center gap-2.5 mb-6">
             <BookOpen className="w-5 h-5 text-primary" />
-            <h3 className="font-serif text-lg font-bold text-foreground">Your Interests</h3>
+            <h3 className="font-serif text-2xl font-bold text-foreground">Your Interests</h3>
           </div>
           <div className="flex flex-wrap gap-2">
             {SUBJECTS.map((subject) => {
@@ -103,7 +105,7 @@ export default function Profile() {
                     "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-all",
                     isSelected
                       ? "bg-[#F2E0E3] text-[#6B1F2A] border-[#F2E0E3]"
-                      : "bg-background text-muted-foreground border-border hover:border-primary/30"
+                      : "bg-background text-foreground/70 border-[#E5DDD0] hover:border-primary/40"
                   )}
                 >
                   {subject.name}
@@ -115,11 +117,11 @@ export default function Profile() {
         </div>
 
         {/* Goals */}
-        <div className="p-6 rounded-xl border border-border bg-card">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
+        <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2.5">
               <Target className="w-5 h-5 text-primary" />
-              <h3 className="font-serif text-lg font-bold text-foreground">Learning Goals</h3>
+              <h3 className="font-serif text-2xl font-bold text-foreground">Learning Goals</h3>
             </div>
             {!editingGoals && (
               <Button variant="ghost" size="sm" onClick={() => setEditingGoals(true)}>Edit</Button>
@@ -139,30 +141,30 @@ export default function Profile() {
               </div>
             </div>
           ) : (
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               {profile?.learning_goals || 'No learning goals set yet. Tap edit to add some.'}
             </p>
           )}
         </div>
 
         {/* Progress */}
-        <div className="p-6 rounded-xl border border-border bg-card">
-          <div className="flex items-center gap-2 mb-4">
+        <div className="p-8 md:p-10 rounded-xl border border-border bg-card">
+          <div className="flex items-center gap-2.5 mb-6">
             <BarChart3 className="w-5 h-5 text-primary" />
-            <h3 className="font-serif text-lg font-bold text-foreground">Learning Progress</h3>
+            <h3 className="font-serif text-2xl font-bold text-foreground">Learning Progress</h3>
           </div>
           <div className="grid grid-cols-3 gap-4">
-            <div className="text-center p-4 rounded-lg bg-muted">
-              <p className="text-2xl font-bold text-foreground">{lessonsCompleted}</p>
-              <p className="text-xs text-muted-foreground mt-1">Lessons completed</p>
+            <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
+              <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{lessonsCompleted}</p>
+              <p className="text-xs text-muted-foreground mt-2">Lessons completed</p>
             </div>
-            <div className="text-center p-4 rounded-lg bg-muted">
-              <p className="text-2xl font-bold text-foreground">{hoursStudied}</p>
-              <p className="text-xs text-muted-foreground mt-1">Hours studied</p>
+            <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
+              <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{hoursStudied}</p>
+              <p className="text-xs text-muted-foreground mt-2">Hours studied</p>
             </div>
-            <div className="text-center p-4 rounded-lg bg-muted">
-              <p className="text-2xl font-bold text-foreground">{casesExploredCount}</p>
-              <p className="text-xs text-muted-foreground mt-1">Cases explored</p>
+            <div className="text-center p-5 rounded-lg bg-[#FAF0F2]">
+              <p className="font-serif text-4xl md:text-5xl font-bold text-[#7B2235] leading-none">{casesExploredCount}</p>
+              <p className="text-xs text-muted-foreground mt-2">Cases explored</p>
             </div>
           </div>
         </div>
@@ -173,14 +175,16 @@ export default function Profile() {
         {/* My Notes */}
         <MyNotesSection />
 
-        <Button
-          variant="ghost"
-          className="text-muted-foreground"
-          onClick={() => base44.auth.logout()}
-        >
-          <LogOut className="w-4 h-4 mr-2" />
-          Sign out
-        </Button>
+        <div className="pt-4">
+          <Button
+            variant="ghost"
+            className="text-muted-foreground"
+            onClick={() => base44.auth.logout()}
+          >
+            <LogOut className="w-4 h-4 mr-2" />
+            Sign out
+          </Button>
+        </div>
       </div>
     </div>
   );
