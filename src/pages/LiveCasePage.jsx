@@ -64,7 +64,7 @@ export default function LiveCasePage() {
 
       <div className="flex gap-1.5 mb-3">
         {liveCase.subjects.map((s) => (
-          <span key={s} className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+          <span key={s} className="text-xs font-semibold uppercase tracking-wider text-[#6B1F2A] bg-[#F2E0E3] px-2.5 py-1 rounded-full">
             {s}
           </span>
         ))}
@@ -72,8 +72,8 @@ export default function LiveCasePage() {
 
       <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-3">{liveCase.title}</h1>
 
-      <div className="p-5 rounded-xl bg-primary/5 border border-primary/10 mb-6">
-        <p className="text-sm font-serif font-bold text-primary mb-1">Why this matters</p>
+      <div className="p-5 rounded-xl bg-[#FAF0F2] border-l-4 border-[#8B2A3A] mb-6">
+        <p className="text-sm font-serif font-bold text-[#8B2A3A] mb-1">Why this matters</p>
         <p className="text-sm text-foreground/80 leading-relaxed">{details.why}</p>
       </div>
 

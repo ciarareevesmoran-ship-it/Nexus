@@ -48,11 +48,11 @@ export default function Sidebar() {
               )}
             >
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-primary" />
+                <span className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-[#C98A96]" />
               )}
               <item.icon className={cn(
                 "w-[18px] h-[18px] transition-colors",
-                isActive ? "text-primary" : "text-sidebar-foreground/70"
+                isActive ? "text-[#C98A96]" : "text-sidebar-foreground/70"
               )} />
               <span>{item.label}</span>
             </Link>
@@ -60,25 +60,25 @@ export default function Sidebar() {
         })}
       </nav>
 
-      {/* Premium card — navy with gold accent */}
-      <div className="p-5 mx-4 mb-6 rounded-xl bg-sidebar-accent/60 border border-primary/30 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+      {/* Premium card — deep burgundy with dusty rose accent */}
+      <div className="p-5 mx-4 mb-6 rounded-xl bg-[#3D1020] border border-[#C98A96]/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-24 h-24 bg-[#C98A96]/15 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
         <div className="relative">
           <div className="flex items-center gap-2 mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C98A96]" />
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C98A96]">
               Premium
             </p>
           </div>
-          <p className="font-serif text-[17px] font-bold text-sidebar-foreground leading-snug mb-2">
+          <p className="font-serif text-[17px] font-bold text-white leading-snug mb-2">
             Unlock the full library
           </p>
-          <p className="text-xs text-sidebar-foreground/70 leading-relaxed mb-4">
+          <p className="text-xs text-white/70 leading-relaxed mb-4">
             All subjects, formats, and the complete Case builder.
           </p>
           <Link
             to="/profile"
-            className="inline-flex items-center justify-center w-full px-3 py-2 rounded-md bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center justify-center w-full px-3 py-2 rounded-md bg-[#C98A96] text-white text-xs font-semibold hover:bg-[#b87783] transition-colors"
           >
             Discover Premium
           </Link>

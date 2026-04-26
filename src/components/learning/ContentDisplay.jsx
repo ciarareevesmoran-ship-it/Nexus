@@ -52,8 +52,8 @@ function TextBody({ subtopic, topic }) {
         but this balance is dynamic rather than static. External forces — whether geological, 
         climatic, or human — constantly push systems away from equilibrium, triggering adaptive responses.
       </p>
-      <div className="my-6 p-5 rounded-xl bg-primary/5 border border-primary/10">
-        <p className="text-sm font-serif font-bold text-primary mb-1">Key Concept</p>
+      <div className="my-6 p-5 rounded-xl bg-[#FAF0F2] border-l-4 border-[#8B2A3A]">
+        <p className="text-sm font-serif font-bold text-[#8B2A3A] mb-1">Key Concept</p>
         <p className="text-sm text-foreground/80">
           Dynamic equilibrium: A state in which a system remains stable overall, even as its internal 
           components are constantly changing. Think of a river — the water is always moving, but the 

@@ -93,7 +93,7 @@ export default function Profile() {
                   className={cn(
                     "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-all",
                     isSelected
-                      ? "bg-primary text-primary-foreground border-primary"
+                      ? "bg-[#F2E0E3] text-[#6B1F2A] border-[#F2E0E3]"
                       : "bg-background text-muted-foreground border-border hover:border-primary/30"
                   )}
                 >
