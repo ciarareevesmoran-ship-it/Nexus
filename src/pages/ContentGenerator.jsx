@@ -2,7 +2,12 @@ import { useState } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Button } from '@/components/ui/button';
 import { FlaskConical, CheckCircle, Loader2, AlertCircle, Play, Eye } from 'lucide-react';
-import { buildContentPrompt, CONTENT_RESPONSE_SCHEMA } from '@/lib/contentPrompt';
+import {
+  buildMainContentPrompt,
+  buildSupplementaryPrompt,
+  MAIN_RESPONSE_SCHEMA,
+  SUPPLEMENTARY_RESPONSE_SCHEMA,
+} from '@/lib/contentPrompt';
 import GeneratedContent from '@/components/learning/GeneratedContent';
 
 // Full chemistry content map: subtopic order 1–15, head_topic, and source content per section
@@ -129,8 +134,10 @@ export default function ContentGenerator() {
 
   const selectedSection = CHEMISTRY_SECTIONS.find(s => s.section_number === selectedKey) || CHEMISTRY_SECTIONS[0];
 
-  // Single shared generator — used by BOTH "Generate Sample" and "Run Full Generation".
-  // Identical prompt template guarantees identical structure across all 73 sections.
+  // Two-call generator — used by BOTH "Generate Sample" and "Run Full Generation".
+  // Call 1: main content (expanded_explanation only). Gets full output budget for the long prose.
+  // Call 2: supplementary (takeaways + examples + terms), conditioned on Call 1's output.
+  // Both calls return JSON; their results are merged into one record.
   const generateForSection = async (rawSection) => {
     const difficulty = inferDifficulty(rawSection);
     const section = {
@@ -138,50 +145,74 @@ export default function ContentGenerator() {
       subject: 'Chemistry',
       difficulty,
     };
-    const prompt = buildContentPrompt(section);
 
-    // Model selection by difficulty.
-    // Advanced sections need a model with a large output budget to fit the
-    // 1200–2000 word expanded_explanation PLUS takeaways, examples, and terms
-    // in a single JSON response. Opus is the most reliable here.
+    // Model selection.
+    // Call 1 (main, long prose): claude_opus_4_6 for advanced (largest output budget),
+    // claude_sonnet_4_6 for intermediate/beginner.
+    // Call 2 (supplementary, short): claude_sonnet_4_6 always — output is small.
     // (Non-default models cost more integration credits.)
-    const model =
-      difficulty === 'advanced' ? 'claude_opus_4_6'
-      : difficulty === 'intermediate' ? 'gpt_5_4'
-      : 'gpt_5_mini';
+    const mainModel = difficulty === 'advanced' ? 'claude_opus_4_6' : 'claude_sonnet_4_6';
+    const supplementaryModel = 'claude_sonnet_4_6';
 
     console.log('[ContentGenerator] section', section.section_number, section.section_title);
-    console.log('[ContentGenerator] difficulty =', difficulty, '| model =', model);
-    console.log('[ContentGenerator] prompt length =', prompt.length, 'chars');
+    console.log('[ContentGenerator] difficulty =', difficulty);
 
-    const result = await base44.integrations.Core.InvokeLLM({
-      prompt,
-      response_json_schema: CONTENT_RESPONSE_SCHEMA,
-      model,
+    // ----- Call 1: main content -----
+    const mainPrompt = buildMainContentPrompt(section);
+    console.log('[ContentGenerator] Call 1 (main) | model =', mainModel, '| prompt length =', mainPrompt.length);
+
+    const mainResult = await base44.integrations.Core.InvokeLLM({
+      prompt: mainPrompt,
+      response_json_schema: MAIN_RESPONSE_SCHEMA,
+      model: mainModel,
     });
 
-    const expanded = (result?.expanded_explanation || '').trim();
+    const expanded = (mainResult?.expanded_explanation || '').trim();
     const wordCount = expanded.split(/\s+/).filter(Boolean).length;
-    console.log('[ContentGenerator] expanded_explanation word count =', wordCount);
-    console.log('[ContentGenerator] full result keys:', result ? Object.keys(result) : 'null');
+    console.log('[ContentGenerator] Call 1 result | word count =', wordCount);
 
-    // Validate the response — surface failures instead of rendering empty.
     if (!expanded) {
       throw new Error(
-        `Model returned empty expanded_explanation (model=${model}, difficulty=${difficulty}). The output was likely truncated by the token limit. Try again, or pick a shorter section to test.`
+        `Call 1 (main) returned empty expanded_explanation (model=${mainModel}, difficulty=${difficulty}). Output was likely truncated. Try again.`
       );
     }
-    if (!Array.isArray(result.key_takeaways) || result.key_takeaways.length === 0) {
-      throw new Error('Model returned no key_takeaways.');
+
+    // ----- Call 2: supplementary content -----
+    const suppPrompt = buildSupplementaryPrompt(section, expanded);
+    console.log('[ContentGenerator] Call 2 (supplementary) | model =', supplementaryModel, '| prompt length =', suppPrompt.length);
+
+    const suppResult = await base44.integrations.Core.InvokeLLM({
+      prompt: suppPrompt,
+      response_json_schema: SUPPLEMENTARY_RESPONSE_SCHEMA,
+      model: supplementaryModel,
+    });
+
+    console.log(
+      '[ContentGenerator] Call 2 result | takeaways =',
+      suppResult?.key_takeaways?.length,
+      '| examples =',
+      suppResult?.real_world_examples?.length,
+      '| terms =',
+      suppResult?.related_terms?.length,
+    );
+
+    if (!Array.isArray(suppResult?.key_takeaways) || suppResult.key_takeaways.length === 0) {
+      throw new Error('Call 2 (supplementary) returned no key_takeaways.');
     }
-    if (!Array.isArray(result.real_world_examples) || result.real_world_examples.length === 0) {
-      throw new Error('Model returned no real_world_examples.');
+    if (!Array.isArray(suppResult?.real_world_examples) || suppResult.real_world_examples.length === 0) {
+      throw new Error('Call 2 (supplementary) returned no real_world_examples.');
     }
-    if (!Array.isArray(result.related_terms) || result.related_terms.length === 0) {
-      throw new Error('Model returned no related_terms.');
+    if (!Array.isArray(suppResult?.related_terms) || suppResult.related_terms.length === 0) {
+      throw new Error('Call 2 (supplementary) returned no related_terms.');
     }
 
-    return result;
+    // ----- Merge -----
+    return {
+      expanded_explanation: expanded,
+      key_takeaways: suppResult.key_takeaways,
+      real_world_examples: suppResult.real_world_examples,
+      related_terms: suppResult.related_terms,
+    };
   };
 
   const handleSample = async () => {
