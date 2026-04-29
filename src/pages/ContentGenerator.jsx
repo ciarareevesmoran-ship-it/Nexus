@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Button } from '@/components/ui/button';
 import { FlaskConical, CheckCircle, Loader2, AlertCircle, Play, Eye } from 'lucide-react';
+import { buildContentPrompt, CONTENT_RESPONSE_SCHEMA } from '@/lib/contentPrompt';
+import GeneratedContent from '@/components/learning/GeneratedContent';
 
 // Full chemistry content map: subtopic order 1–15, head_topic, and source content per section
 const CHEMISTRY_SECTIONS = [
@@ -109,52 +111,34 @@ const CHEMISTRY_SECTIONS = [
   { full_course_order: 15, main_topic: 'Advanced Thermodynamics', head_topic: 'Energy, Rates & Equilibrium', section_number: '15.3', section_title: 'Coupled Reactions', concise_definition: 'Thermodynamically unfavourable reactions (ΔG > 0) driven by coupling to favourable ones (ΔG < 0) so overall ΔG < 0. Biological example: ATP hydrolysis (ΔG° ≈ −30 kJ/mol) coupled to biosynthetic reactions needing energy input. ATP is the energetic currency of living cells.' },
 ];
 
-const SAMPLE_SECTION = CHEMISTRY_SECTIONS[0]; // 1.1 Atom — Fundamental Concepts
+// Difficulty heuristic — later subtopics in the curriculum trend more advanced.
+function inferDifficulty(section) {
+  if (section.full_course_order <= 5) return 'beginner';
+  if (section.full_course_order <= 10) return 'intermediate';
+  return 'advanced';
+}
 
 export default function ContentGenerator() {
+  const [selectedKey, setSelectedKey] = useState(CHEMISTRY_SECTIONS[0].section_number);
   const [sampleResult, setSampleResult] = useState(null);
   const [sampleLoading, setSampleLoading] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [progress, setProgress] = useState({ done: 0, total: CHEMISTRY_SECTIONS.length, errors: [] });
   const [done, setDone] = useState(false);
 
-  const generateForSection = async (section) => {
+  const selectedSection = CHEMISTRY_SECTIONS.find(s => s.section_number === selectedKey) || CHEMISTRY_SECTIONS[0];
+
+  // Single shared generator — used by BOTH "Generate Sample" and "Run Full Generation".
+  // Identical prompt template guarantees identical structure across all 73 sections.
+  const generateForSection = async (rawSection) => {
+    const section = {
+      ...rawSection,
+      subject: 'Chemistry',
+      difficulty: inferDifficulty(rawSection),
+    };
     const result = await base44.integrations.Core.InvokeLLM({
-      prompt: `You are an expert chemistry educator writing for a beginner-to-intermediate level learning platform called Nexus.
-
-Given the following concise source definition for a chemistry section, generate rich educational content.
-
-Section: ${section.section_number} — ${section.section_title}
-Topic: ${section.main_topic}
-Source definition: ${section.concise_definition}
-
-Generate:
-1. expanded_explanation: Write exactly 4 sections, each with a subheading followed by a paragraph of 2–4 sentences. Use plain, clear language. Be scientifically precise. Format each section as "SUBHEADING\nParagraph text." Follow this exact structure:
-   - Subheading: "What is an atom?" — Paragraph: What atoms are and that they are the building blocks of matter.
-   - Subheading: "The nucleus: protons and neutrons" — Paragraph: Describe protons (positive charge) and neutrons (no charge) in the nucleus. Introduce the atomic number (Z) as the number of protons, which defines the element's identity.
-   - Subheading: "A mental model" — Paragraph: Insert this exactly (you may adjust slightly for flow but keep the full meaning): "You can think of an atom as having a tiny, dense center called the nucleus, surrounded by a cloud of electrons. Unlike planets orbiting the sun, electrons do not move in fixed paths. Instead, they exist in regions where they are most likely to be found." Format this paragraph as an HTML callout box using this exact structure: <div style="border: 2px solid #800020; padding: 12px; border-radius: 8px; background-color: #faf5f7;"><strong>Mental model:</strong><br/>You can think of an atom as having a tiny, dense center called the nucleus, surrounded by a cloud of electrons. Unlike planets orbiting the sun, electrons do not move in fixed paths. Instead, they exist in regions where they are most likely to be found.</div>
-   - Subheading: "Electrons, neutral atoms, and ions" — Paragraph: Describe electrons and their charge. Explain that in a neutral atom, the number of electrons equals the number of protons, so their charges cancel out and the atom has no overall electrical charge. Explain ions: cations (lost electrons, positive) and anions (gained electrons, negative).
-   - Subheading: "Mass number and isotopes" — Paragraph: Define mass number (A = protons + neutrons). Give carbon-12 as an example. Briefly explain isotopes as atoms of the same element with different numbers of neutrons.
-
-   Scientific accuracy rules (strictly enforce):
-   - Say "almost everything you can touch, see, or feel is made up of atoms" — never "everything"
-   - Say electrons "have much less mass than protons and neutrons" — never "much smaller"
-   - Say "their charges cancel out and the atom has no overall electrical charge" — never "maintains stability"
-   - If mentioning cooking: "atoms rearranging into new molecules, such as when proteins and sugars react to brown food"
-   - If mentioning rust: "atoms reacting and forming a new compound, iron oxide" — as a separate example from cooking
-
-2. key_takeaways: 4–6 concise bullet points summarising the most important concepts a student must remember.
-3. real_world_examples: 3–4 concrete, relatable real-world applications or examples that make the concept tangible.
-4. related_terms: 6–10 important vocabulary terms related to this section (just the terms, no definitions).`,
-      response_json_schema: {
-        type: 'object',
-        properties: {
-          expanded_explanation: { type: 'string' },
-          key_takeaways: { type: 'array', items: { type: 'string' } },
-          real_world_examples: { type: 'array', items: { type: 'string' } },
-          related_terms: { type: 'array', items: { type: 'string' } },
-        },
-      },
+      prompt: buildContentPrompt(section),
+      response_json_schema: CONTENT_RESPONSE_SCHEMA,
     });
     return result;
   };
@@ -162,7 +146,7 @@ Generate:
   const handleSample = async () => {
     setSampleLoading(true);
     setSampleResult(null);
-    const ai = await generateForSection(SAMPLE_SECTION);
+    const ai = await generateForSection(selectedSection);
     setSampleResult(ai);
     setSampleLoading(false);
   };
@@ -188,7 +172,7 @@ Generate:
           key_takeaways: ai.key_takeaways,
           real_world_examples: ai.real_world_examples,
           related_terms: ai.related_terms,
-          difficulty: 'intermediate',
+          difficulty: inferDifficulty(section),
         });
         setProgress(prev => ({ ...prev, done: i + 1 }));
       } catch (e) {
@@ -218,62 +202,36 @@ Generate:
       <div className="border border-border rounded-xl p-6 mb-6 bg-card">
         <h2 className="font-serif text-lg font-bold text-foreground mb-1">Step 1 — Preview a Sample Record</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Generates content for <strong>1.1 — The Atom: Fundamental Concepts</strong> using AI so you can review quality before running the full batch.
+          Pick any section, then generate a preview. The exact same prompt template is used for the full batch run, so what you approve here is what every section will follow.
         </p>
+
+        <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+          Section to preview
+        </label>
+        <select
+          value={selectedKey}
+          onChange={(e) => setSelectedKey(e.target.value)}
+          disabled={sampleLoading || generating}
+          className="w-full mb-4 px-3 py-2 rounded-lg border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+        >
+          {CHEMISTRY_SECTIONS.map((s) => (
+            <option key={s.section_number} value={s.section_number}>
+              {s.section_number} — {s.section_title}  ·  {s.main_topic}  ({inferDifficulty(s)})
+            </option>
+          ))}
+        </select>
+
         <Button onClick={handleSample} disabled={sampleLoading || generating} className="flex items-center gap-2">
           {sampleLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Eye className="w-4 h-4" />}
-          {sampleLoading ? 'Generating sample...' : 'Generate Sample'}
+          {sampleLoading ? 'Generating sample...' : `Generate Sample for ${selectedSection.section_number}`}
         </Button>
 
         {sampleResult && (
-          <div className="mt-6 space-y-6 font-serif text-sm" style={{ color: '#141414' }}>
-            <div>
-              <p className="font-bold mb-3" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Expanded Explanation</p>
-              <div className="space-y-6">
-                {sampleResult.expanded_explanation.split('\n\n').map((block, i) => {
-                  const lines = block.split('\n');
-                  const isSubheading = lines.length > 1;
-                  if (isSubheading) {
-                    const subheading = lines[0];
-                    const body = lines.slice(1).join(' ');
-                    const isHtml = body.trim().startsWith('<');
-                    return (
-                      <div key={i} className="space-y-2">
-                        <p className="font-bold text-sm" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>{subheading}</p>
-                        {isHtml
-                          ? <div dangerouslySetInnerHTML={{ __html: body }} style={{ fontFamily: 'var(--font-serif)', color: '#141414' }} />
-                          : <p className="leading-relaxed" style={{ color: '#141414' }}>{body}</p>
-                        }
-                      </div>
-                    );
-                  }
-                  const isHtml = block.trim().startsWith('<');
-                  return isHtml
-                    ? <div key={i} dangerouslySetInnerHTML={{ __html: block }} style={{ fontFamily: 'var(--font-serif)', color: '#141414' }} />
-                    : <p key={i} className="leading-relaxed" style={{ color: '#141414' }}>{block}</p>;
-                })}
-              </div>
-            </div>
-            <div>
-              <p className="font-bold mb-2" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Key Takeaways</p>
-              <ul className="list-disc list-inside space-y-2" style={{ color: '#141414' }}>
-                {sampleResult.key_takeaways?.map((t, i) => <li key={i} className="leading-relaxed">{t}</li>)}
-              </ul>
-            </div>
-            <div>
-              <p className="font-bold mb-2" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Real-World Examples</p>
-              <ul className="list-disc list-inside space-y-2" style={{ color: '#141414' }}>
-                {sampleResult.real_world_examples?.map((e, i) => <li key={i} className="leading-relaxed">{e}</li>)}
-              </ul>
-            </div>
-            <div>
-              <p className="font-bold mb-2" style={{ color: '#671D2C', fontFamily: 'var(--font-serif)' }}>Related Terms</p>
-              <div className="flex flex-wrap gap-2">
-                {sampleResult.related_terms?.map((t, i) => (
-                  <span key={i} className="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded-full">{t}</span>
-                ))}
-              </div>
-            </div>
+          <div className="mt-8 pt-8 border-t border-border">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+              Preview — {selectedSection.section_number} {selectedSection.section_title}
+            </p>
+            <GeneratedContent content={sampleResult} subject="Chemistry" />
           </div>
         )}
       </div>

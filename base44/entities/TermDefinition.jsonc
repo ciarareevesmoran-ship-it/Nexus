@@ -1,0 +1,26 @@
+{
+  "name": "TermDefinition",
+  "type": "object",
+  "properties": {
+    "term": {
+      "type": "string",
+      "description": "The term being defined (lowercased for lookup)"
+    },
+    "term_display": {
+      "type": "string",
+      "description": "The original-cased term as displayed"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Subject the term belongs to (e.g. Chemistry)"
+    },
+    "definition": {
+      "type": "string",
+      "description": "One-sentence definition of the term"
+    }
+  },
+  "required": [
+    "term",
+    "definition"
+  ]
+}
