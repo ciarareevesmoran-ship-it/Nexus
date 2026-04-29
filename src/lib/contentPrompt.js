@@ -5,7 +5,11 @@
 export const CONTENT_RESPONSE_SCHEMA = {
   type: 'object',
   properties: {
-    expanded_explanation: { type: 'string' },
+    expanded_explanation: {
+      type: 'string',
+      description:
+        'The full structured explanation, with subheadings and paragraphs separated by blank lines. There is no maximum length. Use as many words as the topic genuinely requires. Beginner topics may need 400–700 words; advanced topics may need 1500+ words.',
+    },
     key_takeaways: { type: 'array', items: { type: 'string' } },
     real_world_examples: { type: 'array', items: { type: 'string' } },
     related_terms: { type: 'array', items: { type: 'string' } },
@@ -27,11 +31,11 @@ export function buildContentPrompt(section) {
 
   const depthGuidance = {
     beginner:
-      'Beginner level: keep paragraphs to 2–3 sentences, plain language, lots of analogies, minimal jargon.',
+      'Beginner level: 3–4 subsection headers, 400–700 words total in expanded_explanation. Paragraphs of 2–3 sentences, plain language, lots of analogies, minimal jargon.',
     intermediate:
-      'Intermediate level: paragraphs of 3–5 sentences, introduce technical vocabulary with brief context, balance precision with accessibility.',
+      'Intermediate level: 4–6 subsection headers, 700–1200 words total in expanded_explanation. Paragraphs of 3–5 sentences, introduce technical vocabulary with brief context, balance precision with accessibility.',
     advanced:
-      'Advanced level: paragraphs of 4–6 sentences, deeper mechanisms, formal terminology, mathematical or quantitative detail where relevant. Total explanation should be noticeably longer than for beginner sections.',
+      'Advanced level: 5–8 subsection headers, 1200–2000 words total in expanded_explanation. Paragraphs of 4–6 sentences, deeper mechanisms, formal terminology, mathematical or quantitative detail where relevant.',
   }[difficulty];
 
   return `You are an expert ${section.subject || 'educator'} writing for the Nexus learning platform.
@@ -48,10 +52,22 @@ DEPTH RULE — scale length and detail with difficulty:
 ${depthGuidance}
 Harder sections MUST produce a longer, more detailed expanded_explanation than introductory sections. Do not artificially shorten advanced material to match beginner length.
 
+LENGTH PRINCIPLE — accuracy over brevity:
+- Length must serve accuracy. If a concept genuinely requires more space to state correctly — including all necessary qualifications, scope limits, and exceptions — use that space. Never drop qualifications, scope limits, or exceptions in order to fit a target length. Accuracy is non-negotiable; length is negotiable.
+- For advanced topics, expect that explaining a single concept correctly may require its own subsection. Do not bundle multiple distinct concepts into one paragraph just to save space. For example, hybridization, reactivity patterns, and aromaticity are three distinct concepts and should each get their own treatment if all three appear in a section.
+
+ACCURACY RULES — strictly enforce:
+- Be precise about the scope of any rule, law, or principle you cite. State exactly when the rule applies and when it does not. Do not generalize a rule beyond its actual scope. Example: Markovnikov's rule applies to addition of HX (hydrohalogenation) and acid-catalyzed hydration to unsymmetrical alkenes — not to hydrogenation or symmetric halogenation.
+- When citing a formula like 4n+2, distinguish between the formula and an actual numerical count. State the count first, then note which formula it satisfies.
+- Before stating that one process or category "occurs" under certain conditions, double-check that those conditions actually produce the process. Avoid sentences that contradict themselves within the same paragraph.
+- Mental models must accommodate all the cases just discussed in the section. If the section covered both chains and rings, do not use a mental model that only describes chains.
+- When comparing reactivity between compound classes, be specific about which type of reactivity. Do not generalize that one class is "more reactive" than another without specifying the reaction context.
+- Before finalizing, re-read each statement that begins with "follows," "obeys," "undergoes," or "is governed by." Verify that the rule or process named applies to all cases you've grouped under it. If not, narrow the statement.
+
 Produce the following four fields. The structure is FIXED and must be identical for every section across the platform.
 
 1. expanded_explanation
-   - Write 3–5 subsections. Each subsection has a SUBHEADING on its own line followed by a paragraph.
+   - Number of subsections is governed by the DEPTH RULE above (3–4 for beginner, 4–6 for intermediate, 5–8 for advanced). Each subsection has a SUBHEADING on its own line followed by a paragraph.
    - Format strictly as: "SUBHEADING\\nParagraph text." with a blank line between subsections.
    - Subheadings should be short, clear questions or noun phrases (e.g. "What is an atom?", "The nucleus", "How it works", "Why it matters").
    - Exactly ONE of the subsections must be the "Mental model" callout. Use the subheading "A mental model" and format the paragraph body as this exact HTML callout (replace the inner sentence(s) with the mental model for THIS section, written in your own words, 1–3 sentences):
