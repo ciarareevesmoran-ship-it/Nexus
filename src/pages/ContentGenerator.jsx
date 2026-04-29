@@ -121,6 +121,7 @@ function inferDifficulty(section) {
 export default function ContentGenerator() {
   const [selectedKey, setSelectedKey] = useState(CHEMISTRY_SECTIONS[0].section_number);
   const [sampleResult, setSampleResult] = useState(null);
+  const [sampleError, setSampleError] = useState(null);
   const [sampleLoading, setSampleLoading] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [progress, setProgress] = useState({ done: 0, total: CHEMISTRY_SECTIONS.length, errors: [] });
@@ -139,19 +140,19 @@ export default function ContentGenerator() {
     };
     const prompt = buildContentPrompt(section);
 
-    // Use a stronger model for advanced sections — needed for the 1200–2000 word
-    // floor and for following long, layered accuracy instructions reliably.
-    // (Costs more integration credits per advanced section.)
+    // Model selection by difficulty.
+    // Advanced sections need a model with a large output budget to fit the
+    // 1200–2000 word expanded_explanation PLUS takeaways, examples, and terms
+    // in a single JSON response. Opus is the most reliable here.
+    // (Non-default models cost more integration credits.)
     const model =
-      difficulty === 'advanced' ? 'claude_sonnet_4_6'
+      difficulty === 'advanced' ? 'claude_opus_4_6'
       : difficulty === 'intermediate' ? 'gpt_5_4'
       : 'gpt_5_mini';
 
-    // Diagnostic logging — verify difficulty value and prompt actually sent.
     console.log('[ContentGenerator] section', section.section_number, section.section_title);
     console.log('[ContentGenerator] difficulty =', difficulty, '| model =', model);
     console.log('[ContentGenerator] prompt length =', prompt.length, 'chars');
-    console.log('[ContentGenerator] prompt:\n' + prompt);
 
     const result = await base44.integrations.Core.InvokeLLM({
       prompt,
@@ -159,8 +160,26 @@ export default function ContentGenerator() {
       model,
     });
 
-    const wordCount = (result?.expanded_explanation || '').trim().split(/\s+/).filter(Boolean).length;
+    const expanded = (result?.expanded_explanation || '').trim();
+    const wordCount = expanded.split(/\s+/).filter(Boolean).length;
     console.log('[ContentGenerator] expanded_explanation word count =', wordCount);
+    console.log('[ContentGenerator] full result keys:', result ? Object.keys(result) : 'null');
+
+    // Validate the response — surface failures instead of rendering empty.
+    if (!expanded) {
+      throw new Error(
+        `Model returned empty expanded_explanation (model=${model}, difficulty=${difficulty}). The output was likely truncated by the token limit. Try again, or pick a shorter section to test.`
+      );
+    }
+    if (!Array.isArray(result.key_takeaways) || result.key_takeaways.length === 0) {
+      throw new Error('Model returned no key_takeaways.');
+    }
+    if (!Array.isArray(result.real_world_examples) || result.real_world_examples.length === 0) {
+      throw new Error('Model returned no real_world_examples.');
+    }
+    if (!Array.isArray(result.related_terms) || result.related_terms.length === 0) {
+      throw new Error('Model returned no related_terms.');
+    }
 
     return result;
   };
@@ -168,8 +187,14 @@ export default function ContentGenerator() {
   const handleSample = async () => {
     setSampleLoading(true);
     setSampleResult(null);
-    const ai = await generateForSection(selectedSection);
-    setSampleResult(ai);
+    setSampleError(null);
+    try {
+      const ai = await generateForSection(selectedSection);
+      setSampleResult(ai);
+    } catch (e) {
+      console.error('[ContentGenerator] sample failed:', e);
+      setSampleError(e.message || 'Unknown error');
+    }
     setSampleLoading(false);
   };
 
@@ -247,6 +272,15 @@ export default function ContentGenerator() {
           {sampleLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Eye className="w-4 h-4" />}
           {sampleLoading ? 'Generating sample...' : `Generate Sample for ${selectedSection.section_number}`}
         </Button>
+
+        {sampleError && (
+          <div className="mt-6 p-4 rounded-lg border border-destructive/40 bg-destructive/5">
+            <p className="text-sm font-semibold text-destructive flex items-center gap-2 mb-1">
+              <AlertCircle className="w-4 h-4" /> Generation failed — please try again
+            </p>
+            <p className="text-xs text-destructive/90 whitespace-pre-wrap">{sampleError}</p>
+          </div>
+        )}
 
         {sampleResult && (
           <div className="mt-8 pt-8 border-t border-border">

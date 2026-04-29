@@ -8,12 +8,13 @@ export const CONTENT_RESPONSE_SCHEMA = {
     expanded_explanation: {
       type: 'string',
       description:
-        'The full structured explanation, with subheadings and paragraphs separated by blank lines. There is no maximum length. Use as many words as the topic genuinely requires. Beginner topics may need 400–700 words; advanced topics may need 1500+ words.',
+        'The full structured explanation, with subheadings and paragraphs separated by blank lines. There is no maximum length. Use as many words as the topic genuinely requires. Beginner topics may need 400–700 words; advanced topics may need 1500+ words. MUST NOT be empty.',
     },
     key_takeaways: { type: 'array', items: { type: 'string' } },
     real_world_examples: { type: 'array', items: { type: 'string' } },
     related_terms: { type: 'array', items: { type: 'string' } },
   },
+  required: ['expanded_explanation', 'key_takeaways', 'real_world_examples', 'related_terms'],
 };
 
 /**
@@ -95,5 +96,12 @@ Produce the following four fields. The structure is FIXED and must be identical 
 4. related_terms
    - 8–12 important vocabulary terms related to this section. Just the terms themselves (no definitions). Use the canonical scientific spelling.
 
-Return ONLY the JSON matching the provided schema.`;
+Return ONLY valid JSON matching the provided schema. ALL FIVE behaviours must hold:
+1. The JSON object must include all four keys: expanded_explanation, key_takeaways, real_world_examples, related_terms.
+2. expanded_explanation must NOT be empty. It must contain the full multi-subsection prose.
+3. key_takeaways must be a non-empty array (4–6 items).
+4. real_world_examples must be a non-empty array (exactly 3 items).
+5. related_terms must be a non-empty array (8–12 items).
+
+If you are about to run out of room, prioritise completing all five fields with at least minimum-length content over hitting the upper word target. Never return an empty string for any field.`;
 }
