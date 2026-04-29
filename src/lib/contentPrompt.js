@@ -29,13 +29,19 @@ export const CONTENT_RESPONSE_SCHEMA = {
 export function buildContentPrompt(section) {
   const difficulty = section.difficulty || 'intermediate';
 
+  const targetRange = {
+    beginner: { headers: '3–4', minWords: 400, maxWords: 700 },
+    intermediate: { headers: '4–6', minWords: 700, maxWords: 1200 },
+    advanced: { headers: '5–8', minWords: 1200, maxWords: 2000 },
+  }[difficulty];
+
   const depthGuidance = {
     beginner:
-      'Beginner level: 3–4 subsection headers, 400–700 words total in expanded_explanation. Paragraphs of 2–3 sentences, plain language, lots of analogies, minimal jargon.',
+      `Beginner level: ${targetRange.headers} subsection headers, ${targetRange.minWords}–${targetRange.maxWords} words total in expanded_explanation. Paragraphs of 2–3 sentences, plain language, lots of analogies, minimal jargon.`,
     intermediate:
-      'Intermediate level: 4–6 subsection headers, 700–1200 words total in expanded_explanation. Paragraphs of 3–5 sentences, introduce technical vocabulary with brief context, balance precision with accessibility.',
+      `Intermediate level: ${targetRange.headers} subsection headers, ${targetRange.minWords}–${targetRange.maxWords} words total in expanded_explanation. Paragraphs of 3–5 sentences, introduce technical vocabulary with brief context, balance precision with accessibility.`,
     advanced:
-      'Advanced level: 5–8 subsection headers, 1200–2000 words total in expanded_explanation. Paragraphs of 4–6 sentences, deeper mechanisms, formal terminology, mathematical or quantitative detail where relevant.',
+      `Advanced level: ${targetRange.headers} subsection headers, ${targetRange.minWords}–${targetRange.maxWords} words total in expanded_explanation. Paragraphs of 4–6 sentences, deeper mechanisms, formal terminology, mathematical or quantitative detail where relevant.`,
   }[difficulty];
 
   return `You are an expert ${section.subject || 'educator'} writing for the Nexus learning platform.
@@ -52,13 +58,18 @@ DEPTH RULE — scale length and detail with difficulty:
 ${depthGuidance}
 Harder sections MUST produce a longer, more detailed expanded_explanation than introductory sections. Do not artificially shorten advanced material to match beginner length.
 
+HARD MINIMUM (${difficulty}): the expanded_explanation MUST be at least ${targetRange.minWords} words. This is a hard floor, not a suggestion. Before returning your JSON, count the words in expanded_explanation. If the count is below ${targetRange.minWords}, you have not finished — keep adding subsections, deeper mechanism, examples, and qualifications until you are at or above ${targetRange.minWords} words. Do not stop short. Do not summarise to fit a shorter length. The target range is ${targetRange.minWords}–${targetRange.maxWords} words.
+
 LENGTH PRINCIPLE — accuracy over brevity:
 - Length must serve accuracy. If a concept genuinely requires more space to state correctly — including all necessary qualifications, scope limits, and exceptions — use that space. Never drop qualifications, scope limits, or exceptions in order to fit a target length. Accuracy is non-negotiable; length is negotiable.
 - For advanced topics, expect that explaining a single concept correctly may require its own subsection. Do not bundle multiple distinct concepts into one paragraph just to save space. For example, hybridization, reactivity patterns, and aromaticity are three distinct concepts and should each get their own treatment if all three appear in a section.
 
-ACCURACY RULES — strictly enforce:
+ACCURACY RULES — strictly enforce (these apply to ALL output fields, not just expanded_explanation):
+- Each takeaway, example, and mental model must hold up to the same accuracy standards as the main explanation. Do not re-overgeneralize a rule in the takeaway that you correctly qualified in the body. If you stated "Markovnikov's rule applies to HX addition to unsymmetrical alkenes" in the body, do not write "addition reactions follow Markovnikov's rule" in the takeaway.
 - Be precise about the scope of any rule, law, or principle you cite. State exactly when the rule applies and when it does not. Do not generalize a rule beyond its actual scope. Example: Markovnikov's rule applies to addition of HX (hydrohalogenation) and acid-catalyzed hydration to unsymmetrical alkenes — not to hydrogenation or symmetric halogenation.
 - When citing a formula like 4n+2, distinguish between the formula and an actual numerical count. State the count first, then note which formula it satisfies.
+- When writing about Hückel's rule, always state the actual number of π electrons in the compound first (e.g., "benzene has 6 π electrons"), then note that this satisfies the formula 4n+2.
+- When listing classes or categories, count them. Do not say "four major types" and then list five. The number you announce and the number you list must match.
 - Before stating that one process or category "occurs" under certain conditions, double-check that those conditions actually produce the process. Avoid sentences that contradict themselves within the same paragraph.
 - Mental models must accommodate all the cases just discussed in the section. If the section covered both chains and rings, do not use a mental model that only describes chains.
 - When comparing reactivity between compound classes, be specific about which type of reactivity. Do not generalize that one class is "more reactive" than another without specifying the reaction context.

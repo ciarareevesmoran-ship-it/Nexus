@@ -131,15 +131,37 @@ export default function ContentGenerator() {
   // Single shared generator — used by BOTH "Generate Sample" and "Run Full Generation".
   // Identical prompt template guarantees identical structure across all 73 sections.
   const generateForSection = async (rawSection) => {
+    const difficulty = inferDifficulty(rawSection);
     const section = {
       ...rawSection,
       subject: 'Chemistry',
-      difficulty: inferDifficulty(rawSection),
+      difficulty,
     };
+    const prompt = buildContentPrompt(section);
+
+    // Use a stronger model for advanced sections — needed for the 1200–2000 word
+    // floor and for following long, layered accuracy instructions reliably.
+    // (Costs more integration credits per advanced section.)
+    const model =
+      difficulty === 'advanced' ? 'claude_sonnet_4_6'
+      : difficulty === 'intermediate' ? 'gpt_5_4'
+      : 'gpt_5_mini';
+
+    // Diagnostic logging — verify difficulty value and prompt actually sent.
+    console.log('[ContentGenerator] section', section.section_number, section.section_title);
+    console.log('[ContentGenerator] difficulty =', difficulty, '| model =', model);
+    console.log('[ContentGenerator] prompt length =', prompt.length, 'chars');
+    console.log('[ContentGenerator] prompt:\n' + prompt);
+
     const result = await base44.integrations.Core.InvokeLLM({
-      prompt: buildContentPrompt(section),
+      prompt,
       response_json_schema: CONTENT_RESPONSE_SCHEMA,
+      model,
     });
+
+    const wordCount = (result?.expanded_explanation || '').trim().split(/\s+/).filter(Boolean).length;
+    console.log('[ContentGenerator] expanded_explanation word count =', wordCount);
+
     return result;
   };
 
