@@ -1,74 +1,151 @@
-import { base44 } from '@/api/base44Client';
+import { supabase } from '@/api/supabaseClient';
+
+async function getUserId() {
+  const { data: { session } } = await supabase.auth.getSession();
+  return session?.user?.id ?? null;
+}
 
 // ─── PROGRESS ───────────────────────────────────────────────
 
 export async function getOrCreateProgress() {
-  const list = await base44.entities.UserProgress.list();
-  if (list.length > 0) return list[0];
-  return await base44.entities.UserProgress.create({
-    lessonsCompleted: 0,
-    completedLessons: [],
-    quizScores: [],
-    casesExplored: [],
-    lastUpdated: new Date().toISOString(),
-  });
+  const userId = await getUserId();
+  if (!userId) return null;
+
+  const { data } = await supabase
+    .from('user_progress')
+    .select('*')
+    .eq('user_id', userId)
+    .maybeSingle();
+
+  if (data) return data;
+
+  const { data: created } = await supabase
+    .from('user_progress')
+    .insert({
+      user_id: userId,
+      lessons_completed: 0,
+      completed_lessons: [],
+      quiz_scores: [],
+      cases_explored: [],
+      last_updated: new Date().toISOString(),
+    })
+    .select()
+    .single();
+
+  return created;
 }
 
 export async function logLessonCompleted({ lessonId, lessonName, subjectId, topicId }) {
   const progress = await getOrCreateProgress();
-  const already = (progress.completedLessons || []).some(l => l.lessonId === lessonId);
+  if (!progress) return null;
+
+  const already = (progress.completed_lessons || []).some(l => l.lessonId === lessonId);
   if (already) return progress;
-  const completedLessons = [
-    ...(progress.completedLessons || []),
+
+  const completed_lessons = [
+    ...(progress.completed_lessons || []),
     { lessonId, lessonName, subjectId, topicId, completedAt: new Date().toISOString() },
   ];
-  return await base44.entities.UserProgress.update(progress.id, {
-    lessonsCompleted: (progress.lessonsCompleted || 0) + 1,
-    completedLessons,
-    lastUpdated: new Date().toISOString(),
-  });
+
+  const { data } = await supabase
+    .from('user_progress')
+    .update({
+      lessons_completed: (progress.lessons_completed || 0) + 1,
+      completed_lessons,
+      last_updated: new Date().toISOString(),
+    })
+    .eq('id', progress.id)
+    .select()
+    .single();
+
+  return data;
 }
 
 export async function logQuizScore({ quizName, score, total }) {
   const progress = await getOrCreateProgress();
-  const quizScores = [
-    ...(progress.quizScores || []),
+  if (!progress) return null;
+
+  const quiz_scores = [
+    ...(progress.quiz_scores || []),
     { quizName, score, total, date: new Date().toISOString() },
   ];
-  return await base44.entities.UserProgress.update(progress.id, {
-    quizScores,
-    lastUpdated: new Date().toISOString(),
-  });
+
+  const { data } = await supabase
+    .from('user_progress')
+    .update({ quiz_scores, last_updated: new Date().toISOString() })
+    .eq('id', progress.id)
+    .select()
+    .single();
+
+  return data;
 }
 
 export async function logCaseExplored({ caseId, caseName }) {
   const progress = await getOrCreateProgress();
-  const already = (progress.casesExplored || []).some(c => c.caseId === caseId);
+  if (!progress) return null;
+
+  const already = (progress.cases_explored || []).some(c => c.caseId === caseId);
   if (already) return progress;
-  const casesExplored = [
-    ...(progress.casesExplored || []),
+
+  const cases_explored = [
+    ...(progress.cases_explored || []),
     { caseId, caseName, openedAt: new Date().toISOString() },
   ];
-  return await base44.entities.UserProgress.update(progress.id, {
-    casesExplored,
-    lastUpdated: new Date().toISOString(),
-  });
+
+  const { data } = await supabase
+    .from('user_progress')
+    .update({ cases_explored, last_updated: new Date().toISOString() })
+    .eq('id', progress.id)
+    .select()
+    .single();
+
+  return data;
 }
 
 // ─── BOOKMARKS ──────────────────────────────────────────────
 
 export async function findBookmark(url) {
-  const list = await base44.entities.UserBookmarks.filter({ url });
-  return list[0] || null;
+  const userId = await getUserId();
+  if (!userId) return null;
+
+  const { data } = await supabase
+    .from('user_bookmarks')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('url', url)
+    .maybeSingle();
+
+  return data || null;
 }
 
 export async function toggleBookmark(bookmark) {
+  const userId = await getUserId();
+  if (!userId) return null;
+
   const existing = await findBookmark(bookmark.url);
+
   if (existing) {
-    await base44.entities.UserBookmarks.delete(existing.id);
+    await supabase.from('user_bookmarks').delete().eq('id', existing.id);
     return null;
   }
-  return await base44.entities.UserBookmarks.create(bookmark);
+
+  const { data } = await supabase
+    .from('user_bookmarks')
+    .insert({
+      user_id: userId,
+      url: bookmark.url,
+      subject_id: bookmark.subjectId,
+      subject_name: bookmark.subjectName,
+      topic_id: bookmark.topicId,
+      topic_name: bookmark.topicName,
+      lesson_id: bookmark.lessonId,
+      lesson_name: bookmark.lessonName,
+      context_type: bookmark.contextType,
+    })
+    .select()
+    .single();
+
+  return data;
 }
 
 // ─── RESUME (last visited lesson per subject) ───────────────
@@ -88,8 +165,7 @@ export function getLastLessonForSubject(subjectId) {
   try {
     const raw = localStorage.getItem(LAST_LESSON_KEY);
     if (!raw) return null;
-    const data = JSON.parse(raw);
-    return data[subjectId] || null;
+    return JSON.parse(raw)[subjectId] || null;
   } catch (e) {
     return null;
   }

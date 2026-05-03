@@ -1,18 +1,26 @@
 import { useEffect, useState } from 'react';
-import { base44 } from '@/api/base44Client';
+import { supabase } from '@/api/supabaseClient';
+import { useAuth } from '@/lib/AuthContext';
 import { StickyNote, Loader2 } from 'lucide-react';
 import { format } from 'date-fns';
 
 export default function MyNotesSection() {
+  const { user } = useAuth();
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    base44.entities.UserNotes.list('-created_date').then((list) => {
-      setNotes(list);
-      setLoading(false);
-    });
-  }, []);
+    if (!user) return;
+    supabase
+      .from('user_notes')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false })
+      .then(({ data }) => {
+        setNotes(data || []);
+        setLoading(false);
+      });
+  }, [user]);
 
   const grouped = notes.reduce((acc, note) => {
     const key = note.contextName || 'Other';
@@ -47,7 +55,7 @@ export default function MyNotesSection() {
                     {n.title && <p className="text-sm font-semibold text-foreground mb-1">{n.title}</p>}
                     <p className="text-xs text-foreground/80 leading-relaxed whitespace-pre-wrap">{n.content}</p>
                     <p className="text-[10px] text-muted-foreground mt-2">
-                      {n.created_date ? format(new Date(n.created_date), 'MMM d, yyyy') : ''}
+                      {n.created_at ? format(new Date(n.created_at), 'MMM d, yyyy') : ''}
                     </p>
                   </div>
                 ))}

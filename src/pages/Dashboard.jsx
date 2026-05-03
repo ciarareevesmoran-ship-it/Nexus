@@ -1,27 +1,32 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { base44 } from '@/api/base44Client';
+import { supabase } from '@/api/supabaseClient';
+import { useAuth } from '@/lib/AuthContext';
 import WelcomeHeader from '../components/dashboard/WelcomeHeader';
 import SubjectGrid from '../components/dashboard/SubjectGrid';
 import LiveCasesSection from '../components/dashboard/LiveCasesSection';
 
 export default function Dashboard() {
+  const { user } = useAuth();
   const [loading, setLoading] = useState(true);
-  const [hasProfile, setHasProfile] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!user) return;
     const checkOnboarding = async () => {
-      const profiles = await base44.entities.UserProfile.list();
-      if (profiles.length === 0) {
+      const { data } = await supabase
+        .from('user_profiles')
+        .select('id')
+        .eq('user_id', user.id)
+        .maybeSingle();
+      if (!data) {
         navigate('/onboarding');
         return;
       }
-      setHasProfile(true);
       setLoading(false);
     };
     checkOnboarding();
-  }, [navigate]);
+  }, [user, navigate]);
 
   if (loading) {
     return (

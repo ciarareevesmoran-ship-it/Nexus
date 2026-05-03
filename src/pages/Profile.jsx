@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-import { base44 } from '@/api/base44Client';
+import { supabase } from '@/api/supabaseClient';
+import { useAuth } from '@/lib/AuthContext';
 import { SUBJECTS } from '@/lib/subjects';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { BookOpen, Target, BarChart3, Crown, X, LogOut } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import BookmarksSection from '../components/profile/BookmarksSection';
 import MyNotesSection from '../components/profile/MyNotesSection';
 
 export default function Profile() {
-  const [user, setUser] = useState(null);
+  const { user, logout } = useAuth();
   const [profile, setProfile] = useState(null);
   const [progress, setProgress] = useState(null);
   const [goals, setGoals] = useState('');
@@ -17,25 +17,24 @@ export default function Profile() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!user) return;
     const loadData = async () => {
-      const [me, profiles, progressList] = await Promise.all([
-        base44.auth.me(),
-        base44.entities.UserProfile.list(),
-        base44.entities.UserProgress.list(),
+      const [{ data: profileData }, { data: progressData }] = await Promise.all([
+        supabase.from('user_profiles').select('*').eq('user_id', user.id).maybeSingle(),
+        supabase.from('user_progress').select('*').eq('user_id', user.id).maybeSingle(),
       ]);
-      setUser(me);
-      if (profiles.length > 0) {
-        setProfile(profiles[0]);
-        setGoals(profiles[0].learning_goals || '');
+      if (profileData) {
+        setProfile(profileData);
+        setGoals(profileData.learning_goals || '');
       }
-      if (progressList.length > 0) setProgress(progressList[0]);
+      if (progressData) setProgress(progressData);
       setLoading(false);
     };
     loadData();
-  }, []);
+  }, [user]);
 
-  const lessonsCompleted = progress?.lessonsCompleted || 0;
-  const casesExploredCount = (progress?.casesExplored || []).length;
+  const lessonsCompleted = progress?.lessons_completed || 0;
+  const casesExploredCount = (progress?.cases_explored || []).length;
   const hoursStudied = Math.round((lessonsCompleted * 15) / 60 * 10) / 10;
 
   const toggleInterest = async (subjectId) => {
@@ -43,16 +42,18 @@ export default function Profile() {
     const newInterests = profile.interests.includes(subjectId)
       ? profile.interests.filter(i => i !== subjectId)
       : [...profile.interests, subjectId];
-    await base44.entities.UserProfile.update(profile.id, { interests: newInterests });
+    await supabase.from('user_profiles').update({ interests: newInterests }).eq('id', profile.id);
     setProfile(prev => ({ ...prev, interests: newInterests }));
   };
 
   const saveGoals = async () => {
     if (!profile) return;
-    await base44.entities.UserProfile.update(profile.id, { learning_goals: goals });
+    await supabase.from('user_profiles').update({ learning_goals: goals }).eq('id', profile.id);
     setProfile(prev => ({ ...prev, learning_goals: goals }));
     setEditingGoals(false);
   };
+
+  const name = user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'Learner';
 
   if (loading) {
     return (
@@ -72,11 +73,11 @@ export default function Profile() {
           <div className="flex items-center gap-5">
             <div className="w-20 h-20 rounded-full bg-[#7B2235] flex items-center justify-center ring-4 ring-[#F2E0E3]">
               <span className="font-serif text-3xl font-bold text-white">
-                {user?.full_name?.charAt(0) || 'N'}
+                {name.charAt(0).toUpperCase()}
               </span>
             </div>
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground leading-tight">{user?.full_name || 'Learner'}</h2>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground leading-tight">{name}</h2>
               <p className="text-sm text-muted-foreground mt-1">{user?.email}</p>
             </div>
           </div>
@@ -169,18 +170,11 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* Bookmarks */}
         <BookmarksSection />
-
-        {/* My Notes */}
         <MyNotesSection />
 
         <div className="pt-4">
-          <Button
-            variant="ghost"
-            className="text-muted-foreground"
-            onClick={() => base44.auth.logout()}
-          >
+          <Button variant="ghost" className="text-muted-foreground" onClick={logout}>
             <LogOut className="w-4 h-4 mr-2" />
             Sign out
           </Button>

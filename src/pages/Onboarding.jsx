@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { GraduationCap, Check, Sparkles, Crown } from 'lucide-react';
 import { SUBJECTS } from '@/lib/subjects';
 import { cn } from '@/lib/utils';
-import { base44 } from '@/api/base44Client';
+import { supabase } from '@/api/supabaseClient';
+import { useAuth } from '@/lib/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function StepWelcome({ onNext }) {
@@ -45,7 +46,7 @@ function StepInterests({ selected, onToggle, onNext }) {
       <div className="max-w-2xl w-full">
         <h2 className="font-serif text-3xl font-bold text-center mb-2">What interests you?</h2>
         <p className="text-muted-foreground text-center mb-8">Select the subjects you'd like to explore. You can always change these later.</p>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
           {SUBJECTS.map((subject) => {
             const isSelected = selected.includes(subject.id);
@@ -138,6 +139,7 @@ function StepPlan({ onSelect }) {
 }
 
 export default function Onboarding() {
+  const { user } = useAuth();
   const [step, setStep] = useState(0);
   const [interests, setInterests] = useState([]);
   const navigate = useNavigate();
@@ -147,7 +149,8 @@ export default function Onboarding() {
   };
 
   const handlePlanSelect = async (plan) => {
-    await base44.entities.UserProfile.create({
+    await supabase.from('user_profiles').insert({
+      user_id: user.id,
       interests,
       plan,
       onboarding_completed: true,

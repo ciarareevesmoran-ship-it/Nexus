@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { base44 } from '@/api/base44Client';
+import { supabase } from '@/api/supabaseClient';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Loader2 } from 'lucide-react';
 
@@ -15,35 +15,19 @@ export default function RelatedTermTag({ term, subject }) {
     setLoading(true);
     const key = term.trim().toLowerCase();
 
-    // 1. Try cache first
-    const existing = await base44.entities.TermDefinition.filter({ term: key, subject });
-    if (existing.length > 0) {
-      setDefinition(existing[0].definition);
-      setLoading(false);
-      return;
+    const { data } = await supabase
+      .from('term_definitions')
+      .select('definition')
+      .eq('term', key)
+      .eq('subject', subject || '')
+      .maybeSingle();
+
+    if (data) {
+      setDefinition(data.definition);
+    } else {
+      setDefinition('Definition not yet available.');
     }
 
-    // 2. Generate via LLM
-    const result = await base44.integrations.Core.InvokeLLM({
-      prompt: `Define the ${subject || 'scientific'} term "${term}" in exactly one clear, precise sentence suitable for a learner. Do not include the term itself at the start. Do not add examples or extra commentary — just the one-sentence definition.`,
-      response_json_schema: {
-        type: 'object',
-        properties: { definition: { type: 'string' } },
-        required: ['definition'],
-      },
-    });
-
-    const text = result?.definition?.trim() || 'Definition unavailable.';
-
-    // 3. Cache for future clicks
-    await base44.entities.TermDefinition.create({
-      term: key,
-      term_display: term,
-      subject: subject || '',
-      definition: text,
-    });
-
-    setDefinition(text);
     setLoading(false);
   };
 

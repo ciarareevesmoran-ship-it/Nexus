@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
-import { base44 } from '@/api/base44Client';
+import { useAuth } from '@/lib/AuthContext';
 
 export default function WelcomeHeader() {
-  const [name, setName] = useState('');
-
-  useEffect(() => {
-    base44.auth.me().then(user => setName(user.full_name?.split(' ')[0] || 'Learner'));
-  }, []);
+  const { user } = useAuth();
+  const name = user?.user_metadata?.full_name?.split(' ')[0]
+    || user?.email?.split('@')[0]
+    || 'Learner';
 
   const hour = new Date().getHours();
   const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';

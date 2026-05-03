@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import { base44 } from '@/api/base44Client';
+import { supabase } from '@/api/supabaseClient';
+import { useAuth } from '@/lib/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Trash2, StickyNote, Loader2 } from 'lucide-react';
 import { format } from 'date-fns';
 
 export default function NotesPanel({ contextType, contextId, contextName }) {
+  const { user } = useAuth();
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [content, setContent] = useState('');
@@ -12,26 +14,31 @@ export default function NotesPanel({ contextType, contextId, contextName }) {
   const [saving, setSaving] = useState(false);
 
   const load = async () => {
+    if (!user) return;
     setLoading(true);
-    const list = await base44.entities.UserNotes.filter(
-      { contextType, contextId },
-      '-created_date'
-    );
-    setNotes(list);
+    const { data } = await supabase
+      .from('user_notes')
+      .select('*')
+      .eq('user_id', user.id)
+      .eq('context_type', contextType)
+      .eq('context_id', contextId)
+      .order('created_at', { ascending: false });
+    setNotes(data || []);
     setLoading(false);
   };
 
-  useEffect(() => { load(); }, [contextType, contextId]);
+  useEffect(() => { load(); }, [user, contextType, contextId]);
 
   const handleSave = async () => {
-    if (!content.trim()) return;
+    if (!content.trim() || !user) return;
     setSaving(true);
-    await base44.entities.UserNotes.create({
-      title: title.trim() || undefined,
+    await supabase.from('user_notes').insert({
+      user_id: user.id,
+      title: title.trim() || null,
       content: content.trim(),
-      contextType,
-      contextId,
-      contextName,
+      context_type: contextType,
+      context_id: contextId,
+      context_name: contextName,
     });
     setContent('');
     setTitle('');
@@ -40,7 +47,7 @@ export default function NotesPanel({ contextType, contextId, contextName }) {
   };
 
   const handleDelete = async (id) => {
-    await base44.entities.UserNotes.delete(id);
+    await supabase.from('user_notes').delete().eq('id', id);
     load();
   };
 
@@ -86,7 +93,7 @@ export default function NotesPanel({ contextType, contextId, contextName }) {
                   {n.title && <p className="text-sm font-semibold text-foreground mb-1">{n.title}</p>}
                   <p className="text-xs text-foreground/80 leading-relaxed whitespace-pre-wrap">{n.content}</p>
                   <p className="text-[10px] text-muted-foreground mt-2">
-                    {n.created_date ? format(new Date(n.created_date), 'MMM d, yyyy') : ''}
+                    {n.created_at ? format(new Date(n.created_at), 'MMM d, yyyy') : ''}
                   </p>
                 </div>
                 <button

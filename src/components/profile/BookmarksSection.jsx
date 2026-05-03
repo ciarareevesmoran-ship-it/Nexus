@@ -1,23 +1,31 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { base44 } from '@/api/base44Client';
+import { supabase } from '@/api/supabaseClient';
+import { useAuth } from '@/lib/AuthContext';
 import { Bookmark, ArrowRight, Loader2 } from 'lucide-react';
 
 export default function BookmarksSection() {
+  const { user } = useAuth();
   const [bookmarks, setBookmarks] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    base44.entities.UserBookmarks.list('-created_date').then((list) => {
-      setBookmarks(list);
-      setLoading(false);
-    });
-  }, []);
+    if (!user) return;
+    supabase
+      .from('user_bookmarks')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false })
+      .then(({ data }) => {
+        setBookmarks(data || []);
+        setLoading(false);
+      });
+  }, [user]);
 
   const grouped = bookmarks.reduce((acc, b) => {
-    const key = b.contextType === 'case'
-      ? (b.lessonName || 'Live Case')
-      : (b.subjectName || 'Other');
+    const key = b.context_type === 'case'
+      ? (b.lesson_name || 'Live Case')
+      : (b.subject_name || 'Other');
     if (!acc[key]) acc[key] = [];
     acc[key].push(b);
     return acc;
@@ -47,9 +55,9 @@ export default function BookmarksSection() {
                 {items.map((b) => (
                   <div key={b.id} className="flex items-center justify-between gap-3 p-4">
                     <div className="min-w-0">
-                      <p className="text-sm font-medium text-foreground truncate">{b.lessonName}</p>
-                      {b.topicName && b.contextType === 'lesson' && (
-                        <p className="text-xs text-muted-foreground truncate mt-0.5">{b.topicName}</p>
+                      <p className="text-sm font-medium text-foreground truncate">{b.lesson_name}</p>
+                      {b.topic_name && b.context_type === 'lesson' && (
+                        <p className="text-xs text-muted-foreground truncate mt-0.5">{b.topic_name}</p>
                       )}
                     </div>
                     <Link
