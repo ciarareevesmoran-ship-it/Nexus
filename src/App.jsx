@@ -18,6 +18,7 @@ import MyLearning from './pages/MyLearning';
 import CasesPage from './pages/CasesPage';
 import LiveCasesPage from './pages/LiveCasesPage';
 import FullCoursePage from './pages/FullCoursePage';
+import ResetPassword from './pages/ResetPassword';
 
 const AuthenticatedApp = () => {
   const { user, loading } = useAuth();
@@ -60,6 +61,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/*" element={<AuthenticatedApp />} />
           </Routes>
         </Router>
