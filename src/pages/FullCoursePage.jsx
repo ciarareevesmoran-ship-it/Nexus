@@ -1,6 +1,6 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { SUBJECTS, SUBJECT_TOPICS } from '@/lib/subjects';
-import { ChevronLeft, ArrowRight, BookOpen } from 'lucide-react';
+import { ChevronLeft, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function FullCoursePage() {

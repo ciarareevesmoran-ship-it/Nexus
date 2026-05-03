@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { Video, Headphones, FileText, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
 const FORMATS = [

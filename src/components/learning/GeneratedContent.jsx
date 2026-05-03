@@ -78,7 +78,7 @@ function MentalModelBox({ html }) {
   );
 }
 
-export default function GeneratedContent({ content, subject }) {
+export default function GeneratedContent({ content }) {
   if (!content) return null;
 
   const blocks = (content.expanded_explanation || '')
@@ -180,12 +180,9 @@ export default function GeneratedContent({ content, subject }) {
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8 pb-3 border-b border-border">
             Related Terms
           </h2>
-          <p className="text-sm text-muted-foreground mb-4 italic">
-            Click any term for a quick definition.
-          </p>
           <div className="flex flex-wrap gap-2">
             {content.related_terms.map((term, i) => (
-              <RelatedTermTag key={`${term}-${i}`} term={term} subject={subject} />
+              <RelatedTermTag key={`${term}-${i}`} term={term} />
             ))}
           </div>
         </section>

@@ -1,7 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { SUBJECTS, SUBJECT_TOPICS } from '@/lib/subjects';
 import { ArrowRight, BookOpen } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import ResumeButton from '../components/subject/ResumeButton';
 

@@ -23,7 +23,7 @@ export default function MyNotesSection() {
   }, [user]);
 
   const grouped = notes.reduce((acc, note) => {
-    const key = note.contextName || 'Other';
+    const key = note.context_name || 'Other';
     if (!acc[key]) acc[key] = [];
     acc[key].push(note);
     return acc;

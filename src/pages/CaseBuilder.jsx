@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { SUBJECTS } from '@/lib/subjects';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, BookOpen, ArrowRight } from 'lucide-react';
+import { ChevronLeft, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function CaseBuilder() {

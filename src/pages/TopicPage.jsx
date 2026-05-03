@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { SUBJECTS, SUBJECT_TOPICS, getSubtopics } from '@/lib/subjects';
 import { ArrowRight, ChevronLeft } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import FormatSelector from '../components/learning/FormatSelector';
 import { motion } from 'framer-motion';
 
