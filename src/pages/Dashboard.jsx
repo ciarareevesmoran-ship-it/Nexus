@@ -14,11 +14,16 @@ export default function Dashboard() {
   useEffect(() => {
     if (!user) return;
     const checkOnboarding = async () => {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('user_profiles')
         .select('id')
         .eq('user_id', user.id)
         .maybeSingle();
+      if (error) {
+        console.error('user_profiles SELECT error:', error);
+        setLoading(false);
+        return;
+      }
       if (!data) {
         navigate('/onboarding');
         return;
