@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Video, Headphones, Loader2 } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { Video, Headphones } from 'lucide-react';
+import learningContent from '@/data/learningContent.json';
 import GeneratedContent from './GeneratedContent';
 
 function VideoHeader({ subtopic }) {
@@ -37,37 +36,15 @@ function PlaceholderText({ subtopic, topic }) {
         Understanding {subtopic.name}
       </h2>
       <p className="text-foreground/80 mb-4" style={{ fontSize: '17px', lineHeight: 1.7 }}>
-        {subtopic.name} is one of the foundational concepts within {topic.name}. Detailed
-        AI-generated content for this section hasn't been produced yet — once it is, it will
-        appear here automatically.
+        {subtopic.name} is one of the foundational concepts within {topic.name}. Content for
+        this section hasn't been added yet — it will appear here once available.
       </p>
     </div>
   );
 }
 
 export default function ContentDisplay({ subtopic, topic, subject, format }) {
-  const [content, setContent] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let cancelled = false;
-    setLoading(true);
-    setContent(null);
-
-    base44.entities.LearningContent
-      .filter({ subject: subject.name, section_title: subtopic.name })
-      .then((rows) => {
-        if (cancelled) return;
-        setContent(rows[0] || null);
-        setLoading(false);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        setLoading(false);
-      });
-
-    return () => { cancelled = true; };
-  }, [subject.name, subtopic.name]);
+  const content = learningContent[subtopic.id] || null;
 
   return (
     <div className="px-6 md:px-10 py-8 md:py-10">
@@ -87,11 +64,7 @@ export default function ContentDisplay({ subtopic, topic, subject, format }) {
       {format === 'video' && <VideoHeader subtopic={subtopic} />}
       {format === 'audio' && <AudioHeader subtopic={subtopic} />}
 
-      {loading ? (
-        <div className="flex items-center justify-center py-16">
-          <Loader2 className="w-5 h-5 animate-spin text-muted-foreground" />
-        </div>
-      ) : content ? (
+      {content ? (
         <GeneratedContent content={content} subject={subject.name} />
       ) : (
         <PlaceholderText subtopic={subtopic} topic={topic} />

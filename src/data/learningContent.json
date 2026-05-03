@@ -1,0 +1,32 @@
+{
+  "atom-fundamentals": {
+    "section_number": "1.1",
+    "section_title": "The Atom — Fundamental Concepts",
+    "difficulty": "beginner",
+    "expanded_explanation": "What is an atom?\nAn atom is the smallest unit of an element that retains its chemical properties. Every atom has a nucleus at its centre — made up of protons and neutrons — with electrons occupying the space around it.\n\nA mental model\n<div style=\"border: 2px solid #800020; padding: 12px; border-radius: 8px; background-color: #faf5f7;\"><strong>Mental model:</strong><br/>Think of the atom like a tiny solar system: the nucleus is the sun at the centre, and the electrons are planets orbiting around it — though in reality their paths are probabilistic clouds, not fixed rings.</div>\n\nProtons, neutrons, and electrons\nThe atomic number (Z) is the number of protons in the nucleus and defines which element an atom is. The mass number (A) is the total count of protons plus neutrons. In a neutral atom, the number of electrons always equals the number of protons.\n\nIons: atoms with a charge\nAtoms become ions when they gain or lose electrons. Cations are positively charged ions — formed when an atom loses electrons. Anions are negatively charged ions — formed when an atom gains electrons.",
+    "key_takeaways": [
+      "The atomic number (Z) = number of protons; this defines the element.",
+      "The mass number (A) = protons + neutrons.",
+      "In a neutral atom, electrons = protons.",
+      "Cations are positive (lost electrons); anions are negative (gained electrons)."
+    ],
+    "real_world_examples": [
+      "Carbon has atomic number 6, meaning every carbon atom has exactly 6 protons. Change that number and you have a different element entirely — 7 protons makes nitrogen.",
+      "Sodium (Na) readily loses one electron to form Na⁺, a cation. This is why sodium reacts vigorously with water and why table salt (NaCl) is held together by the attraction between Na⁺ and Cl⁻ ions.",
+      "Medical imaging relies on the behaviour of specific atoms — MRI machines, for example, exploit the magnetic properties of hydrogen nuclei (single protons) in the water molecules in your body."
+    ],
+    "related_terms": [
+      "atomic number",
+      "mass number",
+      "proton",
+      "neutron",
+      "electron",
+      "nucleus",
+      "ion",
+      "cation",
+      "anion",
+      "isotope",
+      "element"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"Session complete — remember to commit and push to GitHub!\"}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
