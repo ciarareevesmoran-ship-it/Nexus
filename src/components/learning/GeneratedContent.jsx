@@ -1,30 +1,34 @@
 import { Lightbulb } from 'lucide-react';
 import RelatedTermTag from './RelatedTermTag';
 
-const KEY_CHEM_TERMS = [
-  'atomic number',
-  'mass number',
-  'isotope',
-  'isotopes',
-  'cation',
-  'cations',
-  'anion',
-  'anions',
-  'proton',
-  'protons',
-  'neutron',
-  'neutrons',
-  'electron',
-  'electrons',
-  'nucleus',
-];
+const SUBJECT_KEY_TERMS = {
+  chemistry: [
+    'atomic number',
+    'mass number',
+    'isotope',
+    'isotopes',
+    'cation',
+    'cations',
+    'anion',
+    'anions',
+    'proton',
+    'protons',
+    'neutron',
+    'neutrons',
+    'electron',
+    'electrons',
+    'nucleus',
+  ],
+};
 
 // Bold the FIRST occurrence (case-insensitive) of each key term in a paragraph.
-function autoBoldKeyTerms(text) {
+function autoBoldKeyTerms(text, subjectId) {
   if (!text) return text;
+  const keyTerms = SUBJECT_KEY_TERMS[subjectId];
+  if (!keyTerms || keyTerms.length === 0) return text;
   const seen = new Set();
   // Sort by length desc so multi-word terms match before their substrings.
-  const terms = [...KEY_CHEM_TERMS].sort((a, b) => b.length - a.length);
+  const terms = [...keyTerms].sort((a, b) => b.length - a.length);
 
   const nodes = [];
   let remaining = text;
@@ -78,7 +82,7 @@ function MentalModelBox({ html }) {
   );
 }
 
-export default function GeneratedContent({ content }) {
+export default function GeneratedContent({ content, subjectId }) {
   if (!content) return null;
 
   const blocks = (content.expanded_explanation || '')
@@ -121,7 +125,7 @@ export default function GeneratedContent({ content }) {
                   className="text-foreground"
                   style={{ fontSize: '17px', lineHeight: 1.7 }}
                 >
-                  {autoBoldKeyTerms(body)}
+                  {autoBoldKeyTerms(body, subjectId)}
                 </p>
               </div>
             );

@@ -65,7 +65,7 @@ export default function ContentDisplay({ subtopic, topic, subject, format }) {
       {format === 'audio' && <AudioHeader subtopic={subtopic} />}
 
       {content ? (
-        <GeneratedContent content={content} />
+        <GeneratedContent content={content} subjectId={subject.id} />
       ) : (
         <PlaceholderText subtopic={subtopic} topic={topic} />
       )}

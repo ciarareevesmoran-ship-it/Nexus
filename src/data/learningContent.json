@@ -28,5 +28,615 @@
       "isotope",
       "element"
     ]
+  },
+  "what-are-social-sciences": {
+    "section_number": "1.1",
+    "section_title": "What Are the Social Sciences?",
+    "subject": "Social Sciences",
+    "topic": "Introduction to Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "why-social-sciences-matter": {
+    "section_number": "1.2",
+    "section_title": "Why the Social Sciences Matter",
+    "subject": "Social Sciences",
+    "topic": "Introduction to Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "interconnectedness-of-social-sciences": {
+    "section_number": "1.3",
+    "section_title": "The Interconnectedness of the Social Sciences",
+    "subject": "Social Sciences",
+    "topic": "Introduction to Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "scientific-method-in-social-sciences": {
+    "section_number": "1.4",
+    "section_title": "The Scientific Method in the Social Sciences",
+    "subject": "Social Sciences",
+    "topic": "Introduction to Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "quantitative-vs-qualitative": {
+    "section_number": "1.5",
+    "section_title": "Quantitative vs. Qualitative Approaches",
+    "subject": "Social Sciences",
+    "topic": "Introduction to Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "what-is-political-science": {
+    "section_number": "2.1",
+    "section_title": "What Is Political Science?",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "power-authority-legitimacy": {
+    "section_number": "2.2",
+    "section_title": "Power, Authority, and Legitimacy",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "the-state-and-sovereignty": {
+    "section_number": "2.3",
+    "section_title": "The State and Sovereignty",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "political-ideologies": {
+    "section_number": "2.4",
+    "section_title": "Political Ideologies",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "forms-of-government": {
+    "section_number": "2.5",
+    "section_title": "Forms of Government",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "democracy-and-its-variants": {
+    "section_number": "2.6",
+    "section_title": "Democracy and Its Variants",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "authoritarianism-and-totalitarianism": {
+    "section_number": "2.7",
+    "section_title": "Authoritarianism and Totalitarianism",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "political-parties-and-elections": {
+    "section_number": "2.8",
+    "section_title": "Political Parties and Elections",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "civil-society-and-political-participation": {
+    "section_number": "2.9",
+    "section_title": "Civil Society and Political Participation",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "human-rights-domestic": {
+    "section_number": "2.10",
+    "section_title": "Human Rights: A Domestic Perspective",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "political-economy": {
+    "section_number": "2.11",
+    "section_title": "Political Economy",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "globalization-and-the-state": {
+    "section_number": "2.12",
+    "section_title": "Globalization and the State",
+    "subject": "Social Sciences",
+    "topic": "Political Science",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "what-is-international-relations": {
+    "section_number": "3.1",
+    "section_title": "What Is International Relations?",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "the-international-system": {
+    "section_number": "3.2",
+    "section_title": "The International System: States, Sovereignty, and Anarchy",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "realism-and-neorealism": {
+    "section_number": "3.3",
+    "section_title": "Realism and Neorealism",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "liberalism-and-neoliberalism": {
+    "section_number": "3.4",
+    "section_title": "Liberalism and Neoliberalism",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "constructivism-and-critical-theories": {
+    "section_number": "3.5",
+    "section_title": "Constructivism and Critical Theories",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "balance-of-power-and-hegemony": {
+    "section_number": "3.6",
+    "section_title": "Balance of Power and Hegemony",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "international-organisations": {
+    "section_number": "3.7",
+    "section_title": "International Organisations: UN, EU, NATO, WTO, IMF, World Bank",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "international-law": {
+    "section_number": "3.8",
+    "section_title": "International Law",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "human-rights-international": {
+    "section_number": "3.9",
+    "section_title": "Human Rights: An International Perspective",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "conflict-war-and-peace": {
+    "section_number": "3.10",
+    "section_title": "Conflict, War, and Peace",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "globalisation-and-interdependence": {
+    "section_number": "3.11",
+    "section_title": "Globalisation and Interdependence",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "diplomacy-and-foreign-policy": {
+    "section_number": "3.12",
+    "section_title": "Diplomacy and Foreign Policy",
+    "subject": "Social Sciences",
+    "topic": "International Relations",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "economics-as-a-social-lens": {
+    "section_number": "4.1",
+    "section_title": "Economics as a Social Lens",
+    "subject": "Social Sciences",
+    "topic": "Economics (as a lens for society)",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "markets-supply-and-demand": {
+    "section_number": "4.2",
+    "section_title": "Markets, Supply, and Demand",
+    "subject": "Social Sciences",
+    "topic": "Economics (as a lens for society)",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "market-structures": {
+    "section_number": "4.3",
+    "section_title": "Market Structures: Competition, Monopoly, and In Between",
+    "subject": "Social Sciences",
+    "topic": "Economics (as a lens for society)",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "gdp-and-economic-growth": {
+    "section_number": "4.4",
+    "section_title": "GDP and Economic Growth",
+    "subject": "Social Sciences",
+    "topic": "Economics (as a lens for society)",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "inflation-and-its-political-stakes": {
+    "section_number": "4.5",
+    "section_title": "Inflation and Its Political Stakes",
+    "subject": "Social Sciences",
+    "topic": "Economics (as a lens for society)",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "unemployment-and-the-business-cycle": {
+    "section_number": "4.6",
+    "section_title": "Unemployment and the Business Cycle",
+    "subject": "Social Sciences",
+    "topic": "Economics (as a lens for society)",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "fiscal-policy-government-spending-and-taxation": {
+    "section_number": "4.7",
+    "section_title": "Fiscal Policy: Government Spending and Taxation",
+    "subject": "Social Sciences",
+    "topic": "Economics (as a lens for society)",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "monetary-policy-central-banks-and-interest-rates": {
+    "section_number": "4.8",
+    "section_title": "Monetary Policy: Central Banks and Interest Rates",
+    "subject": "Social Sciences",
+    "topic": "Economics (as a lens for society)",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "inequality-and-redistribution": {
+    "section_number": "4.9",
+    "section_title": "Inequality and Redistribution",
+    "subject": "Social Sciences",
+    "topic": "Economics (as a lens for society)",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "what-is-geography": {
+    "section_number": "5.1",
+    "section_title": "What Is Geography?",
+    "subject": "Social Sciences",
+    "topic": "Geography",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "physical-vs-human-geography": {
+    "section_number": "5.2",
+    "section_title": "Physical vs. Human Geography",
+    "subject": "Social Sciences",
+    "topic": "Geography",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "population-and-migration": {
+    "section_number": "5.3",
+    "section_title": "Population and Migration",
+    "subject": "Social Sciences",
+    "topic": "Geography",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "urbanisation-and-cities": {
+    "section_number": "5.4",
+    "section_title": "Urbanisation and Cities",
+    "subject": "Social Sciences",
+    "topic": "Geography",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "globalisation-and-place": {
+    "section_number": "5.5",
+    "section_title": "Globalisation and Place",
+    "subject": "Social Sciences",
+    "topic": "Geography",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "resources-and-environment": {
+    "section_number": "5.6",
+    "section_title": "Resources and the Environment",
+    "subject": "Social Sciences",
+    "topic": "Geography",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "climate-and-society": {
+    "section_number": "5.7",
+    "section_title": "Climate and Society",
+    "subject": "Social Sciences",
+    "topic": "Geography",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "geopolitics-and-territory": {
+    "section_number": "5.8",
+    "section_title": "Geopolitics and Territory",
+    "subject": "Social Sciences",
+    "topic": "Geography",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "what-is-anthropology": {
+    "section_number": "6.1",
+    "section_title": "What Is Anthropology?",
+    "subject": "Social Sciences",
+    "topic": "Anthropology",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "culture-and-cultural-relativism": {
+    "section_number": "6.2",
+    "section_title": "Culture and Cultural Relativism",
+    "subject": "Social Sciences",
+    "topic": "Anthropology",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "kinship-and-social-organisation": {
+    "section_number": "6.3",
+    "section_title": "Kinship and Social Organisation",
+    "subject": "Social Sciences",
+    "topic": "Anthropology",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "language-and-communication": {
+    "section_number": "6.4",
+    "section_title": "Language and Communication",
+    "subject": "Social Sciences",
+    "topic": "Anthropology",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "religion-ritual-and-belief": {
+    "section_number": "6.5",
+    "section_title": "Religion, Ritual, and Belief",
+    "subject": "Social Sciences",
+    "topic": "Anthropology",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "identity-race-and-ethnicity": {
+    "section_number": "6.6",
+    "section_title": "Identity, Race, and Ethnicity",
+    "subject": "Social Sciences",
+    "topic": "Anthropology",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "globalisation-and-cultural-change": {
+    "section_number": "6.7",
+    "section_title": "Globalisation and Cultural Change",
+    "subject": "Social Sciences",
+    "topic": "Anthropology",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "ethnography-and-fieldwork": {
+    "section_number": "6.8",
+    "section_title": "Ethnography and Fieldwork",
+    "subject": "Social Sciences",
+    "topic": "Anthropology",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "why-research-methods-matter": {
+    "section_number": "7.1",
+    "section_title": "Why Research Methods Matter",
+    "subject": "Social Sciences",
+    "topic": "Research Methods in Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "formulating-research-questions": {
+    "section_number": "7.2",
+    "section_title": "Formulating Research Questions",
+    "subject": "Social Sciences",
+    "topic": "Research Methods in Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "quantitative-methods": {
+    "section_number": "7.3",
+    "section_title": "Quantitative Methods",
+    "subject": "Social Sciences",
+    "topic": "Research Methods in Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "qualitative-methods": {
+    "section_number": "7.4",
+    "section_title": "Qualitative Methods",
+    "subject": "Social Sciences",
+    "topic": "Research Methods in Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "mixed-methods": {
+    "section_number": "7.5",
+    "section_title": "Mixed Methods",
+    "subject": "Social Sciences",
+    "topic": "Research Methods in Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "ethics-in-social-research": {
+    "section_number": "7.6",
+    "section_title": "Ethics in Social Research",
+    "subject": "Social Sciences",
+    "topic": "Research Methods in Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
+  },
+  "interpreting-and-presenting-findings": {
+    "section_number": "7.7",
+    "section_title": "Interpreting and Presenting Findings",
+    "subject": "Social Sciences",
+    "topic": "Research Methods in Social Sciences",
+    "expanded_explanation": "",
+    "key_takeaways": [],
+    "real_world_examples": [],
+    "related_terms": []
   }
 }
