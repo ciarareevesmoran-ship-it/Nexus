@@ -66,10 +66,60 @@
     "section_title": "Why the Social Sciences Matter",
     "subject": "Social Sciences",
     "topic": "Introduction to Social Sciences",
-    "expanded_explanation": "",
-    "key_takeaways": [],
-    "real_world_examples": [],
-    "related_terms": []
+    "expanded_explanation": {
+      "introduction": "It is easy to take the social sciences for granted. Politics happens whether or not we study political science. People form communities whether or not we study sociology. Economies grow and collapse whether or not we study economics. So why bother formalising any of it into a discipline at all? The answer is that understanding why things happen is not the same as watching them happen. The social sciences give us the tools to move from observation to explanation, and from explanation to action.",
+      "section_1": {
+        "heading": "Making the Invisible Visible",
+        "content": "Much of what shapes our lives is invisible in the sense that it operates through structures, norms, and systems rather than through obvious, direct force. Why do some people earn more than others? Why do revolutions happen when they do, and not before? Why do certain cultural practices persist across centuries while others vanish within a generation? These questions cannot be answered by instinct or casual observation alone. The social sciences build frameworks that make these hidden forces visible, nameable, and therefore something we can actually think about and respond to. Without that, we are left reacting to a world we do not understand."
+      },
+      "section_2": {
+        "heading": "Turning Experience Into Knowledge",
+        "content": "Everyone has personal experience of society. We have all felt unfairness, witnessed inequality, or noticed that the world does not quite work the way we were told it would. But personal experience, on its own, is limited. It is shaped by where we grew up, who raised us, what we were exposed to, and what we were never shown. The social sciences take that raw experience and place it inside a larger picture. They ask: is this pattern local or global? Is it new or historical? Is it accidental or structural? This does not make personal experience irrelevant. It makes it more powerful, because it connects individual lives to the forces that shaped them."
+      },
+      "section_3": {
+        "heading": "The Foundation for Almost Every Major Decision",
+        "content": "Social science knowledge underpins the decisions that affect entire populations. Public health campaigns are built on behavioural psychology and sociology. Economic policy is shaped by macroeconomic theory. International agreements rest on political science and international relations. Urban planning draws on geography and sociology together. None of these decisions are made in a vacuum, and none of them can be made well without the conceptual tools the social sciences provide. A society that does not invest in understanding itself is one that repeats avoidable mistakes."
+      },
+      "section_4": {
+        "heading": "A Toolkit for Citizenship",
+        "content": "Beyond policy and institutions, the social sciences matter at the individual level because they make better citizens. Understanding how political systems work makes it harder to be misled by them. Understanding how economies function makes it possible to evaluate competing claims about tax, trade, and welfare with real judgment rather than tribal loyalty. Understanding how societies change makes it possible to see beyond the present moment and recognise that what feels permanent rarely is. These are not abstract academic skills. They are practical tools for navigating a complex world with more clarity and less confusion."
+      }
+    },
+    "mental_model": {
+      "heading": "Think of it like this",
+      "content": "Imagine you are standing in a city you have never visited. You can see the streets, the buildings, the people moving around you. But without a map, you do not know where anything leads, why the city was built this way, or how to get where you need to go. The social sciences are the map. They do not replace the experience of being in the city. They make it possible to move through it with intention rather than just wandering and hoping for the best."
+    },
+    "key_takeaways": [
+      "The social sciences make invisible structures and systems visible and understandable.",
+      "Personal experience is valuable but limited without the broader frameworks that social science provides.",
+      "Major policy decisions in health, economics, politics, and urban planning all depend on social science knowledge.",
+      "Understanding the social sciences builds the practical capacity to participate in society with greater clarity and judgment.",
+      "The goal is not detached academic knowledge but a sharper understanding of why the world works the way it does."
+    ],
+    "real_world_examples": [
+      {
+        "title": "Vaccine Hesitancy",
+        "description": "When vaccine hesitancy became a significant public health problem, the response could not be purely medical. Sociology helped explain how trust in institutions erodes. Psychology identified the cognitive patterns behind risk perception. Political science mapped how misinformation spreads through polarised communities. Addressing the problem required all three, which is precisely why the social sciences matter beyond the classroom."
+      },
+      {
+        "title": "The 2008 Financial Crisis",
+        "description": "The 2008 financial crisis was not just an economic event. It was also a political failure, a regulatory failure, and a sociological event that reshaped how millions of people understood fairness and opportunity. Economics alone could not explain it fully. Political science, sociology, and history were all required to understand why it happened, why the response took the shape it did, and why its effects were distributed so unevenly across different populations."
+      },
+      {
+        "title": "Migration and Integration",
+        "description": "When large numbers of people move across borders, the questions that follow are inherently social scientific. Geography shapes where people move and why. Economics shapes the labour market effects. Sociology examines how communities form and resist integration. Political science explains the policy responses and the backlash against them. No single discipline has the full picture, which is why the social sciences, understood together, are essential for making sense of one of the defining dynamics of the modern world."
+      }
+    ],
+    "related_terms": [
+      "social structure",
+      "institutional power",
+      "empirical research",
+      "public policy",
+      "civic literacy",
+      "interdisciplinary thinking",
+      "behavioural patterns",
+      "systemic inequality"
+    ]
   },
   "interconnectedness-of-social-sciences": {
     "section_number": "1.3",

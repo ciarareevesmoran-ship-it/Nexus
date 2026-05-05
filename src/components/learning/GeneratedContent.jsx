@@ -82,13 +82,45 @@ function MentalModelBox({ html }) {
   );
 }
 
+function StructuredExplanation({ explanation, mentalModel, subjectId }) {
+  const sections = ['section_1', 'section_2', 'section_3', 'section_4', 'section_5', 'section_6'];
+  return (
+    <div className="space-y-9">
+      {explanation.introduction && (
+        <p className="text-foreground" style={{ fontSize: '17px', lineHeight: 1.7 }}>
+          {autoBoldKeyTerms(explanation.introduction, subjectId)}
+        </p>
+      )}
+      {sections.map(key => {
+        const s = explanation[key];
+        if (!s) return null;
+        return (
+          <div key={key}>
+            <h3 className="font-serif text-xl md:text-[1.4rem] font-bold text-[#7B2235] mb-3">
+              {s.heading}
+            </h3>
+            <p className="text-foreground" style={{ fontSize: '17px', lineHeight: 1.7 }}>
+              {autoBoldKeyTerms(s.content, subjectId)}
+            </p>
+          </div>
+        );
+      })}
+      {mentalModel && <MentalModelBox html={`<strong>Mental model:</strong><br/>${mentalModel.content}`} />}
+    </div>
+  );
+}
+
 export default function GeneratedContent({ content, subjectId }) {
   if (!content) return null;
 
-  const blocks = (content.expanded_explanation || '')
-    .split(/\n\s*\n/)
-    .map(b => b.trim())
-    .filter(Boolean);
+  const isStructured = content.expanded_explanation && typeof content.expanded_explanation === 'object';
+
+  const legacyBlocks = isStructured
+    ? []
+    : (content.expanded_explanation || '')
+        .split(/\n\s*\n/)
+        .map(b => b.trim())
+        .filter(Boolean);
 
   return (
     <div
@@ -100,37 +132,44 @@ export default function GeneratedContent({ content, subjectId }) {
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8 pb-3 border-b border-border">
           Expanded Explanation
         </h2>
-        <div className="space-y-9">
-          {blocks.map((block, i) => {
-            const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
-            const subheading = lines[0];
-            const body = lines.slice(1).join(' ');
-            const isCallout = body.trim().startsWith('<') && body.toLowerCase().includes('mental model');
+        {isStructured ? (
+          <StructuredExplanation
+            explanation={content.expanded_explanation}
+            mentalModel={content.mental_model}
+            subjectId={subjectId}
+          />
+        ) : (
+          <div className="space-y-9">
+            {legacyBlocks.map((block, i) => {
+              const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
+              const subheading = lines[0];
+              const body = lines.slice(1).join(' ');
+              const isCallout = body.trim().startsWith('<') && body.toLowerCase().includes('mental model');
 
-            if (isCallout) {
-              return <MentalModelBox key={i} html={body} />;
-            }
+              if (isCallout) {
+                return <MentalModelBox key={i} html={body} />;
+              }
 
-            // Some models inline the callout HTML on the subheading line — handle that too.
-            if (subheading.startsWith('<') && subheading.toLowerCase().includes('mental model')) {
-              return <MentalModelBox key={i} html={subheading} />;
-            }
+              if (subheading.startsWith('<') && subheading.toLowerCase().includes('mental model')) {
+                return <MentalModelBox key={i} html={subheading} />;
+              }
 
-            return (
-              <div key={i}>
-                <h3 className="font-serif text-xl md:text-[1.4rem] font-bold text-[#7B2235] mb-3">
-                  {subheading}
-                </h3>
-                <p
-                  className="text-foreground"
-                  style={{ fontSize: '17px', lineHeight: 1.7 }}
-                >
-                  {autoBoldKeyTerms(body, subjectId)}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+              return (
+                <div key={i}>
+                  <h3 className="font-serif text-xl md:text-[1.4rem] font-bold text-[#7B2235] mb-3">
+                    {subheading}
+                  </h3>
+                  <p
+                    className="text-foreground"
+                    style={{ fontSize: '17px', lineHeight: 1.7 }}
+                  >
+                    {autoBoldKeyTerms(body, subjectId)}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </section>
 
       {/* Key Takeaways */}
@@ -166,12 +205,20 @@ export default function GeneratedContent({ content, subjectId }) {
                 key={i}
                 className="p-5 rounded-xl bg-[#FAF7F2] border border-[#EFE6D8]"
               >
-                <p
-                  className="text-foreground"
-                  style={{ fontSize: '16px', lineHeight: 1.65 }}
-                >
-                  {e}
-                </p>
+                {typeof e === 'object' ? (
+                  <>
+                    <p className="font-semibold text-foreground mb-1.5" style={{ fontSize: '16px' }}>
+                      {e.title}
+                    </p>
+                    <p className="text-foreground" style={{ fontSize: '16px', lineHeight: 1.65 }}>
+                      {e.description}
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-foreground" style={{ fontSize: '16px', lineHeight: 1.65 }}>
+                    {e}
+                  </p>
+                )}
               </div>
             ))}
           </div>
