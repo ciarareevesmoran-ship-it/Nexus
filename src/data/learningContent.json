@@ -34,10 +34,32 @@
     "section_title": "What Are the Social Sciences?",
     "subject": "Social Sciences",
     "topic": "Introduction to Social Sciences",
-    "expanded_explanation": "",
-    "key_takeaways": [],
-    "real_world_examples": [],
-    "related_terms": []
+    "expanded_explanation": "A definition that actually means something\nThe social sciences are the disciplines that study human beings as social creatures — how we organise ourselves, how we make decisions, how we exercise power, how we build and break the systems we live inside. Where the natural sciences ask how the physical world works, the social sciences ask how the human world works. That includes everything from why people vote the way they do, to why some countries are rich and others poor, to why a particular street in a particular city becomes a neighbourhood people want to live in.\n\nThe family of disciplines\nThere is no single field called \"social science.\" The term covers a family of disciplines that share a subject — human social life — but approach it from different angles. Political science studies power, governance, and the state. Economics studies how people and societies allocate scarce resources. Sociology studies the groups, institutions, and patterns that shape collective behaviour. Anthropology studies culture and what it means to be human across societies. Geography studies the relationship between people and place. International relations studies how states and global actors interact. Each of these has its own questions, methods, and traditions, but they overlap constantly — and the most interesting questions usually live in the overlap.\n\n<div style=\"border: 2px solid #800020; padding: 12px; border-radius: 8px; background-color: #faf5f7; margin: 16px 0;\"><strong>Mental model:</strong><br/>Think of the social sciences as different people studying the same object — society — but each using a different lens. The political scientist focuses on power and decision-making. The economist focuses on incentives and resource allocation. The sociologist focuses on groups, norms, and institutions. The anthropologist focuses on culture and meaning. The geographer focuses on space and place. None of them sees the full picture alone. Understanding society means learning to move between these perspectives.</div>\n\nWhat the social sciences are not\nThe social sciences are not opinion or storytelling. They are evidence-based disciplines that use methods such as surveys, experiments, statistical analysis, archival research, and ethnography. However, unlike the natural sciences, their subject — human behaviour — can change in response to being studied. This makes prediction more complex and interpretation more important.\n\nWhy this matters\nAlmost every major decision in society — from taxation to education, healthcare, immigration, and climate policy — depends on assumptions about human behaviour. These assumptions come from social science, whether they are made explicit or not. Understanding social science helps you see how those assumptions shape decisions that affect everyone.",
+    "key_takeaways": [
+      "The social sciences study human social life — how people organise, decide, and exercise power.",
+      "They are a family of disciplines (political science, economics, sociology, anthropology, geography, international relations) rather than a single field.",
+      "Each discipline offers a different lens on the same underlying object: human society.",
+      "Social science uses evidence and method, but its subject can change behaviour when observed — making prediction more complex and interpretation more important.",
+      "Almost every major public decision rests on assumptions drawn from social science, whether explicitly or not."
+    ],
+    "real_world_examples": [
+      "When a government decides whether to raise income tax, an economist models the effect on consumption, a political scientist analyses the electoral consequences, and a sociologist studies how different income groups respond. The decision depends on all three.",
+      "Understanding why some neighbourhoods gentrify and others do not requires geography (location, transit access), economics (housing markets), and sociology (social networks, cultural signals) at the same time. No single discipline explains it.",
+      "Predicting how a country will respond to a climate disaster involves political science (state capacity), international relations (foreign aid), economics (resource allocation), and anthropology (cultural attitudes toward risk and authority)."
+    ],
+    "related_terms": [
+      "social science",
+      "discipline",
+      "political science",
+      "economics",
+      "sociology",
+      "anthropology",
+      "geography",
+      "international relations",
+      "scientific method",
+      "society",
+      "interdisciplinary"
+    ]
   },
   "why-social-sciences-matter": {
     "section_number": "1.2",

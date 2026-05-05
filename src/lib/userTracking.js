@@ -1,5 +1,4 @@
 import { supabase } from '@/api/supabaseClient';
-import { toast } from '@/components/ui/use-toast';
 
 async function getUserId() {
   const { data: { session } } = await supabase.auth.getSession();
@@ -8,7 +7,6 @@ async function getUserId() {
 
 function notifyError(title, error) {
   console.error(`${title}:`, error);
-  toast({ title, description: error?.message, variant: 'destructive' });
 }
 
 // ─── PROGRESS ───────────────────────────────────────────────
