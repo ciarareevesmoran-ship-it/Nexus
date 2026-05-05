@@ -1,8 +1,14 @@
 import { supabase } from '@/api/supabaseClient';
+import { toast } from '@/components/ui/use-toast';
 
 async function getUserId() {
   const { data: { session } } = await supabase.auth.getSession();
   return session?.user?.id ?? null;
+}
+
+function notifyError(title, error) {
+  console.error(`${title}:`, error);
+  toast({ title, description: error?.message, variant: 'destructive' });
 }
 
 // ─── PROGRESS ───────────────────────────────────────────────
@@ -11,15 +17,19 @@ export async function getOrCreateProgress() {
   const userId = await getUserId();
   if (!userId) return null;
 
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('user_progress')
     .select('*')
     .eq('user_id', userId)
     .maybeSingle();
 
+  if (error) {
+    notifyError('Could not load progress', error);
+    return null;
+  }
   if (data) return data;
 
-  const { data: created } = await supabase
+  const { data: created, error: insertError } = await supabase
     .from('user_progress')
     .insert({
       user_id: userId,
@@ -32,6 +42,10 @@ export async function getOrCreateProgress() {
     .select()
     .single();
 
+  if (insertError) {
+    notifyError('Could not create progress record', insertError);
+    return null;
+  }
   return created;
 }
 
@@ -47,7 +61,7 @@ export async function logLessonCompleted({ lessonId, lessonName, subjectId, topi
     { lessonId, lessonName, subjectId, topicId, completedAt: new Date().toISOString() },
   ];
 
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('user_progress')
     .update({
       lessons_completed: (progress.lessons_completed || 0) + 1,
@@ -58,6 +72,10 @@ export async function logLessonCompleted({ lessonId, lessonName, subjectId, topi
     .select()
     .single();
 
+  if (error) {
+    notifyError('Could not save lesson progress', error);
+    return null;
+  }
   return data;
 }
 
@@ -70,13 +88,17 @@ export async function logQuizScore({ quizName, score, total }) {
     { quizName, score, total, date: new Date().toISOString() },
   ];
 
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('user_progress')
     .update({ quiz_scores, last_updated: new Date().toISOString() })
     .eq('id', progress.id)
     .select()
     .single();
 
+  if (error) {
+    notifyError('Could not save quiz score', error);
+    return null;
+  }
   return data;
 }
 
@@ -92,13 +114,17 @@ export async function logCaseExplored({ caseId, caseName }) {
     { caseId, caseName, openedAt: new Date().toISOString() },
   ];
 
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('user_progress')
     .update({ cases_explored, last_updated: new Date().toISOString() })
     .eq('id', progress.id)
     .select()
     .single();
 
+  if (error) {
+    notifyError('Could not save case progress', error);
+    return null;
+  }
   return data;
 }
 
@@ -108,13 +134,17 @@ export async function findBookmark(url) {
   const userId = await getUserId();
   if (!userId) return null;
 
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('user_bookmarks')
     .select('*')
     .eq('user_id', userId)
     .eq('url', url)
     .maybeSingle();
 
+  if (error) {
+    notifyError('Could not check bookmark', error);
+    return null;
+  }
   return data || null;
 }
 
@@ -125,11 +155,19 @@ export async function toggleBookmark(bookmark) {
   const existing = await findBookmark(bookmark.url);
 
   if (existing) {
-    await supabase.from('user_bookmarks').delete().eq('id', existing.id);
+    const { error } = await supabase
+      .from('user_bookmarks')
+      .delete()
+      .eq('id', existing.id)
+      .eq('user_id', userId);
+    if (error) {
+      notifyError('Could not remove bookmark', error);
+      return existing;
+    }
     return null;
   }
 
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('user_bookmarks')
     .insert({
       user_id: userId,
@@ -145,6 +183,10 @@ export async function toggleBookmark(bookmark) {
     .select()
     .single();
 
+  if (error) {
+    notifyError('Could not save bookmark', error);
+    return null;
+  }
   return data;
 }
 

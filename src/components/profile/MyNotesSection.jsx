@@ -3,11 +3,13 @@ import { supabase } from '@/api/supabaseClient';
 import { useAuth } from '@/lib/AuthContext';
 import { StickyNote, Loader2 } from 'lucide-react';
 import { format } from 'date-fns';
+import { toast } from '@/components/ui/use-toast';
 
 export default function MyNotesSection() {
   const { user } = useAuth();
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!user) return;
@@ -16,8 +18,13 @@ export default function MyNotesSection() {
       .select('*')
       .eq('user_id', user.id)
       .order('created_at', { ascending: false })
-      .then(({ data }) => {
-        setNotes(data || []);
+      .then(({ data, error }) => {
+        if (error) {
+          setError(error.message || 'Could not load notes.');
+          toast({ title: 'Could not load notes', description: error.message, variant: 'destructive' });
+        } else {
+          setNotes(data || []);
+        }
         setLoading(false);
       });
   }, [user]);
@@ -40,6 +47,10 @@ export default function MyNotesSection() {
         <div className="flex items-center justify-center py-6">
           <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
         </div>
+      ) : error ? (
+        <p className="text-sm text-destructive leading-relaxed">
+          Could not load notes: {error}
+        </p>
       ) : notes.length === 0 ? (
         <p className="text-sm text-muted-foreground leading-relaxed">
           You haven't written any notes yet. Start taking notes while you learn — they'll appear here, organised by subject and case.

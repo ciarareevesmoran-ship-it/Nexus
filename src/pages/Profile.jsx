@@ -7,6 +7,7 @@ import { BookOpen, Target, BarChart3, Crown, X, LogOut } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import BookmarksSection from '../components/profile/BookmarksSection';
 import MyNotesSection from '../components/profile/MyNotesSection';
+import { toast } from '@/components/ui/use-toast';
 
 export default function Profile() {
   const { user, logout } = useAuth();
@@ -15,19 +16,29 @@ export default function Profile() {
   const [goals, setGoals] = useState('');
   const [editingGoals, setEditingGoals] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(null);
 
   useEffect(() => {
     if (!user) return;
     const loadData = async () => {
-      const [{ data: profileData }, { data: progressData }] = await Promise.all([
+      const [profileRes, progressRes] = await Promise.all([
         supabase.from('user_profiles').select('*').eq('user_id', user.id).maybeSingle(),
         supabase.from('user_progress').select('*').eq('user_id', user.id).maybeSingle(),
       ]);
-      if (profileData) {
-        setProfile(profileData);
-        setGoals(profileData.learning_goals || '');
+      if (profileRes.error) {
+        console.error('user_profiles SELECT error:', profileRes.error);
+        setLoadError(profileRes.error.message || 'Could not load your profile.');
+        setLoading(false);
+        return;
       }
-      if (progressData) setProgress(progressData);
+      if (progressRes.error) {
+        console.error('user_progress SELECT error:', progressRes.error);
+      }
+      if (profileRes.data) {
+        setProfile(profileRes.data);
+        setGoals(profileRes.data.learning_goals || '');
+      }
+      if (progressRes.data) setProgress(progressRes.data);
       setLoading(false);
     };
     loadData();
@@ -39,16 +50,33 @@ export default function Profile() {
 
   const toggleInterest = async (subjectId) => {
     if (!profile) return;
-    const newInterests = profile.interests.includes(subjectId)
-      ? profile.interests.filter(i => i !== subjectId)
-      : [...profile.interests, subjectId];
-    await supabase.from('user_profiles').update({ interests: newInterests }).eq('id', profile.id);
+    const interests = profile.interests || [];
+    const newInterests = interests.includes(subjectId)
+      ? interests.filter(i => i !== subjectId)
+      : [...interests, subjectId];
+    const { error } = await supabase
+      .from('user_profiles')
+      .update({ interests: newInterests })
+      .eq('id', profile.id)
+      .eq('user_id', user.id);
+    if (error) {
+      toast({ title: 'Could not update interests', description: error.message, variant: 'destructive' });
+      return;
+    }
     setProfile(prev => ({ ...prev, interests: newInterests }));
   };
 
   const saveGoals = async () => {
     if (!profile) return;
-    await supabase.from('user_profiles').update({ learning_goals: goals }).eq('id', profile.id);
+    const { error } = await supabase
+      .from('user_profiles')
+      .update({ learning_goals: goals })
+      .eq('id', profile.id)
+      .eq('user_id', user.id);
+    if (error) {
+      toast({ title: 'Could not save goals', description: error.message, variant: 'destructive' });
+      return;
+    }
     setProfile(prev => ({ ...prev, learning_goals: goals }));
     setEditingGoals(false);
   };
@@ -59,6 +87,18 @@ export default function Profile() {
     return (
       <div className="flex items-center justify-center h-screen">
         <div className="w-8 h-8 border-4 border-border border-t-primary rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="max-w-md mx-auto px-6 py-20 text-center">
+        <h2 className="font-serif text-2xl font-bold text-foreground mb-3">Something went wrong</h2>
+        <p className="text-sm text-muted-foreground mb-6">
+          We couldn't load your profile: {loadError}
+        </p>
+        <Button onClick={() => window.location.reload()}>Try again</Button>
       </div>
     );
   }

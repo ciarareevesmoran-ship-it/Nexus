@@ -4,6 +4,7 @@ import { useAuth } from '@/lib/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Trash2, StickyNote, Loader2 } from 'lucide-react';
 import { format } from 'date-fns';
+import { toast } from '@/components/ui/use-toast';
 
 export default function NotesPanel({ contextType, contextId, contextName }) {
   const { user } = useAuth();
@@ -16,14 +17,19 @@ export default function NotesPanel({ contextType, contextId, contextName }) {
   const load = async () => {
     if (!user) return;
     setLoading(true);
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('user_notes')
       .select('*')
       .eq('user_id', user.id)
       .eq('context_type', contextType)
       .eq('context_id', contextId)
       .order('created_at', { ascending: false });
-    setNotes(data || []);
+    if (error) {
+      toast({ title: 'Could not load notes', description: error.message, variant: 'destructive' });
+      setNotes([]);
+    } else {
+      setNotes(data || []);
+    }
     setLoading(false);
   };
 
@@ -32,7 +38,7 @@ export default function NotesPanel({ contextType, contextId, contextName }) {
   const handleSave = async () => {
     if (!content.trim() || !user) return;
     setSaving(true);
-    await supabase.from('user_notes').insert({
+    const { error } = await supabase.from('user_notes').insert({
       user_id: user.id,
       title: title.trim() || null,
       content: content.trim(),
@@ -40,14 +46,22 @@ export default function NotesPanel({ contextType, contextId, contextName }) {
       context_id: contextId,
       context_name: contextName,
     });
+    setSaving(false);
+    if (error) {
+      toast({ title: 'Could not save note', description: error.message, variant: 'destructive' });
+      return;
+    }
     setContent('');
     setTitle('');
-    setSaving(false);
     load();
   };
 
   const handleDelete = async (id) => {
-    await supabase.from('user_notes').delete().eq('id', id);
+    const { error } = await supabase.from('user_notes').delete().eq('id', id).eq('user_id', user.id);
+    if (error) {
+      toast({ title: 'Could not delete note', description: error.message, variant: 'destructive' });
+      return;
+    }
     load();
   };
 

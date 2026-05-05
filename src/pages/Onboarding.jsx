@@ -149,7 +149,6 @@ export default function Onboarding() {
   };
 
   const handlePlanSelect = async (plan) => {
-    console.log('Inserting profile for user:', user?.id, 'plan:', plan, 'interests:', interests);
     const { data, error } = await supabase.from('user_profiles').insert({
       user_id: user.id,
       interests,
@@ -157,7 +156,6 @@ export default function Onboarding() {
       onboarding_completed: true,
       learning_goals: '',
     }).select();
-    console.log('Insert result — data:', data, 'error:', error);
     if (error) {
       alert(`Could not save your profile: ${error.message}`);
       return;

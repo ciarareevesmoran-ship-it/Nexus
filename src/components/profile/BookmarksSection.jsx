@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { supabase } from '@/api/supabaseClient';
 import { useAuth } from '@/lib/AuthContext';
 import { Bookmark, ArrowRight, Loader2 } from 'lucide-react';
+import { toast } from '@/components/ui/use-toast';
 
 export default function BookmarksSection() {
   const { user } = useAuth();
   const [bookmarks, setBookmarks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!user) return;
@@ -16,8 +18,13 @@ export default function BookmarksSection() {
       .select('*')
       .eq('user_id', user.id)
       .order('created_at', { ascending: false })
-      .then(({ data }) => {
-        setBookmarks(data || []);
+      .then(({ data, error }) => {
+        if (error) {
+          setError(error.message || 'Could not load bookmarks.');
+          toast({ title: 'Could not load bookmarks', description: error.message, variant: 'destructive' });
+        } else {
+          setBookmarks(data || []);
+        }
         setLoading(false);
       });
   }, [user]);
@@ -42,6 +49,10 @@ export default function BookmarksSection() {
         <div className="flex items-center justify-center py-6">
           <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
         </div>
+      ) : error ? (
+        <p className="text-sm text-destructive leading-relaxed">
+          Could not load bookmarks: {error}
+        </p>
       ) : bookmarks.length === 0 ? (
         <p className="text-sm text-muted-foreground leading-relaxed">
           No bookmarks yet. Bookmark lessons or live cases you'd like to return to — they'll show up here.
