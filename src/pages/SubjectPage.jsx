@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { SUBJECTS, SUBJECT_TOPICS } from '@/lib/subjects';
+import { SUBJECTS, SUBJECT_TOPICS, getSubtopics } from '@/lib/subjects';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ResumeButton from '../components/subject/ResumeButton';
@@ -15,6 +15,12 @@ export default function SubjectPage() {
 
   const Icon = subject.icon;
 
+  const firstTopic = topics[0];
+  const firstSubtopic = firstTopic ? getSubtopics(firstTopic.id)[0] : null;
+  const fullCourseHref = firstTopic && firstSubtopic
+    ? `/learn/${subjectId}/${firstTopic.id}/${firstSubtopic.id}?format=text&course=full`
+    : `/subject/${subjectId}`;
+
   return (
     <div className="max-w-5xl mx-auto px-6 py-8 md:py-10">
       <div className="flex items-center gap-3 mb-6">
@@ -24,7 +30,7 @@ export default function SubjectPage() {
         <h1 className="font-serif text-3xl font-bold text-foreground">{subject.name}</h1>
       </div>
 
-      <Link to={`/subject/${subjectId}/full-course`}>
+      <Link to={fullCourseHref}>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
