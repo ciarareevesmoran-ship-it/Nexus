@@ -2,13 +2,19 @@ import { useEffect, useState } from 'react';
 import { Bookmark } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { findBookmark, toggleBookmark } from '@/lib/userTracking';
+import { useAuth } from '@/lib/AuthContext';
 import { cn } from '@/lib/utils';
 
 export default function BookmarkButton({ bookmark, variant = 'pill' }) {
+  const { user, loading: authLoading } = useAuth();
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (authLoading || !user) {
+      setLoading(false);
+      return;
+    }
     let cancelled = false;
     findBookmark(bookmark.url).then((b) => {
       if (!cancelled) {
@@ -17,9 +23,10 @@ export default function BookmarkButton({ bookmark, variant = 'pill' }) {
       }
     });
     return () => { cancelled = true; };
-  }, [bookmark.url]);
+  }, [bookmark.url, user, authLoading]);
 
   const handleClick = async () => {
+    if (!user) return;
     setLoading(true);
     const result = await toggleBookmark(bookmark);
     setIsBookmarked(!!result);

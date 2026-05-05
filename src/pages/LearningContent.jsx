@@ -8,10 +8,12 @@ import ContentDisplay from '../components/learning/ContentDisplay';
 import AiTutor from '../components/ai-tutor/AiTutor';
 import BookmarkButton from '../components/learning/BookmarkButton';
 import { logLessonCompleted, setLastLessonForSubject } from '@/lib/userTracking';
+import { useAuth } from '@/lib/AuthContext';
 
 export default function LearningContent() {
   const { subjectId, topicId, subtopicId } = useParams();
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [toolsOpen, setToolsOpen] = useState(false);
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -39,13 +41,14 @@ export default function LearningContent() {
       topicName: topic.name,
       url: `${lessonUrl}?format=${format}`,
     });
+    if (!user) return;
     logLessonCompleted({
       lessonId: subtopicId,
       lessonName: subtopic.name,
       subjectId,
       topicId,
     }).catch(() => {});
-  }, [subjectId, topicId, subtopicId]);
+  }, [subjectId, topicId, subtopicId, user]);
 
   if (!subject || !topic || !subtopic) {
     return <div className="p-10 text-center text-muted-foreground">Content not found.</div>;

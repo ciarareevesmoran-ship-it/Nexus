@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import BookmarkButton from '../components/learning/BookmarkButton';
 import NotesPanel from '../components/learning/NotesPanel';
 import { logCaseExplored } from '@/lib/userTracking';
+import { useAuth } from '@/lib/AuthContext';
 
 const LIVE_CASE_DETAILS = {
   arctic: {
@@ -47,16 +48,17 @@ const LIVE_CASE_DETAILS = {
 export default function LiveCasePage() {
   const { caseId } = useParams();
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [notesOpen, setNotesOpen] = useState(false);
 
   const liveCase = LIVE_CASES.find(c => c.id === caseId);
   const details = LIVE_CASE_DETAILS[caseId];
 
   useEffect(() => {
-    if (liveCase) {
+    if (liveCase && user) {
       logCaseExplored({ caseId: liveCase.id, caseName: liveCase.title }).catch(() => {});
     }
-  }, [liveCase]);
+  }, [liveCase, user]);
 
   if (!liveCase || !details) {
     return <div className="p-10 text-center text-muted-foreground">Case not found.</div>;
