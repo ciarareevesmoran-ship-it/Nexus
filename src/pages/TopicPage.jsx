@@ -29,7 +29,7 @@ export default function TopicPage() {
       <h1 className="font-serif text-3xl font-bold text-foreground mb-1">{topic.name}</h1>
       <p className="text-muted-foreground mb-8">{topic.description}</p>
 
-      <div className="space-y-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
         {subtopics.map((subtopic, index) => (
           <motion.button
             key={subtopic.id}
@@ -37,13 +37,13 @@ export default function TopicPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
             onClick={() => setSelectedSubtopic(subtopic)}
-            className="group w-full flex items-center justify-between p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-sm transition-all text-left"
+            className="group h-full flex flex-col items-start justify-between gap-4 p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-sm transition-all text-left"
           >
             <div>
               <h3 className="font-serif text-base font-bold text-foreground group-hover:text-primary transition-colors">{subtopic.name}</h3>
-              <p className="text-sm text-muted-foreground mt-0.5">{subtopic.description}</p>
+              <p className="text-sm text-muted-foreground mt-1">{subtopic.description}</p>
             </div>
-            <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all shrink-0" />
+            <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all shrink-0 self-end" />
           </motion.button>
         ))}
       </div>

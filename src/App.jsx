@@ -15,7 +15,6 @@ import CaseBuilder from './pages/CaseBuilder';
 import LiveCasePage from './pages/LiveCasePage';
 import Profile from './pages/Profile';
 import MyLearning from './pages/MyLearning';
-import CasesPage from './pages/CasesPage';
 import LiveCasesPage from './pages/LiveCasesPage';
 import FullCoursePage from './pages/FullCoursePage';
 import ResetPassword from './pages/ResetPassword';
@@ -45,7 +44,7 @@ const AuthenticatedApp = () => {
         <Route path="/live-case/:caseId" element={<LiveCasePage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/my-learning" element={<MyLearning />} />
-        <Route path="/cases" element={<CasesPage />} />
+        <Route path="/cases" element={<Navigate to="/case-builder" replace />} />
         <Route path="/live-cases" element={<LiveCasesPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>

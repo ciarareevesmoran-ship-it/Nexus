@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SUBJECTS } from '@/lib/subjects';
 import { cn } from '@/lib/utils';
-import { Plus } from 'lucide-react';
+import { Plus, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 
@@ -35,10 +35,11 @@ function CaseConfirmModal({ subject1, subject2, onConfirm, onCancel }) {
   );
 }
 
-export default function SubjectGrid() {
+export default function SubjectGrid({ interests = [] }) {
   const navigate = useNavigate();
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const interestSet = new Set(interests);
 
   const subject1 = SUBJECTS.find(s => s.id === selectedSubjects[0]);
   const subject2 = SUBJECTS.find(s => s.id === selectedSubjects[1]);
@@ -102,11 +103,12 @@ export default function SubjectGrid() {
           />
         )}
       </AnimatePresence>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-fr">
         {SUBJECTS.map((subject, index) => {
           const Icon = subject.icon;
           const isSelected = selectedSubjects.includes(subject.id);
           const isSecondary = selectedSubjects.length > 0 && !isSelected;
+          const isInterest = interestSet.has(subject.id);
           return (
             <motion.button
               key={subject.id}
@@ -116,13 +118,23 @@ export default function SubjectGrid() {
               whileHover={{ y: -4 }}
               onClick={() => handleClick(subject)}
               className={cn(
-                "group relative flex flex-col items-start p-7 rounded-xl text-left transition-all duration-300 bg-card",
+                "group relative h-full flex flex-col items-start p-7 rounded-xl text-left transition-all duration-300 bg-card",
                 isSelected
                   ? "shadow-editorial-lg ring-2 ring-primary"
                   : "shadow-editorial hover:shadow-editorial-lg",
                 isSecondary && "hover:ring-2 hover:ring-primary/40"
               )}
             >
+              {isInterest && !isSelected && (
+                <motion.span
+                  aria-hidden="true"
+                  className="absolute top-4 right-4 pointer-events-none transition-opacity duration-200 group-hover:opacity-0"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <Star className="w-4 h-4 text-primary fill-primary" />
+                </motion.span>
+              )}
               <button
                 onClick={(e) => handleCaseToggle(e, subject.id)}
                 className={cn(

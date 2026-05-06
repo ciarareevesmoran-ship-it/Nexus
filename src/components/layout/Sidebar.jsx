@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const NAV_ITEMS = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/my-learning', label: 'My Learning', icon: BookOpen },
-  { path: '/cases', label: 'Cases', icon: Layers },
+  { path: '/case-builder', label: 'Case Builder', icon: Layers },
   { path: '/live-cases', label: 'Live Cases', icon: Radio },
   { path: '/profile', label: 'Profile', icon: User },
 ];
@@ -14,7 +14,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   return (
-    <aside className="hidden md:flex flex-col w-64 min-h-screen bg-sidebar text-sidebar-foreground">
+    <aside className="hidden md:flex flex-col w-64 h-screen sticky top-0 bg-sidebar text-sidebar-foreground">
       {/* Wordmark */}
       <div className="flex items-center gap-3 px-7 pt-8 pb-10">
         <div className="w-10 h-10 rounded-lg bg-sidebar-accent flex items-center justify-center ring-1 ring-primary/40">
@@ -74,7 +74,7 @@ export default function Sidebar() {
             Unlock the full library
           </p>
           <p className="text-xs text-white/70 leading-relaxed mb-4">
-            All subjects, formats, and the complete Case builder.
+            All subjects, formats, and the complete Case Builder.
           </p>
           <Link
             to="/profile"

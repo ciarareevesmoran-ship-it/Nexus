@@ -10,6 +10,7 @@ export default function Dashboard() {
   const { user } = useAuth();
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(null);
+  const [interests, setInterests] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function Dashboard() {
     const checkOnboarding = async () => {
       const { data, error } = await supabase
         .from('user_profiles')
-        .select('id')
+        .select('id, interests')
         .eq('user_id', user.id)
         .maybeSingle();
       if (error) {
@@ -30,6 +31,7 @@ export default function Dashboard() {
         navigate('/onboarding');
         return;
       }
+      setInterests(Array.isArray(data.interests) ? data.interests : []);
       setLoading(false);
     };
     checkOnboarding();
@@ -63,7 +65,7 @@ export default function Dashboard() {
   return (
     <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-20">
       <WelcomeHeader />
-      <SubjectGrid />
+      <SubjectGrid interests={interests} />
       <LiveCasesSection />
     </div>
   );

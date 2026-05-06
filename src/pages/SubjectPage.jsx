@@ -48,23 +48,24 @@ export default function SubjectPage() {
       </Link>
 
       <h2 className="font-serif text-xl font-bold mb-4 text-foreground">Topics</h2>
-      <div className="grid md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
         {topics.map((topic, index) => (
           <motion.div
             key={topic.id}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
+            className="h-full"
           >
             <Link
               to={`/subject/${subjectId}/topic/${topic.id}`}
-              className="group flex items-center justify-between p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-sm transition-all"
+              className="group h-full flex flex-col items-start justify-between gap-4 p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-sm transition-all"
             >
               <div>
                 <h3 className="font-serif text-base font-bold text-foreground group-hover:text-primary transition-colors">{topic.name}</h3>
-                <p className="text-sm text-muted-foreground mt-0.5">{topic.description}</p>
+                <p className="text-sm text-muted-foreground mt-1">{topic.description}</p>
               </div>
-              <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all self-end shrink-0" />
             </Link>
           </motion.div>
         ))}

@@ -1,8 +1,31 @@
 import { useNavigate } from 'react-router-dom';
 import { SUBJECTS } from '@/lib/subjects';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, BookOpen } from 'lucide-react';
+import { ChevronLeft, BookOpen, Layers } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+function CaseBuilderLanding() {
+  const navigate = useNavigate();
+  return (
+    <div className="max-w-4xl mx-auto px-6 py-8 md:py-10">
+      <h1 className="font-serif text-3xl font-bold text-foreground mb-2">Case Builder</h1>
+      <p className="text-muted-foreground mb-10">
+        Combine any two subjects into a single cross-disciplinary learning path.
+      </p>
+
+      <div className="flex flex-col items-center justify-center py-20 text-center">
+        <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center mb-4">
+          <Layers className="w-7 h-7 text-muted-foreground" />
+        </div>
+        <h2 className="font-serif text-xl font-bold text-foreground mb-2">No cases yet</h2>
+        <p className="text-sm text-muted-foreground max-w-xs mb-6">
+          Head to the dashboard, hover over a subject, and click the circle icon to start combining subjects.
+        </p>
+        <Button className="rounded-xl" onClick={() => navigate('/')}>Go to dashboard</Button>
+      </div>
+    </div>
+  );
+}
 
 export default function CaseBuilder() {
   const navigate = useNavigate();
@@ -12,6 +35,10 @@ export default function CaseBuilder() {
 
   const subject1 = SUBJECTS.find(s => s.id === s1Id);
   const subject2 = SUBJECTS.find(s => s.id === s2Id);
+
+  if (!s1Id || !s2Id) {
+    return <CaseBuilderLanding />;
+  }
 
   if (!subject1 || !subject2) {
     return <div className="p-10 text-center text-muted-foreground">Select two subjects to build a case.</div>;
