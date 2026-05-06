@@ -291,6 +291,46 @@ export const TOPIC_SUBTOPICS = {
     { id: 'ethics-in-social-research', name: '7.6 Ethics in Social Research', description: 'Doing right by the people we study' },
     { id: 'interpreting-and-presenting-findings', name: '7.7 Interpreting and Presenting Findings', description: 'Drawing conclusions and communicating them well' },
   ],
+  micro: [
+    { id: 'micro-intro', name: '1.1 What Is Microeconomics?', description: 'The study of individual choices, markets, and resource allocation' },
+    { id: 'micro-markets', name: '1.2 Markets, Supply, and Demand', description: 'How prices emerge from the interaction of buyers and sellers' },
+    { id: 'micro-consumer-theory', name: '1.3 Consumer Theory and Choice', description: 'How individuals make decisions under constraints and trade-offs' },
+  ],
+  macro: [
+    { id: 'macro-intro', name: '2.1 What Is Macroeconomics?', description: 'The study of whole economies — output, employment, and growth' },
+    { id: 'macro-gdp-inflation', name: '2.2 GDP, Inflation, and Unemployment', description: 'The key measures of economic health and what they reveal' },
+    { id: 'macro-fiscal-monetary', name: '2.3 Fiscal and Monetary Policy', description: 'How governments and central banks steer the economy' },
+  ],
+  development: [
+    { id: 'dev-intro', name: '3.1 What Is Development Economics?', description: 'Understanding growth, poverty, and well-being across nations' },
+    { id: 'dev-inequality', name: '3.2 Inequality and Its Consequences', description: 'Why economic gaps persist and why they matter' },
+    { id: 'dev-global-poverty', name: '3.3 Global Poverty and Aid', description: 'The causes of poverty and the debates over how to address it' },
+  ],
+  behavioural: [
+    { id: 'beh-intro', name: '4.1 What Is Behavioural Economics?', description: 'How psychology challenges the assumption of rational economic actors' },
+    { id: 'beh-biases', name: '4.2 Cognitive Biases and Heuristics', description: 'The mental shortcuts that systematically distort our decisions' },
+    { id: 'beh-nudge-theory', name: '4.3 Nudge Theory and Choice Architecture', description: 'How small design changes can steer behaviour without restricting freedom' },
+  ],
+  ethics: [
+    { id: 'ethics-intro', name: '1.1 What Is Ethics?', description: 'The philosophical study of right, wrong, and how we ought to live' },
+    { id: 'ethics-normative', name: '1.2 Normative Ethical Theories', description: 'Consequentialism, deontology, and virtue ethics compared' },
+    { id: 'ethics-applied', name: '1.3 Applied Ethics', description: 'Using ethical frameworks to reason about real-world dilemmas' },
+  ],
+  logic: [
+    { id: 'logic-intro', name: '2.1 What Is Logic?', description: 'The study of correct reasoning and the structure of valid arguments' },
+    { id: 'logic-arguments', name: '2.2 Arguments, Validity, and Soundness', description: 'How to construct and evaluate arguments formally' },
+    { id: 'logic-fallacies', name: '2.3 Logical Fallacies', description: 'Common errors in reasoning and how to spot them' },
+  ],
+  epistemology: [
+    { id: 'epist-intro', name: '3.1 What Is Epistemology?', description: 'The branch of philosophy concerned with the nature and scope of knowledge' },
+    { id: 'epist-knowledge-justified', name: '3.2 Knowledge, Belief, and Justification', description: 'What distinguishes genuine knowledge from mere belief?' },
+    { id: 'epist-limits', name: '3.3 The Limits of Knowledge', description: 'Scepticism, uncertainty, and what we cannot know' },
+  ],
+  metaphysics: [
+    { id: 'meta-intro', name: '4.1 What Is Metaphysics?', description: 'Philosophy\'s inquiry into the fundamental nature of reality and existence' },
+    { id: 'meta-reality-existence', name: '4.2 Reality, Existence, and Being', description: 'What is real? What exists? How do we distinguish appearance from reality?' },
+    { id: 'meta-free-will', name: '4.3 Free Will and Determinism', description: 'Are our choices genuinely free, or are they the product of prior causes?' },
+  ],
 };
 
 // Generic subtopics for topics not explicitly defined

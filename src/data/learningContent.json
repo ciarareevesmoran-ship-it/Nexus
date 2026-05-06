@@ -710,5 +710,821 @@
     "key_takeaways": [],
     "real_world_examples": [],
     "related_terms": []
+  },
+
+  "micro-intro": {
+    "section_number": "1.1",
+    "section_title": "What Is Microeconomics?",
+    "subject": "Economics",
+    "topic": "Microeconomics",
+    "expanded_explanation": {
+      "introduction": "Microeconomics is the branch of economics that studies how individuals, households, and firms make decisions about allocating scarce resources. While macroeconomics looks at the economy as a whole, microeconomics zooms in on the smallest units of economic activity — a single consumer choosing between products, a firm deciding how many workers to hire, or a market arriving at a price through the interaction of thousands of buyers and sellers.",
+      "section_1": {
+        "heading": "Scarcity: The Fundamental Problem",
+        "content": "At the heart of microeconomics is a simple but profound idea: resources are scarce, but human wants are not. We cannot have everything we want, so we must choose. Every choice involves a trade-off — deciding to spend money on a holiday means not spending it on a new laptop. Economists call the value of the next-best forgone option the opportunity cost. Understanding opportunity cost is central to almost all economic reasoning."
+      },
+      "section_2": {
+        "heading": "Incentives and Rational Actors",
+        "content": "Microeconomics traditionally assumes that people respond to incentives and make broadly rational decisions — that is, they pursue their own goals in a consistent, purposeful way. This does not mean people are perfectly informed or purely selfish. It means that when the costs or benefits of an action change, behaviour tends to change too. Raise the price of petrol, and people drive less. Offer a tax rebate on solar panels, and more homeowners install them."
+      },
+      "section_3": {
+        "heading": "Markets as Coordination Mechanisms",
+        "content": "One of microeconomics' central insights is that markets — even without a central planner — can coordinate the decisions of millions of individuals through the price system. Prices signal information: a rising price tells producers to supply more and tells consumers to buy less, naturally adjusting the allocation of resources. This coordination is often remarkably efficient, though not always fair, and markets can fail in predictable ways that microeconomics helps us identify."
+      }
+    },
+    "key_takeaways": [
+      "Microeconomics studies decision-making by individuals, households, and firms.",
+      "Scarcity forces choices; opportunity cost is the value of what you give up.",
+      "Rational actors respond predictably to changes in incentives.",
+      "Prices coordinate economic activity without central direction.",
+      "Markets can be efficient but are also capable of systematic failure."
+    ],
+    "real_world_examples": [
+      { "title": "Surge Pricing", "description": "When demand for taxis spikes on New Year's Eve, Uber raises prices. This is microeconomics in action: higher prices incentivise more drivers to work and discourage some riders, restoring balance between supply and demand." },
+      { "title": "The Opportunity Cost of University", "description": "Choosing to study for four years isn't just about tuition fees — it's also the salary you forgo by not working full-time. Many economists argue this 'time cost' is the largest part of the true cost of higher education." }
+    ],
+    "related_terms": ["scarcity", "opportunity cost", "incentives", "rational actor", "price mechanism", "trade-off", "marginal analysis"]
+  },
+
+  "micro-markets": {
+    "section_number": "1.2",
+    "section_title": "Markets, Supply, and Demand",
+    "subject": "Economics",
+    "topic": "Microeconomics",
+    "expanded_explanation": {
+      "introduction": "Supply and demand is the foundational model of microeconomics. It explains how prices are determined in competitive markets, how markets respond to change, and why shortages and surpluses arise and resolve themselves. Almost every market analysis starts here — from the price of coffee to the wage rate of software engineers.",
+      "section_1": {
+        "heading": "Demand: What Buyers Want",
+        "content": "The demand curve shows the relationship between price and the quantity consumers are willing and able to buy, holding everything else constant. The law of demand states that as price rises, quantity demanded falls — and vice versa. This inverse relationship exists because higher prices make a product less attractive relative to alternatives (the substitution effect) and reduce consumers' real purchasing power (the income effect). Demand shifts when something other than price changes: income, consumer tastes, the price of related goods, or expectations about the future."
+      },
+      "section_2": {
+        "heading": "Supply: What Sellers Offer",
+        "content": "The supply curve shows how much producers are willing and able to sell at each price. The law of supply states that higher prices incentivise greater production — more profit potential justifies using more resources. Supply shifts when production costs change (e.g., cheaper raw materials or new technology), when the number of producers changes, or when government policy (like taxes or subsidies) changes the economics of production."
+      },
+      "section_3": {
+        "heading": "Equilibrium: Where They Meet",
+        "content": "The market equilibrium is the price at which quantity supplied equals quantity demanded. At this price, there is no surplus (excess supply) or shortage (excess demand). Markets have a natural tendency toward equilibrium — if prices are too high, unsold goods accumulate and sellers cut prices; if too low, queues form and buyers bid prices up. When supply or demand shifts, the equilibrium price and quantity change, which is how markets continuously adapt to new information and conditions."
+      }
+    },
+    "key_takeaways": [
+      "Demand falls as price rises; supply rises as price rises.",
+      "Equilibrium is where supply equals demand — markets tend toward this point.",
+      "Shifts in demand or supply (not just price) move the equilibrium.",
+      "Prices act as signals, allocating resources without central coordination.",
+      "Government interventions like price controls can prevent markets from clearing."
+    ],
+    "real_world_examples": [
+      { "title": "Coffee Prices and Weather", "description": "A drought in Brazil — the world's largest coffee producer — destroys crops, shifting the supply curve left. With less coffee available at every price, the equilibrium price rises globally. Consumers feel this in their morning cup." },
+      { "title": "Rent Controls in Major Cities", "description": "When cities cap rents below market equilibrium, demand for housing exceeds supply. Landlords convert properties to other uses or stop maintaining them, and housing shortages deepen — a textbook example of a price ceiling's unintended consequences." }
+    ],
+    "related_terms": ["demand curve", "supply curve", "equilibrium price", "shortage", "surplus", "price ceiling", "price floor", "elasticity"]
+  },
+
+  "micro-consumer-theory": {
+    "section_number": "1.3",
+    "section_title": "Consumer Theory and Choice",
+    "subject": "Economics",
+    "topic": "Microeconomics",
+    "expanded_explanation": {
+      "introduction": "Consumer theory is the microeconomic framework for understanding how individuals make choices when they face limited budgets. It asks: given what you want and what you can afford, how do you decide what to buy? The answers have implications far beyond shopping — they underpin everything from public health policy to the design of financial products.",
+      "section_1": {
+        "heading": "Preferences and Utility",
+        "content": "Economists model consumer satisfaction through the concept of utility — a measure of the enjoyment or benefit a consumer derives from goods and services. The key insight is diminishing marginal utility: each additional unit of a good tends to bring less extra satisfaction than the previous one. The tenth slice of pizza brings far less joy than the first. This helps explain why consumers diversify — spreading spending across multiple goods rather than buying only their favourite thing."
+      },
+      "section_2": {
+        "heading": "Budget Constraints",
+        "content": "Preferences alone don't determine choices — consumers also face a budget constraint. They can only spend what they have. The budget line represents all the combinations of goods a consumer can afford at given prices. When prices change or income changes, the budget line shifts, pushing the consumer to a new optimum. A rise in the price of one good effectively makes the consumer poorer in terms of what they can afford, combining income and substitution effects."
+      },
+      "section_3": {
+        "heading": "The Rational Consumer and Its Limits",
+        "content": "Standard consumer theory assumes people make consistent, goal-directed choices — maximising utility given their constraints. This is a powerful simplification, but it is not always realistic. People have bounded rationality: limited information, limited time, and cognitive biases that lead to systematic departures from the optimum. Behavioural economics (covered in Topic 4) directly challenges and extends consumer theory by incorporating these psychological realities."
+      }
+    },
+    "key_takeaways": [
+      "Utility measures satisfaction; diminishing marginal utility explains why we diversify.",
+      "Budget constraints limit what consumers can actually choose.",
+      "Optimal consumer choice maximises utility subject to the budget constraint.",
+      "Price changes affect both what we can afford (income effect) and what we prefer (substitution effect).",
+      "Behavioural economics challenges the assumption of perfectly rational consumers."
+    ],
+    "real_world_examples": [
+      { "title": "Supermarket Own-Brand Products", "description": "When the price of branded cereal rises, many consumers switch to the own-brand equivalent. This substitution effect is consumer theory at work — the relative cost of the branded option has increased, making the alternative comparatively more attractive." },
+      { "title": "All-You-Can-Eat Buffets", "description": "Buffets exploit diminishing marginal utility. The first plate feels worth every penny; by the fourth, most diners stop — not because they're out of money, but because the marginal utility of another plate has fallen to near zero." }
+    ],
+    "related_terms": ["utility", "marginal utility", "diminishing returns", "budget constraint", "substitution effect", "income effect", "indifference curve", "rational choice"]
+  },
+
+  "macro-intro": {
+    "section_number": "2.1",
+    "section_title": "What Is Macroeconomics?",
+    "subject": "Economics",
+    "topic": "Macroeconomics",
+    "expanded_explanation": {
+      "introduction": "Macroeconomics is the branch of economics that studies the behaviour and performance of an economy as a whole. Rather than asking why an individual consumer buys more coffee when the price falls, macroeconomics asks: why does an entire country's economy grow in some decades and stagnate in others? Why do millions of people lose their jobs at once during a recession? How does the money supply affect inflation? These questions require a different lens — one that looks at aggregate patterns rather than individual decisions.",
+      "section_1": {
+        "heading": "The Big Questions of Macroeconomics",
+        "content": "Macroeconomics centres on three interrelated phenomena: output (how much an economy produces), employment (how many people are working), and the price level (how much things cost in general). Understanding how these three move together — and why they sometimes diverge — is the core challenge of macroeconomic analysis. A healthy economy typically exhibits stable growth, low unemployment, and stable (not zero) inflation. The task of policymakers is largely to keep these variables in a productive balance."
+      },
+      "section_2": {
+        "heading": "Why Individual Behaviour Doesn't Simply Scale Up",
+        "content": "One of the key insights of macroeconomics is that what is rational for an individual can be collectively destructive. During a recession, it is prudent for each household to save more and spend less. But if everyone does this simultaneously, total spending falls, businesses earn less, workers are laid off, and the recession deepens — a phenomenon Keynes called the 'paradox of thrift.' This is why macroeconomics cannot simply be derived from microeconomics: aggregate behaviour can be qualitatively different from individual behaviour."
+      },
+      "section_3": {
+        "heading": "Schools of Macroeconomic Thought",
+        "content": "Macroeconomics has been shaped by major intellectual disagreements about how economies work and what governments should do. Keynesian economics, developed after the Great Depression, argues that governments should actively manage demand through spending and taxation. Monetarism (associated with Milton Friedman) holds that controlling the money supply is the key lever. More recent schools, including New Keynesian and New Classical economics, have incorporated microeconomic foundations and expectations into macroeconomic models. These debates are not merely academic — they directly shape policy decisions affecting millions of lives."
+      }
+    },
+    "key_takeaways": [
+      "Macroeconomics studies whole economies: output, employment, and the price level.",
+      "Aggregate behaviour can differ fundamentally from individual behaviour.",
+      "The 'paradox of thrift' illustrates how individually rational actions can be collectively harmful.",
+      "Major schools of thought — Keynesian, monetarist, New Classical — disagree on how economies work.",
+      "Macroeconomic policy choices have direct consequences for living standards and employment."
+    ],
+    "real_world_examples": [
+      { "title": "The 2008 Financial Crisis", "description": "When US housing markets collapsed, the effects rippled through the entire global economy — banks failed, credit froze, businesses cut investment, and unemployment rose sharply. This was a macroeconomic event: a shock in one sector cascaded across the entire system in ways no individual actor could prevent or fully anticipate." },
+      { "title": "Japan's Lost Decade", "description": "After a financial bubble burst in 1991, Japan experienced a prolonged period of low growth and deflation. Despite low interest rates, spending remained weak — consumers and firms kept saving in anticipation of further price falls. This deflationary trap illustrated how macroeconomic expectations can become self-fulfilling." }
+    ],
+    "related_terms": ["GDP", "inflation", "unemployment", "aggregate demand", "aggregate supply", "fiscal policy", "monetary policy", "Keynesian economics", "business cycle"]
+  },
+
+  "macro-gdp-inflation": {
+    "section_number": "2.2",
+    "section_title": "GDP, Inflation, and Unemployment",
+    "subject": "Economics",
+    "topic": "Macroeconomics",
+    "expanded_explanation": {
+      "introduction": "To understand an economy's health, economists rely on three headline measures: GDP, inflation, and unemployment. These are not just statistics — they reflect the material conditions of millions of people. A rising GDP suggests more goods and services are being produced; rising inflation means the cost of living is increasing; rising unemployment means more people cannot find work. Together they form a dashboard for economic performance.",
+      "section_1": {
+        "heading": "GDP: Measuring Economic Output",
+        "content": "Gross Domestic Product (GDP) is the total monetary value of all final goods and services produced within a country in a given period. It is the most widely used measure of economic size and growth. GDP can be calculated three ways: by summing all spending (expenditure approach), all incomes earned (income approach), or all value added in production (output approach). All three should give the same answer. GDP growth above roughly 2–3% per year is typically considered healthy for advanced economies, though the 'right' rate depends on context. Critics note that GDP ignores inequality, environmental damage, and unpaid work."
+      },
+      "section_2": {
+        "heading": "Inflation: The General Rise in Prices",
+        "content": "Inflation is the sustained increase in the general price level across an economy. It is measured by tracking a 'basket' of goods and services over time. Moderate inflation (around 2%) is widely considered normal and even desirable — it encourages spending and investment over hoarding cash. High inflation erodes the real value of savings and wages, creating uncertainty. Deflation (falling prices) may sound appealing but can be equally damaging, as it encourages consumers to delay purchases, reducing demand and deepening recessions. Central banks typically target a low, stable inflation rate."
+      },
+      "section_3": {
+        "heading": "Unemployment: More Than a Statistic",
+        "content": "The unemployment rate measures the share of the labour force that is actively seeking work but cannot find it. Not all unemployment is the same: cyclical unemployment rises during recessions as demand for labour falls; structural unemployment results from mismatches between workers' skills and available jobs; frictional unemployment is the natural result of workers between jobs. Full employment does not mean zero unemployment — some frictional and structural unemployment is always present. The 'natural rate' of unemployment is the level consistent with stable inflation, and it varies across countries depending on labour market institutions and flexibility."
+      }
+    },
+    "key_takeaways": [
+      "GDP measures total economic output; growth signals expansion, contraction signals recession.",
+      "GDP ignores distribution, sustainability, and well-being — it is a measure of size, not quality.",
+      "Moderate inflation (around 2%) is generally healthy; high inflation and deflation are both problematic.",
+      "Unemployment has different causes — cyclical, structural, and frictional — requiring different policy responses.",
+      "These three indicators interact: low unemployment often pushes up inflation (the Phillips curve trade-off)."
+    ],
+    "real_world_examples": [
+      { "title": "Weimar Germany's Hyperinflation", "description": "In 1923, Germany's inflation became so extreme that prices doubled every few days. Workers collected wages in wheelbarrows. The collapse in the real value of money destroyed savings, destabilised society, and left lasting political scars — illustrating the devastating human cost of extreme inflation." },
+      { "title": "The Gig Economy and Unemployment Statistics", "description": "Official unemployment figures can mask underemployment. Many gig economy workers are technically 'employed' but work far fewer hours than they want, at lower pay. This has prompted economists to develop broader measures of labour market slack beyond the headline unemployment rate." }
+    ],
+    "related_terms": ["GDP", "real GDP", "inflation", "CPI", "deflation", "unemployment rate", "cyclical unemployment", "natural rate of unemployment", "Phillips curve"]
+  },
+
+  "macro-fiscal-monetary": {
+    "section_number": "2.3",
+    "section_title": "Fiscal and Monetary Policy",
+    "subject": "Economics",
+    "topic": "Macroeconomics",
+    "expanded_explanation": {
+      "introduction": "Governments and central banks have two main tools for steering the macroeconomy: fiscal policy (using taxation and spending) and monetary policy (controlling the money supply and interest rates). Both can be used to stimulate a sluggish economy or cool an overheating one, but they work through different channels, have different lags, and are governed by different institutions. Understanding them is essential for making sense of economic news.",
+      "section_1": {
+        "heading": "Fiscal Policy: Government Spending and Taxation",
+        "content": "Fiscal policy refers to decisions about government spending and tax rates. Expansionary fiscal policy — increasing spending or cutting taxes — injects demand into the economy, potentially boosting output and employment. Contractionary fiscal policy — cutting spending or raising taxes — withdraws demand, useful when inflation is high. The challenge is timing: fiscal measures typically take months to pass through political processes and more months to affect the economy. A stimulus designed for a recession may arrive just as the economy is recovering, causing inflation instead."
+      },
+      "section_2": {
+        "heading": "Monetary Policy: Interest Rates and the Money Supply",
+        "content": "Monetary policy is set by central banks (like the European Central Bank or the US Federal Reserve). The primary tool is the interest rate: raising rates makes borrowing more expensive and saving more attractive, reducing spending and cooling inflation; cutting rates stimulates borrowing and investment. Central banks also use quantitative easing — purchasing financial assets to inject money directly into the financial system — when interest rates are already near zero. Because central banks are independent from governments in most democracies, monetary policy can be adjusted more quickly than fiscal policy."
+      },
+      "section_3": {
+        "heading": "The Limitations and Trade-offs of Policy",
+        "content": "Neither tool is a perfect solution. Fiscal stimulus can raise public debt to unsustainable levels. Monetary stimulus can inflate asset bubbles rather than reaching the real economy. Both operate with time lags that make precise calibration difficult. Moreover, the tools interact: aggressive monetary tightening can undermine the effects of fiscal expansion, or vice versa. The 2008 crisis and COVID-19 pandemic both required extraordinary coordination of fiscal and monetary policy, pushing both to their historical limits and generating ongoing debate about their effectiveness and risks."
+      }
+    },
+    "key_takeaways": [
+      "Fiscal policy uses government spending and taxes; monetary policy uses interest rates and money supply.",
+      "Expansionary policies stimulate demand; contractionary policies reduce it.",
+      "Fiscal policy is slower (political process); monetary policy is faster (central bank decisions).",
+      "Both tools have limitations: debt sustainability, asset bubbles, and uncertain time lags.",
+      "Coordination between fiscal and monetary authorities is crucial during major crises."
+    ],
+    "real_world_examples": [
+      { "title": "The 2008 Stimulus Packages", "description": "Following the financial crisis, governments worldwide launched large fiscal stimulus packages (the US passed an $800 billion package). Simultaneously, central banks cut interest rates to near zero. The combination helped prevent a repeat of the Great Depression, though it also left lasting questions about public debt and inequality." },
+      { "title": "The ECB's Quantitative Easing", "description": "When eurozone inflation fell dangerously low in 2015, the European Central Bank began purchasing hundreds of billions of euros in government bonds — 'printing money' to inject liquidity. This unprecedented monetary intervention remains controversial but is credited with preventing deflation and stabilising the eurozone." }
+    ],
+    "related_terms": ["fiscal policy", "monetary policy", "interest rate", "central bank", "quantitative easing", "budget deficit", "government debt", "inflation targeting", "automatic stabilisers"]
+  },
+
+  "dev-intro": {
+    "section_number": "3.1",
+    "section_title": "What Is Development Economics?",
+    "subject": "Economics",
+    "topic": "Development Economics",
+    "expanded_explanation": {
+      "introduction": "Development economics asks why some countries are rich and others are poor — and what can be done about it. It is one of the most politically charged and morally urgent branches of economics, dealing directly with questions of poverty, hunger, health, education, and human dignity. Unlike standard macroeconomics, which often assumes functioning institutions and relatively stable conditions, development economics must grapple with weak states, colonial legacies, geographic constraints, and the compounding effects of poverty itself.",
+      "section_1": {
+        "heading": "Measuring Development",
+        "content": "GDP per capita is the most common starting point for comparing living standards across countries, but it is an incomplete measure. Two countries with the same GDP per capita may differ dramatically in life expectancy, literacy, or equality. The Human Development Index (HDI), developed by the United Nations, combines income with education and health indicators to give a richer picture of human well-being. More recent frameworks include measures of multidimensional poverty, which capture whether people lack access to nutrition, healthcare, education, and basic services — dimensions that a single income measure misses."
+      },
+      "section_2": {
+        "heading": "Why Do Countries Differ?",
+        "content": "The causes of diverging development paths are deeply contested. Geographic theories point to disease burdens, climate, and access to navigable waterways as constraints on growth. Institutional theories argue that secure property rights, rule of law, and inclusive political institutions are the decisive factors — countries with extractive institutions (designed to concentrate wealth rather than distribute it) tend to stagnate. Historical theories emphasise the lasting effects of colonialism: the extraction of resources, the distortion of institutions, and the drawing of arbitrary borders that cut across ethnic and linguistic communities."
+      },
+      "section_3": {
+        "heading": "Growth vs. Development",
+        "content": "Economic growth — an increase in GDP — is not the same as development. A country can grow rapidly while most of its population remains in poverty if the gains are captured by a narrow elite. Development requires that growth translates into improved living conditions for ordinary people: better health outcomes, access to education, reduced vulnerability to shocks. This distinction motivates a focus on the distribution of growth, not just its aggregate rate — and on building the human capabilities and social structures that allow people to live flourishing lives."
+      }
+    },
+    "key_takeaways": [
+      "Development economics studies the causes of poverty and the pathways out of it.",
+      "GDP per capita is a limited measure; the HDI and multidimensional poverty indices offer fuller pictures.",
+      "Explanations for underdevelopment include geography, institutions, and colonial history.",
+      "Growth is not the same as development — distribution and human well-being matter.",
+      "Development economics is inherently normative: it is concerned with what ought to change, not just what is."
+    ],
+    "real_world_examples": [
+      { "title": "Botswana vs. Zimbabwe", "description": "Two neighbouring southern African countries with similar colonial histories diverged dramatically after independence. Botswana built strong institutions, managed its diamond wealth prudently, and grew into a middle-income country. Zimbabwe pursued destructive land policies and collapsed into hyperinflation. The contrast illustrates the importance of institutions over geography." },
+      { "title": "South Korea's Transformation", "description": "In 1960, South Korea had a per capita income comparable to Ghana. By 2000, it was a high-income country with world-class technology companies. This transformation — driven by industrial policy, investment in education, and export-led growth — is one of the most studied cases in development economics." }
+    ],
+    "related_terms": ["GDP per capita", "Human Development Index", "poverty trap", "institutions", "colonial legacy", "inclusive growth", "multidimensional poverty", "Sustainable Development Goals"]
+  },
+
+  "dev-inequality": {
+    "section_number": "3.2",
+    "section_title": "Inequality and Its Consequences",
+    "subject": "Economics",
+    "topic": "Development Economics",
+    "expanded_explanation": {
+      "introduction": "Economic inequality — the gap in income and wealth between individuals, groups, and nations — is one of the defining challenges of our time. Inequality is not simply a moral problem; economists have shown it has concrete consequences for growth, social cohesion, health, and political stability. Understanding why inequality arises, how to measure it, and what effects it has is central to development economics and to broader questions of justice.",
+      "section_1": {
+        "heading": "Measuring Inequality",
+        "content": "The most widely used measure of income inequality is the Gini coefficient, which ranges from 0 (perfect equality, everyone has the same income) to 1 (maximum inequality, one person has everything). Nordic countries typically have Gini coefficients around 0.25–0.30; the United States around 0.39; Brazil and South Africa above 0.50. Another approach is to look at income shares: what share of national income goes to the top 1%, top 10%, bottom 50%? Economists like Thomas Piketty have shown that in many rich countries, the share going to the top has grown dramatically since the 1980s."
+      },
+      "section_2": {
+        "heading": "Causes of Rising Inequality",
+        "content": "Multiple forces have driven rising inequality in recent decades. Technological change has increased demand for high-skilled workers and reduced demand for routine jobs, widening wage gaps. Globalisation has integrated labour markets globally, intensifying competition for lower-skilled work. The decline of trade unions has weakened workers' bargaining power. Tax policy changes — including lower top marginal rates and reduced taxation on capital — have allowed gains to accumulate at the top. These forces interact in complex ways, and their relative importance is disputed."
+      },
+      "section_3": {
+        "heading": "Why Inequality Matters Beyond Fairness",
+        "content": "High inequality is associated with worse outcomes across many dimensions. Societies with high inequality tend to have lower social mobility — the poor are less likely to escape poverty, and the rich are more likely to maintain their advantages. High inequality is linked to worse public health, higher crime, and lower trust. Politically, extreme inequality tends to undermine democratic institutions, as wealthy elites gain disproportionate influence over policy. Some economists also argue that high inequality reduces aggregate demand, slowing growth — since the wealthy save a higher proportion of their income than the poor."
+      }
+    },
+    "key_takeaways": [
+      "The Gini coefficient measures income inequality from 0 (equal) to 1 (maximally unequal).",
+      "Inequality has risen in many rich countries since the 1980s, driven by technology, globalisation, and policy.",
+      "High inequality reduces social mobility and intergenerational opportunity.",
+      "Inequality is correlated with worse health, trust, and political outcomes.",
+      "Addressing inequality involves trade-offs between redistribution, efficiency, and incentives."
+    ],
+    "real_world_examples": [
+      { "title": "The Great Gatsby Curve", "description": "Economist Miles Corak documented a pattern now known as the 'Great Gatsby Curve': countries with higher inequality also tend to have lower social mobility. In highly unequal societies, where you start in life strongly predicts where you end up — the 'rags to riches' story becomes less common." },
+      { "title": "Nordic Equality", "description": "Scandinavian countries combine relatively high equality with strong economic performance, challenging the assumption that equality and efficiency inevitably trade off. Strong unions, universal public services, and progressive taxation produce relatively compressed wage distributions without sacrificing innovation or productivity." }
+    ],
+    "related_terms": ["Gini coefficient", "income distribution", "social mobility", "wealth inequality", "progressive taxation", "Kuznets curve", "relative poverty", "absolute poverty"]
+  },
+
+  "dev-global-poverty": {
+    "section_number": "3.3",
+    "section_title": "Global Poverty and Aid",
+    "subject": "Economics",
+    "topic": "Development Economics",
+    "expanded_explanation": {
+      "introduction": "Extreme poverty — defined by the World Bank as living on less than $2.15 per day — has declined dramatically over the past two centuries, falling from affecting the vast majority of humanity to under 10% of the global population today. Yet nearly 700 million people still live in extreme poverty, concentrated in sub-Saharan Africa and South Asia. How do we understand the persistence of extreme poverty in an era of unprecedented global wealth, and what role can foreign aid play in addressing it?",
+      "section_1": {
+        "heading": "The Progress and Its Limits",
+        "content": "The reduction of extreme poverty is one of history's most significant achievements, driven largely by economic growth — particularly in China and India. However, progress has been uneven. Much of the remaining extreme poverty is concentrated in fragile states affected by conflict, in landlocked regions with poor access to markets, and in communities facing multiple overlapping disadvantages. Progress has also been threatened by global shocks: the COVID-19 pandemic reversed years of poverty reduction gains, pushing an estimated 70–100 million people back into extreme poverty."
+      },
+      "section_2": {
+        "heading": "Foreign Aid: The Debate",
+        "content": "The role of foreign aid in development is intensely debated. Optimists like Jeffrey Sachs argue that targeted aid can break 'poverty traps' — situations where people are too poor to invest in their own futures. Sceptics like William Easterly counter that aid has largely failed because it bypasses local institutions, creates dependency, and is driven by donor interests rather than recipient needs. A third perspective, associated with Esther Duflo and Abhijit Banerjee, advocates for rigorous evaluation of specific aid programmes using randomised controlled trials to identify what actually works at the micro level."
+      },
+      "section_3": {
+        "heading": "Beyond Aid: Trade, Institutions, and Migration",
+        "content": "Most economists agree that aid alone cannot drive large-scale development. Trade — particularly fair and open access to rich-country markets — allows developing countries to grow through comparative advantage. Strong institutions (property rights, rule of law, absence of corruption) create the conditions for private investment and growth. Migration, particularly remittances sent home by workers who have moved to richer countries, now exceeds foreign aid flows as a source of income for many developing nations. Addressing global poverty requires a systemic rethinking of the rules governing international trade and finance, not just more aid."
+      }
+    },
+    "key_takeaways": [
+      "Extreme poverty has fallen dramatically but remains concentrated in sub-Saharan Africa and fragile states.",
+      "The aid debate pits optimists (Sachs), sceptics (Easterly), and empiricists (Duflo/Banerjee) against each other.",
+      "Randomised controlled trials have brought more rigour to evaluating what anti-poverty programmes actually work.",
+      "Trade, institutions, and remittances may matter more than aid for long-run development.",
+      "Global shocks like COVID-19 can reverse years of poverty reduction progress rapidly."
+    ],
+    "real_world_examples": [
+      { "title": "The GiveDirectly Experiment", "description": "GiveDirectly gives unconditional cash transfers directly to extremely poor households in Kenya and Uganda, bypassing traditional aid intermediaries. Studies show recipients use the money well — investing in assets, education, and health — challenging the assumption that poor people cannot be trusted to spend aid effectively." },
+      { "title": "China's Poverty Reduction", "description": "China lifted approximately 800 million people out of extreme poverty between 1978 and 2018 — the single largest poverty reduction in history. This was driven primarily by economic growth, not aid, though the state also made targeted investments in infrastructure, education, and rural development." }
+    ],
+    "related_terms": ["extreme poverty", "poverty trap", "foreign aid", "randomised controlled trials", "remittances", "comparative advantage", "fragile states", "World Bank", "Millennium Development Goals"]
+  },
+
+  "beh-intro": {
+    "section_number": "4.1",
+    "section_title": "What Is Behavioural Economics?",
+    "subject": "Economics",
+    "topic": "Behavioural Economics",
+    "expanded_explanation": {
+      "introduction": "Standard economics assumes that people are rational: they have consistent preferences, gather relevant information, and make decisions that maximise their well-being. Behavioural economics challenges this assumption by incorporating insights from psychology to show that real human decision-making systematically departs from the rational ideal. The result is a richer, more realistic picture of how people actually think, choose, and behave — with profound implications for policy, business, and ethics.",
+      "section_1": {
+        "heading": "The Origins: Kahneman and Tversky",
+        "content": "Behavioural economics emerged from the work of psychologists Daniel Kahneman and Amos Tversky in the 1970s. Their research documented specific, predictable departures from rationality — patterns of bias that were systematic, not random. They showed, for instance, that people are loss averse: losses feel roughly twice as painful as equivalent gains feel pleasant. This asymmetry between gains and losses cannot be explained by standard utility theory. Kahneman later developed Dual Process Theory, distinguishing between fast, intuitive thinking ('System 1') and slow, deliberative reasoning ('System 2')."
+      },
+      "section_2": {
+        "heading": "Why It Matters",
+        "content": "If people routinely behave irrationally in predictable ways, then policies and institutions designed assuming rationality will systematically fail. Pension systems designed on the assumption that people will voluntarily save for retirement find most people don't — even when it is clearly in their interest. Health systems designed assuming patients will follow medical advice find compliance rates are often low. Behavioural economics offers tools to redesign systems so they work with human psychology rather than against it."
+      },
+      "section_3": {
+        "heading": "Behavioural Economics and Philosophy",
+        "content": "Behavioural economics raises deep questions about autonomy and rationality that connect directly to philosophy. If our choices are systematically biased, are they truly our own? When a government uses knowledge of biases to 'nudge' people toward better decisions, is it respecting their autonomy or manipulating them? These questions sit at the intersection of economics, ethics, and political philosophy — which is precisely why the Economics × Philosophy case study is so rich with material."
+      }
+    },
+    "key_takeaways": [
+      "Behavioural economics integrates psychology into economic models of decision-making.",
+      "People are systematically biased, not randomly irrational — the patterns are predictable.",
+      "Loss aversion, present bias, and framing effects are among the most robust findings.",
+      "Dual Process Theory distinguishes fast intuitive thinking (System 1) from slow reasoning (System 2).",
+      "Behavioural economics raises philosophical questions about autonomy, manipulation, and what it means to choose freely."
+    ],
+    "real_world_examples": [
+      { "title": "Auto-Enrolment Pensions", "description": "When employers automatically enrol workers in pension schemes (with the option to opt out), participation rates jump dramatically — often from under 40% to over 90%. The decision to save hasn't changed; only the default has. This exploits status quo bias and has become a major tool of retirement policy worldwide." },
+      { "title": "The Endowment Effect", "description": "People consistently value objects more once they own them. In one famous experiment, participants randomly given a coffee mug demanded nearly twice as much to sell it as others were willing to pay. This 'endowment effect' — valuing things more once they're ours — cannot be explained by rational choice theory." }
+    ],
+    "related_terms": ["rational choice", "loss aversion", "cognitive bias", "heuristics", "dual process theory", "System 1 / System 2", "prospect theory", "behavioural policy", "nudge"]
+  },
+
+  "beh-biases": {
+    "section_number": "4.2",
+    "section_title": "Cognitive Biases and Heuristics",
+    "subject": "Economics",
+    "topic": "Behavioural Economics",
+    "expanded_explanation": {
+      "introduction": "Heuristics are mental shortcuts — quick rules of thumb that allow us to make decisions without exhaustive analysis. In many contexts they serve us well, but they also introduce systematic errors called cognitive biases. Behavioural economists have catalogued dozens of these biases, but several recur across virtually all human decision-making contexts. Understanding them is the first step toward designing better decisions and better systems.",
+      "section_1": {
+        "heading": "Anchoring and Framing",
+        "content": "Anchoring is the tendency to rely too heavily on the first piece of information encountered when making a decision. In salary negotiations, whoever states a number first has a significant advantage — the other party's responses cluster around that anchor, even when it is arbitrary. Framing refers to how the presentation of information affects choices. People respond differently to 'a 90% survival rate' versus 'a 10% mortality rate' even though these are identical facts. Politicians, advertisers, and policy designers routinely exploit framing effects — sometimes to improve decisions, sometimes to manipulate."
+      },
+      "section_2": {
+        "heading": "Present Bias and Hyperbolic Discounting",
+        "content": "People tend to overvalue immediate rewards relative to future ones — more so than would be rational. This 'present bias' helps explain why people procrastinate, fail to save, and overconsume in the short term. Standard economics assumes people discount the future at a constant rate. Behavioural research shows the discount rate is much higher for the near future than the distant future — a pattern called hyperbolic discounting. This explains why someone can simultaneously want to exercise more starting next week while continuing to skip the gym today."
+      },
+      "section_3": {
+        "heading": "The Availability Heuristic and Overconfidence",
+        "content": "The availability heuristic leads people to judge the likelihood of events based on how easily examples come to mind. After a dramatic plane crash, many people overestimate the risk of flying — even though statistics show it is far safer than driving. This bias causes systematic distortions in risk perception, with consequences for insurance markets, public health, and policy. Overconfidence — the tendency to believe our knowledge and abilities are better than they are — is equally pervasive. Studies consistently show that most people rate themselves above average on most dimensions, a mathematical impossibility that nonetheless shapes markets, entrepreneurship, and politics."
+      }
+    },
+    "key_takeaways": [
+      "Heuristics are useful mental shortcuts but introduce predictable biases.",
+      "Anchoring: first information encountered disproportionately influences judgments.",
+      "Framing: identical information presented differently produces different choices.",
+      "Present bias: we overweight immediate rewards; hyperbolic discounting explains procrastination.",
+      "Availability heuristic: we judge probability by ease of recall, not actual frequency."
+    ],
+    "real_world_examples": [
+      { "title": "Supermarket Pricing", "description": "Pricing a product at £9.99 rather than £10 exploits anchoring and the left-digit effect — buyers anchor on the 9 and perceive the price as significantly cheaper, even though the difference is trivial. Decades of research confirm this effect is robust across cultures and product types." },
+      { "title": "The Lottery and Risk Perception", "description": "Lottery tickets sell despite offering negative expected value because winners are vivid and memorable (availability heuristic) while losing is silent and forgettable. Meanwhile, many people vastly underestimate their risk of mundane killers like heart disease or car accidents — events that are common but rarely dramatised." }
+    ],
+    "related_terms": ["heuristic", "anchoring", "framing effect", "present bias", "hyperbolic discounting", "availability heuristic", "overconfidence", "status quo bias", "sunk cost fallacy"]
+  },
+
+  "beh-nudge-theory": {
+    "section_number": "4.3",
+    "section_title": "Nudge Theory and Choice Architecture",
+    "subject": "Economics",
+    "topic": "Behavioural Economics",
+    "expanded_explanation": {
+      "introduction": "If people have predictable biases, then the way choices are presented — the 'choice architecture' — can systematically push behaviour in one direction or another. Nudge theory, developed by Richard Thaler and Cass Sunstein, argues that governments and organisations can use this knowledge to guide people toward better outcomes while preserving freedom of choice. Rather than banning harmful behaviours or mandating good ones, nudges work by changing defaults, simplifying information, and making beneficial choices the path of least resistance.",
+      "section_1": {
+        "heading": "The Logic of Nudging",
+        "content": "A nudge is any intervention that changes behaviour in a predictable way without forbidding options or significantly changing economic incentives. Setting saving as the default pension option is a nudge; making organ donation the default (with an opt-out) is a nudge; displaying calories on a menu is a nudge. The key is that the choice remains free — people can always opt out — but the design of the choice environment influences which option is most likely to be taken. Thaler and Sunstein call this approach 'libertarian paternalism': paternalistic in its goals (improving outcomes) but libertarian in its means (preserving choice)."
+      },
+      "section_2": {
+        "heading": "Applications in Public Policy",
+        "content": "Nudge theory has been widely adopted by governments. The UK's Behavioural Insights Team ('Nudge Unit'), established in 2010, has applied behavioural insights to tax compliance, energy consumption, financial saving, and public health. Sending tax letters that tell people most of their neighbours have already paid increases compliance. Showing households how their energy usage compares to similar neighbours reduces consumption. These low-cost interventions have often outperformed expensive traditional policy tools."
+      },
+      "section_3": {
+        "heading": "The Ethics of Nudging",
+        "content": "Despite its appeal, nudge theory is philosophically controversial. Critics argue that exploiting cognitive biases — even for good ends — is a form of manipulation that disrespects people's autonomy as rational agents. If a government nudges citizens toward the 'correct' lifestyle choices, it is making judgments about what is good for them that citizens themselves may not endorse. Others worry about who decides what the 'better' outcome is, and whether nudging could be used by corporations or governments to serve their interests rather than citizens'. These tensions between effectiveness and ethics sit at the heart of contemporary debates about paternalism and freedom."
+      }
+    },
+    "key_takeaways": [
+      "Choice architecture — how options are presented — shapes decisions without changing options.",
+      "Nudges preserve freedom of choice while guiding behaviour toward better outcomes.",
+      "'Libertarian paternalism' is the philosophy behind nudge: benevolent goals, freedom-preserving means.",
+      "Governments worldwide have adopted nudge units to improve policy effectiveness at low cost.",
+      "Nudging is ethically contested: does exploiting biases respect or undermine human autonomy?"
+    ],
+    "real_world_examples": [
+      { "title": "Organ Donation Defaults", "description": "Countries with opt-out organ donation (where you are a donor unless you register otherwise) have dramatically higher donation rates than opt-in countries. Spain, with opt-out, has among the world's highest donation rates; the UK recently shifted to opt-out. The difference in outcomes is driven entirely by the default, not by changed values." },
+      { "title": "Healthier School Canteens", "description": "Placing fruit at eye level and healthy options first in school cafeteria lines increases children's consumption of nutritious food — without removing any less healthy options. This real-world experiment by the Cornell Food and Brand Lab helped launch the behavioural approach to public health policy." }
+    ],
+    "related_terms": ["nudge", "choice architecture", "default effect", "libertarian paternalism", "opt-in vs opt-out", "behavioural insights", "paternalism", "autonomy", "Thaler and Sunstein"]
+  },
+
+  "ethics-intro": {
+    "section_number": "1.1",
+    "section_title": "What Is Ethics?",
+    "subject": "Philosophy",
+    "topic": "Ethics",
+    "expanded_explanation": {
+      "introduction": "Ethics is the branch of philosophy concerned with questions of right and wrong, good and bad, and how we ought to live. Unlike descriptive questions (what do people believe is right?) or legal questions (what does the law require?), ethics asks normative questions: what should we do? What kind of person should we be? What makes actions right or wrong? These questions are ancient, but they remain urgently relevant to contemporary debates about justice, technology, climate change, and how we treat each other.",
+      "section_1": {
+        "heading": "Moral Philosophy and Its Branches",
+        "content": "Ethics is typically divided into three interconnected branches. Metaethics asks foundational questions: Do moral facts exist? Are ethical claims objectively true or merely expressions of feeling? What do words like 'good' and 'right' actually mean? Normative ethics is the study of principles for right action — the great ethical theories (consequentialism, deontology, virtue ethics) that try to tell us what we ought to do. Applied ethics uses these frameworks to analyse specific moral issues: euthanasia, capital punishment, climate obligations, the ethics of AI. Most practical ethical reasoning moves between all three levels."
+      },
+      "section_2": {
+        "heading": "Why Ethics Is Not Just a Matter of Opinion",
+        "content": "A common view is that ethics is subjective — everyone has their own values, and no one can say whose are right. Philosophers call the view that moral claims are merely expressions of personal or cultural preference moral relativism. But most philosophers are critical of strong relativism: it struggles to explain why we think some historical practices (slavery, genocide) were genuinely wrong rather than merely unfashionable, and it provides no resources for criticising moral practices we consider obviously unjust. The fact that ethical questions are difficult and contested does not mean all answers are equally valid — it means the reasoning matters."
+      },
+      "section_3": {
+        "heading": "Ethics, Law, and Custom",
+        "content": "Ethics must be distinguished from both law and social custom. Something can be legal but ethically wrong (historically, slavery was legal). Something can be ethical but illegal (civil disobedience in protest of unjust laws). And something can be socially expected — customary — without being ethically required. This independence of ethics from law and custom is crucial: it is what allows us to criticise unjust laws and change them. The relationship between ethics and law is close but never perfectly aligned — and the gap between them is where some of the most interesting ethical work happens."
+      }
+    },
+    "key_takeaways": [
+      "Ethics asks normative questions: what should we do and what kind of person should we be?",
+      "Metaethics, normative ethics, and applied ethics are the three main branches.",
+      "Moral relativism struggles to explain why we think some practices are genuinely, not merely conventionally, wrong.",
+      "Ethics is independent of law and custom — they often diverge in important ways.",
+      "Ethical reasoning is rigorous and requires argument, not just preference."
+    ],
+    "real_world_examples": [
+      { "title": "Whistleblowing", "description": "Is it ethical to leak classified government information that reveals illegal surveillance of citizens? Edward Snowden's case pits loyalty to law and institution against obligations to truth and the public interest. Ethics provides the framework for reasoning through the conflict — even if it doesn't supply a simple answer." },
+      { "title": "Historical Moral Progress", "description": "The abolition of slavery, the extension of voting rights to women, and the decriminalisation of homosexuality were all cases where ethical reasoning — the insistence that current practices were wrong — drove legal and social change. This is only possible if ethics is not merely a description of what people currently believe." }
+    ],
+    "related_terms": ["normative ethics", "metaethics", "applied ethics", "moral relativism", "moral realism", "value", "obligation", "right action", "moral progress"]
+  },
+
+  "ethics-normative": {
+    "section_number": "1.2",
+    "section_title": "Normative Ethical Theories",
+    "subject": "Philosophy",
+    "topic": "Ethics",
+    "expanded_explanation": {
+      "introduction": "Normative ethical theories are systematic frameworks for determining what we ought to do. Three traditions have dominated Western moral philosophy: consequentialism, which evaluates actions by their outcomes; deontology, which focuses on duties and rules; and virtue ethics, which centres on character. Each captures important moral intuitions while facing serious objections. A philosophically sophisticated reasoner typically draws on all three, using them as lenses that illuminate different aspects of moral situations.",
+      "section_1": {
+        "heading": "Consequentialism: The Morality of Outcomes",
+        "content": "Consequentialism holds that the rightness of an action is determined entirely by its consequences. The most influential version, utilitarianism (developed by Jeremy Bentham and John Stuart Mill), argues that we should maximise overall well-being or happiness — the greatest good for the greatest number. This approach is appealingly democratic (everyone's interests count equally) and practically useful (it demands evidence about real-world outcomes). Its challenges include: how do we measure and compare well-being across people? Does it justify harming the few for the benefit of the many? Is it always wrong to 'use' a person as a means to a collective end?"
+      },
+      "section_2": {
+        "heading": "Deontology: The Morality of Duty",
+        "content": "Deontological ethics holds that some actions are intrinsically right or wrong, regardless of consequences. The most influential deontological framework is Kant's categorical imperative: act only according to principles you could will to be universal laws; treat persons always as ends in themselves, never merely as means. Deontology captures the intuition that there are things we simply should not do — torture an innocent person, break a solemn promise — even if doing so would produce better outcomes overall. Its challenges include: how do we resolve conflicts between duties? What do we do when following the rules leads to terrible consequences?"
+      },
+      "section_3": {
+        "heading": "Virtue Ethics: The Morality of Character",
+        "content": "Virtue ethics, rooted in Aristotle's philosophy, shifts the question from 'what should I do?' to 'what kind of person should I be?' It holds that ethics is fundamentally about developing good character traits — virtues like courage, honesty, compassion, and practical wisdom. The virtuous person doesn't need a rulebook; they have cultivated the character and judgment to respond well to moral situations. Virtue ethics is particularly strong on moral development, relationships, and the idea that ethics involves becoming someone, not just following principles. Its challenge is that it may be less useful for resolving dilemmas in unfamiliar situations."
+      }
+    },
+    "key_takeaways": [
+      "Consequentialism judges actions by outcomes; utilitarianism maximises overall well-being.",
+      "Deontology holds that some actions are intrinsically right or wrong regardless of consequences.",
+      "Kant's categorical imperative: act only on principles you could universalise; treat persons as ends.",
+      "Virtue ethics focuses on character and becoming a good person, not just following rules.",
+      "Each theory captures genuine moral insights; using them as complementary lenses is typically more useful than picking one."
+    ],
+    "real_world_examples": [
+      { "title": "The Trolley Problem", "description": "A runaway trolley will kill five people unless you divert it to a side track where it will kill one. Most people say divert — a consequentialist verdict. But would you push a large man off a bridge to stop the trolley with his body, killing him but saving five? Most people say no, even though the arithmetic is identical. This inconsistency has driven decades of research into moral intuition." },
+      { "title": "Tax Evasion", "description": "A consequentialist might permit tax evasion if a wealthy individual genuinely believes they will spend the money more effectively than the government. A Kantian would refuse: the principle 'I will evade taxes when convenient' cannot be universalised — if everyone did it, taxation would collapse. The deontological perspective captures why rule-following matters even when individual calculations favour bending them." }
+    ],
+    "related_terms": ["consequentialism", "utilitarianism", "deontology", "categorical imperative", "virtue ethics", "Aristotle", "Kant", "Bentham", "Mill", "moral intuition", "the good life"]
+  },
+
+  "ethics-applied": {
+    "section_number": "1.3",
+    "section_title": "Applied Ethics",
+    "subject": "Philosophy",
+    "topic": "Ethics",
+    "expanded_explanation": {
+      "introduction": "Applied ethics brings philosophical frameworks to bear on specific real-world moral questions: the ethics of abortion, capital punishment, euthanasia, animal rights, climate change, AI, and economic inequality, among many others. Rather than staying at the level of abstract theory, applied ethics asks: what do our best moral frameworks tell us about this particular issue? The discipline requires both rigorous ethical theory and accurate empirical knowledge about the subject being analysed.",
+      "section_1": {
+        "heading": "The Method of Applied Ethics",
+        "content": "Applied ethics typically proceeds by identifying the morally relevant features of a situation, applying multiple ethical frameworks to it, and seeing where they converge or diverge. When consequentialism, deontology, and virtue ethics all point in the same direction, we have strong grounds for moral confidence. When they diverge, we must think carefully about which considerations are most important in this kind of case. Applied ethics also takes moral intuitions seriously as data: if a philosophical argument leads to a conclusion that strikes virtually everyone as monstrous, this is evidence that something is wrong with the argument."
+      },
+      "section_2": {
+        "heading": "The Ethics of Economic Life",
+        "content": "Economics raises distinctive ethical questions that applied ethics helps clarify. Is economic inequality unjust, and if so, to what extent does the state have an obligation to reduce it? Is it wrong to sell certain goods (organs, votes, care work) through markets? What do wealthy countries owe to the global poor? John Rawls' influential framework argues that just institutions are those that a rational person would choose behind a 'veil of ignorance' — not knowing whether they would be born rich or poor, skilled or unskilled. This thought experiment generates strong support for reducing inequality and ensuring a fair baseline for all."
+      },
+      "section_3": {
+        "heading": "Emerging Ethical Frontiers",
+        "content": "New technologies create new ethical questions faster than societies can answer them. AI systems make decisions affecting employment, credit, and criminal justice — raising questions about algorithmic bias, transparency, and accountability. Social media platforms shape public discourse in ways that affect democracy. Climate change forces us to think about obligations to future generations who cannot speak for themselves. Each of these frontiers requires applied ethical reasoning: not just 'what is technically possible?' but 'what should we do, and why?'"
+      }
+    },
+    "key_takeaways": [
+      "Applied ethics uses philosophical frameworks to reason about specific real-world moral issues.",
+      "Convergence across frameworks provides stronger moral grounds; divergence requires deeper analysis.",
+      "Moral intuitions serve as data: a repugnant conclusion is evidence against the argument that generates it.",
+      "Rawls' veil of ignorance offers a powerful tool for reasoning about distributive justice.",
+      "Emerging technologies (AI, social media, biotech) generate new ethical frontiers requiring careful analysis."
+    ],
+    "real_world_examples": [
+      { "title": "Organ Markets", "description": "Currently it is illegal to sell kidneys in most countries, though organ shortages kill thousands each year. Should we legalise organ markets? Consequentialists might say yes if it saves lives. Deontologists worry it treats the body as a commodity. Others worry markets for organs would exploit the poor — raising justice concerns that straight utilitarian calculus misses." },
+      { "title": "Climate Justice", "description": "Rich countries industrialised by burning fossil fuels and are responsible for most cumulative emissions, yet poor countries suffer most from the consequences. Applied ethics asks: what obligations does this history create? Answers range from financial reparations to technology transfers to more stringent emissions commitments from wealthy nations." }
+    ],
+    "related_terms": ["applied ethics", "Rawls", "veil of ignorance", "distributive justice", "organ markets", "climate ethics", "future generations", "algorithmic ethics", "moral intuition"]
+  },
+
+  "logic-intro": {
+    "section_number": "2.1",
+    "section_title": "What Is Logic?",
+    "subject": "Philosophy",
+    "topic": "Logic",
+    "expanded_explanation": {
+      "introduction": "Logic is the study of correct reasoning — the principles that distinguish good arguments from bad ones. It is foundational to all rigorous inquiry, whether in philosophy, mathematics, science, or law. Logic does not tell you what to believe; it tells you how to reason well from whatever starting points you have. An argument can be logically valid — its conclusion follows necessarily from its premises — and yet be factually wrong if its premises are false. Understanding this distinction is the first step toward clearer thinking.",
+      "section_1": {
+        "heading": "Arguments: The Basic Unit of Logic",
+        "content": "In logic, an argument is a set of statements in which some (the premises) are offered as reasons for another (the conclusion). Not every collection of sentences is an argument — a description, a question, or an expression of feeling is not. Identifying arguments — locating premises and conclusions — is a basic but critical skill. Arguments can be deductive, where the premises are intended to guarantee the conclusion, or inductive, where they are intended to make the conclusion probable. These have different standards of evaluation."
+      },
+      "section_2": {
+        "heading": "Formal Logic and Symbolic Reasoning",
+        "content": "Formal logic represents arguments in symbolic form, stripping away content to study their structure alone. The simplest example: 'All humans are mortal; Socrates is human; therefore Socrates is mortal.' This is a valid syllogism: if the premises are true, the conclusion must be. Formal logic allows us to identify validity purely through structure, independent of subject matter. Modern symbolic logic — developed by Frege, Russell, and others — extended this to handle complex mathematical and philosophical arguments, and underlies computer science, artificial intelligence, and database design."
+      },
+      "section_3": {
+        "heading": "Logic and Critical Thinking",
+        "content": "Beyond formal systems, logic equips us with tools for critical thinking in everyday and academic contexts. Recognising when an argument is poorly constructed, when a conclusion does not follow from its premises, or when someone is trading on an ambiguity requires logical literacy. In political debate, academic writing, and economic modelling, the ability to identify whether a conclusion genuinely follows from stated assumptions is indispensable. This is why logic is not just a technical subject for philosophers — it is a foundational intellectual skill."
+      }
+    },
+    "key_takeaways": [
+      "Logic studies the principles of correct reasoning — what makes arguments good or bad.",
+      "An argument has premises (reasons) and a conclusion (what is being supported).",
+      "Validity means the conclusion follows necessarily from the premises; soundness requires valid + true premises.",
+      "Formal logic represents argument structure symbolically, independent of content.",
+      "Logical literacy is essential for critical thinking in any domain."
+    ],
+    "real_world_examples": [
+      { "title": "Legal Reasoning", "description": "Courtroom argument is a form of applied logic. A lawyer presenting a case is offering premises (evidence) and arguing that a conclusion (guilt or innocence) follows from them. Judges and juries must evaluate whether the conclusion genuinely follows from the evidence — a fundamentally logical task." },
+      { "title": "Scientific Hypotheses", "description": "The falsifiability criterion in science (associated with Karl Popper) is a logical claim: a hypothesis is scientific only if it can, in principle, be contradicted by evidence. This is a statement about the logical relationship between hypothesis and evidence — between a general claim and the particular observations that could refute it." }
+    ],
+    "related_terms": ["argument", "premise", "conclusion", "validity", "soundness", "deductive reasoning", "inductive reasoning", "syllogism", "formal logic", "critical thinking"]
+  },
+
+  "logic-arguments": {
+    "section_number": "2.2",
+    "section_title": "Arguments, Validity, and Soundness",
+    "subject": "Philosophy",
+    "topic": "Logic",
+    "expanded_explanation": {
+      "introduction": "The core tools of logical analysis are the concepts of validity and soundness. Together, they allow us to evaluate whether an argument is correctly structured and whether it gives us genuine reasons to accept its conclusion. Mastering these concepts is foundational to philosophical reasoning, legal argumentation, and scientific inference alike.",
+      "section_1": {
+        "heading": "Validity: Does the Conclusion Follow?",
+        "content": "An argument is deductively valid if and only if it is impossible for the premises to be true and the conclusion false — the truth of the premises guarantees the truth of the conclusion. Crucially, validity says nothing about whether the premises are actually true. The argument 'All fish can fly; Nemo is a fish; therefore Nemo can fly' is valid in form, even though both premises are false. This is why validity alone is not enough to give us confidence in a conclusion — we also need to know the premises are true."
+      },
+      "section_2": {
+        "heading": "Soundness: Valid + True Premises",
+        "content": "A sound argument is one that is both valid (the conclusion follows from the premises) and has true premises. A sound argument gives us genuine grounds for accepting its conclusion. In practice, most interesting philosophical, economic, and political disputes turn on the truth of the premises — the logical form of the argument is often uncontested. Knowing whether an argument is sound requires both logical analysis (is it valid?) and empirical or philosophical investigation (are the premises true?). This combination is what rigorous reasoning demands."
+      },
+      "section_3": {
+        "heading": "Inductive Arguments and Their Standard",
+        "content": "Not all good arguments are deductive. Inductive arguments move from specific observations to general conclusions or predictions — they support their conclusions with evidence, but do not guarantee them. 'The sun has risen every day in recorded history; therefore it will rise tomorrow' is a strong inductive argument, but not a deductively valid one. Science predominantly uses inductive reasoning, which is why scientific knowledge is inherently provisional — always open to revision in light of new evidence. The appropriate standard for inductive arguments is strength (how well do the premises support the conclusion?), not validity."
+      }
+    },
+    "key_takeaways": [
+      "A valid argument: if premises true, conclusion must be true.",
+      "Validity is about form, not factual truth — false premises can appear in valid arguments.",
+      "A sound argument is valid with all true premises — the gold standard for deductive reasoning.",
+      "Most real disputes are about premise truth, not logical form.",
+      "Inductive arguments support conclusions with evidence without guaranteeing them; science relies on induction."
+    ],
+    "real_world_examples": [
+      { "title": "Climate Change Arguments", "description": "The argument for human-caused climate change is essentially: (P1) CO₂ causes atmospheric warming; (P2) human activity significantly increases CO₂ levels; (C) therefore human activity causes atmospheric warming. The logical form is valid. The debate is about the truth of the premises — which is why it is an empirical, not a logical, dispute." },
+      { "title": "Economic Policy Debate", "description": "Arguments about minimum wages often have the form: (P1) Price ceilings reduce supply; (P2) minimum wages are price floors on labour; (C) minimum wages reduce employment. The form is valid, but both premises are contested. The real debate is over whether labour markets behave like simple commodity markets — an empirical question, not a logical one." }
+    ],
+    "related_terms": ["deductive validity", "soundness", "inductive reasoning", "modus ponens", "modus tollens", "premise", "conclusion", "inference", "falsifiability"]
+  },
+
+  "logic-fallacies": {
+    "section_number": "2.3",
+    "section_title": "Logical Fallacies",
+    "subject": "Philosophy",
+    "topic": "Logic",
+    "expanded_explanation": {
+      "introduction": "Logical fallacies are errors in reasoning — arguments that seem persuasive but are actually flawed. They come in two types: formal fallacies, where the argument's structure is logically invalid; and informal fallacies, where the problem lies in the content, language, or context rather than the form. Learning to recognise fallacies is essential for evaluating arguments in philosophy, politics, science, and everyday life.",
+      "section_1": {
+        "heading": "Formal Fallacies",
+        "content": "Formal fallacies arise when an argument's logical form is invalid, even if the premises are true. The most common is 'affirming the consequent': 'If it rains, the street is wet. The street is wet. Therefore it rained.' This is invalid — the street could be wet for other reasons. Closely related is 'denying the antecedent': 'If it rains, the street is wet. It didn't rain. Therefore the street isn't wet.' Again invalid — the street could be wet from a burst pipe. These fallacies are especially dangerous because they can seem intuitively compelling."
+      },
+      "section_2": {
+        "heading": "Informal Fallacies: Content-Based Errors",
+        "content": "Informal fallacies involve problems with content, evidence, or context rather than logical form. Ad hominem attacks the person making the argument rather than the argument itself. Appeal to authority invokes an expert opinion without evidence of its relevance or credibility. Straw man misrepresents an opponent's position in an easier-to-attack form. The false dichotomy presents two options as if they are the only possibilities when others exist. Slippery slope assumes that one event will inevitably lead to a chain of others without demonstrating why. These are pervasive in political and economic debate."
+      },
+      "section_3": {
+        "heading": "Fallacies in Economic and Political Reasoning",
+        "content": "Economic and political discourse is full of informal fallacies. The 'broken window fallacy' (common in economic debate) mistakes visible benefits for net benefits, ignoring hidden costs — a special case of failing to consider opportunity costs. Correlation-causation confusion is endemic in social science debates: crime fell after X policy, therefore X reduced crime — ignoring that other factors may have changed simultaneously. 'False balance' — treating fringe views as equal to scientific consensus — undermines public understanding. Being able to name and explain a fallacy is a powerful tool for improving public discourse."
+      }
+    },
+    "key_takeaways": [
+      "Formal fallacies are logical errors in argument structure; informal fallacies are content-based.",
+      "Ad hominem, straw man, false dichotomy, and slippery slope are common informal fallacies.",
+      "'Affirming the consequent' and 'denying the antecedent' are key formal fallacies.",
+      "Correlation does not imply causation — one of the most important fallacies in social science.",
+      "Identifying fallacies improves argument quality and political/scientific discourse."
+    ],
+    "real_world_examples": [
+      { "title": "Political Debate Ad Hominems", "description": "Dismissing an economic argument because the economist who made it once worked for a bank is ad hominem — it attacks the person rather than the argument. Even if the economist's motives are suspect, the argument must be evaluated on its merits." },
+      { "title": "The Correlation/Causation Problem", "description": "Ice cream sales and drowning deaths are positively correlated. The cause is a third variable (hot weather increases both). In social science, failing to account for confounding variables — assuming correlation implies causation — produces consistently wrong conclusions, from vaccine safety panics to misguided economic policies." }
+    ],
+    "related_terms": ["ad hominem", "straw man", "false dichotomy", "affirming the consequent", "slippery slope", "correlation vs causation", "appeal to authority", "red herring", "begging the question"]
+  },
+
+  "epist-intro": {
+    "section_number": "3.1",
+    "section_title": "What Is Epistemology?",
+    "subject": "Philosophy",
+    "topic": "Epistemology",
+    "expanded_explanation": {
+      "introduction": "Epistemology is the branch of philosophy that investigates the nature, sources, and limits of human knowledge. It asks: What is knowledge? How do we acquire it? How can we distinguish genuine knowledge from mere belief? What are the boundaries of what we can know? These questions may seem abstract, but they have concrete implications: for science, for law, for economics, and for everyday decisions made under uncertainty.",
+      "section_1": {
+        "heading": "Why Epistemology Matters",
+        "content": "Every time we claim to know something — a scientific fact, a historical event, a policy's effects — we are making an implicit epistemological claim. Epistemology examines the grounds for such claims. Is personal experience a reliable source of knowledge? How much should we trust expert opinion? When should we revise beliefs in light of new evidence? These questions are not merely academic: disputes about the reliability of economic models, the interpretation of historical evidence, and the credibility of scientific expertise all have epistemological foundations."
+      },
+      "section_2": {
+        "heading": "Rationalism and Empiricism",
+        "content": "The central historical debate in epistemology is between rationalism and empiricism. Rationalists (Descartes, Leibniz, Kant) hold that reason alone — independent of sensory experience — can give us genuine knowledge, at least about some things. Empiricists (Locke, Hume, Berkeley) hold that all knowledge ultimately derives from sensory experience. The debate matters enormously for the sciences: does mathematics describe a realm of independently existing truths, or is it ultimately grounded in observation? Modern epistemology tends toward a more nuanced position — different kinds of knowledge seem to have different sources."
+      },
+      "section_3": {
+        "heading": "Knowledge in Practice: Testimony and Expertise",
+        "content": "Most of what we know, we know through testimony — we believe it because others told us. We believe the Earth is approximately 4.5 billion years old not because we personally conducted geological analysis, but because we trust the scientific community's collective judgment. Epistemology of testimony asks: when is it reasonable to accept what we are told? This question is particularly pressing in an era of misinformation, where the authority of expertise is contested and reliable and unreliable sources are superficially similar. The epistemology of expertise — when and why to defer to experts — is one of contemporary philosophy's most practically urgent topics."
+      }
+    },
+    "key_takeaways": [
+      "Epistemology studies the nature, sources, and limits of knowledge.",
+      "The classic division: rationalists ground knowledge in reason; empiricists in sensory experience.",
+      "Most human knowledge is testimonial — acquired through trusting others.",
+      "The epistemology of expertise is urgently relevant in an age of contested authority.",
+      "Epistemology connects to economics in questions about model knowledge, uncertainty, and rational belief."
+    ],
+    "real_world_examples": [
+      { "title": "The Replication Crisis in Science", "description": "Many findings in psychology and economics have failed to replicate when re-tested. This is an epistemological crisis: which of our 'knowledge' claims were actually just statistical noise? The crisis has prompted epistemological reflection on methodology, publication bias, and the conditions under which scientific knowledge can be trusted." },
+      { "title": "COVID-19 and Expert Disagreement", "description": "The pandemic saw genuine, well-credentialed experts publicly disagreeing on the appropriate policy responses. This created an epistemological challenge for ordinary citizens: how to form reasonable beliefs when the experts disagree? Epistemology offers tools — assessing expert consensus, understanding uncertainty, recognising motivated reasoning — for navigating such situations." }
+    ],
+    "related_terms": ["knowledge", "belief", "justification", "rationalism", "empiricism", "testimony", "epistemology of expertise", "scepticism", "a priori", "a posteriori"]
+  },
+
+  "epist-knowledge-justified": {
+    "section_number": "3.2",
+    "section_title": "Knowledge, Belief, and Justification",
+    "subject": "Philosophy",
+    "topic": "Epistemology",
+    "expanded_explanation": {
+      "introduction": "What distinguishes knowledge from mere belief? The traditional philosophical answer, going back to Plato, is that knowledge is 'justified true belief': to know something, you must believe it, it must be true, and you must have adequate justification for believing it. This seemingly simple definition has generated enormous philosophical debate — particularly after Edmund Gettier showed in a famous 1963 paper that justified true belief is not sufficient for knowledge. The resulting puzzle continues to shape epistemology today.",
+      "section_1": {
+        "heading": "The Traditional Account: JTB",
+        "content": "The justified true belief (JTB) account holds that knowledge requires three conditions: (1) you believe the proposition; (2) the proposition is actually true; (3) you have adequate justification for your belief. Each condition rules out a failure mode: (1) rules out mere acquaintance without belief; (2) rules out lucky guesses that happen to be right; (3) rules out beliefs held for bad reasons that happen to be correct. This tripartite analysis dominated epistemology for over two millennia, until Gettier's challenge."
+      },
+      "section_2": {
+        "heading": "The Gettier Problem",
+        "content": "Edmund Gettier provided simple cases showing that justified true belief can fail to be knowledge. Imagine you have strong evidence that your colleague owns a Ford (you've seen her driving one). You form the justified belief: 'Someone in my office owns a Ford.' Unbeknownst to you, she recently sold the Ford — but another colleague, whom you didn't know owned a car, happens to own a Ford. Your belief is justified and true — but it seems accidental. Gettier cases show that good justification + true belief can produce accidental correctness that we don't want to call knowledge."
+      },
+      "section_3": {
+        "heading": "Responses and Implications",
+        "content": "Philosophers have proposed various responses to Gettier: requiring a causal connection between the fact and the belief, requiring 'no false lemmas' in the justification chain, or abandoning the analysis altogether in favour of reliabilist accounts (a belief counts as knowledge if it is produced by a reliably truth-tracking process). The debate connects to broader questions in economics about model validity and rational expectations: economic models that produce accurate predictions for the wrong reasons face an analogous 'Gettier' problem — they may be accidentally right in ways that don't generate genuine economic understanding."
+      }
+    },
+    "key_takeaways": [
+      "Traditional epistemology defines knowledge as justified true belief (JTB).",
+      "Gettier cases show JTB is not sufficient — you can have justified true belief that still isn't knowledge.",
+      "Reliabilism holds that knowledge requires belief produced by a reliable process.",
+      "The distinction between lucky true belief and genuine knowledge matters in science, law, and economic modelling.",
+      "Justification can be internalist (based on what the believer is aware of) or externalist (based on external reliability)."
+    ],
+    "real_world_examples": [
+      { "title": "Economic Forecasting", "description": "An economist predicts a recession for incorrect reasons — but a recession happens anyway due to a cause they didn't identify. Is this 'knowledge' of a coming recession? The Gettier problem in epistemology suggests not — getting the right answer for the wrong reasons is not the same as genuine understanding or reliable prediction." },
+      { "title": "Legal Standards of Proof", "description": "Law distinguishes between 'beyond reasonable doubt' (criminal) and 'balance of probabilities' (civil) standards — these are essentially epistemological standards for what counts as adequate justification before acting. The legal system explicitly recognises that different contexts require different thresholds for justified belief before consequential action." }
+    ],
+    "related_terms": ["justified true belief", "Gettier problem", "reliabilism", "epistemic justification", "internalism", "externalism", "epistemic luck", "truth", "belief"]
+  },
+
+  "epist-limits": {
+    "section_number": "3.3",
+    "section_title": "The Limits of Knowledge",
+    "subject": "Philosophy",
+    "topic": "Epistemology",
+    "expanded_explanation": {
+      "introduction": "Epistemology does not only ask what we can know — it also asks what we cannot. Sceptical challenges, cognitive limitations, and the inherent complexity of systems (whether natural, social, or economic) all impose limits on human knowledge. Grappling with these limits is not a counsel of despair but a prerequisite for intellectual honesty — and for designing knowledge-gathering practices that are appropriately humble.",
+      "section_1": {
+        "heading": "Philosophical Scepticism",
+        "content": "Philosophical scepticism questions whether we can know anything at all. Descartes, in his Meditations, imagined an evil demon who deceives him about the entire external world. The modern equivalent is the 'brain in a vat' scenario: how do you know you're not a brain in a laboratory, with all your experiences being fed to you artificially? Descartes' famous response — 'I think, therefore I am' — established the thinking self as the one thing that cannot be doubted. Most philosophers now take scepticism seriously as a challenge to epistemology rather than a literally plausible position, but it sharpens our understanding of what genuine knowledge requires."
+      },
+      "section_2": {
+        "heading": "Epistemic Limits in Complex Systems",
+        "content": "Beyond philosophical scepticism, there are practical limits to knowledge in complex systems — which is directly relevant to economics. Hayek's famous 'knowledge problem' argues that the information required to run a planned economy (the preferences of millions of individuals, the costs of thousands of resources across countless locations) is not merely difficult to gather but impossible to centralise — it is tacit, distributed, and constantly changing. This is an epistemological argument against central planning: not just that it is inefficient, but that the knowledge required for it cannot exist in any single mind or institution."
+      },
+      "section_3": {
+        "heading": "Uncertainty, Risk, and Rational Action",
+        "content": "Distinguishing between risk (where we know the probability distribution of outcomes) and uncertainty (where we don't even know what the possible outcomes are) is crucial in both epistemology and economics. Knight's distinction between risk and uncertainty, and Keynes' concept of 'animal spirits' — the irreducibly uncertain expectations that drive investment decisions — represent economic thinking at the edge of the epistemological frontier. Financial crises often arise from the pretence that genuine uncertainty can be managed as if it were calculable risk — a classic case of epistemic overconfidence with catastrophic real-world consequences."
+      }
+    },
+    "key_takeaways": [
+      "Philosophical scepticism challenges whether any knowledge is possible; most responses accept its force while resisting its conclusions.",
+      "Hayek's 'knowledge problem' shows that distributed tacit knowledge cannot be centralised.",
+      "Knight distinguishes risk (known probabilities) from uncertainty (unknown possibilities).",
+      "Overconfidence in models — treating uncertainty as risk — has contributed to major financial crises.",
+      "Intellectual humility and epistemic honesty are practical virtues, not just philosophical ideals."
+    ],
+    "real_world_examples": [
+      { "title": "The 2008 Financial Crisis and Model Overconfidence", "description": "Financial models used in the run-up to the 2008 crisis assumed that risks were calculable and that historical correlations would hold. They failed to account for genuine uncertainty — the possibility of a global deleveraging event outside the model's parameters. This was epistemic hubris: treating fundamental uncertainty as tractable risk." },
+      { "title": "Hayek vs. Keynes", "description": "The great 20th-century economic debate between Hayek and Keynes was partly an epistemological dispute. Hayek argued that economies coordinate distributed knowledge through prices — a process no central authority can replicate. Keynes argued that under uncertainty, market expectations can be self-defeating and government intervention can coordinate expectations more effectively. Both were making claims about what economic actors can and cannot know." }
+    ],
+    "related_terms": ["scepticism", "Hayek's knowledge problem", "tacit knowledge", "risk vs uncertainty", "Knightian uncertainty", "animal spirits", "epistemic humility", "distributed knowledge", "falsificationism"]
+  },
+
+  "meta-intro": {
+    "section_number": "4.1",
+    "section_title": "What Is Metaphysics?",
+    "subject": "Philosophy",
+    "topic": "Metaphysics",
+    "expanded_explanation": {
+      "introduction": "Metaphysics is philosophy's investigation into the most fundamental questions about reality: What exists? What is the nature of being? How are mind and matter related? Is the world fundamentally physical, or are there non-physical realities? These questions lie beneath and beyond what the natural sciences can answer — metaphysics asks not just how the world works but what kind of world it is. Despite its abstract reputation, metaphysics has practical implications for ethics, economics, and our understanding of human nature.",
+      "section_1": {
+        "heading": "The Core Questions",
+        "content": "Metaphysics encompasses several interconnected domains. Ontology asks what kinds of things exist — do numbers, properties, possibilities, and values have real existence, or are they merely useful fictions? Philosophy of mind asks how mental phenomena (consciousness, intention, belief) relate to physical processes — a question with direct implications for economics, which assumes agents have genuine mental states (preferences, beliefs, intentions). Personal identity asks what makes someone the same person over time — and thus what grounding exists for commitments, contracts, and responsibility."
+      },
+      "section_2": {
+        "heading": "Materialism and Its Alternatives",
+        "content": "The dominant metaphysical position in contemporary philosophy is materialism (or physicalism): the view that everything that exists is ultimately physical. The mind — including consciousness, preferences, and rational deliberation — is ultimately a product of brain processes. This sits in tension with dualism (mind and body are fundamentally different kinds of thing) and idealism (reality is fundamentally mental). For economics, materialism raises the question of whether 'preferences' and 'utility' are genuine mental entities or useful theoretical constructs without an independently existing referent."
+      },
+      "section_3": {
+        "heading": "Metaphysics and Social Reality",
+        "content": "Social entities — institutions, money, markets, laws, corporations — pose distinctive metaphysical puzzles. What kind of thing is a corporation? It has legal rights and obligations, but no physical body. What kind of thing is money? It is physically just paper (or numbers in a computer), but it has value only through collective belief and social practice. The philosopher John Searle developed the concept of 'social ontology' — the study of how collectively constructed realities (like money, marriage, and markets) can be genuinely real and causally powerful without being reducible to physical objects. This directly illuminates how economic institutions work."
+      }
+    },
+    "key_takeaways": [
+      "Metaphysics investigates the fundamental nature of reality: what exists and what it is like.",
+      "Ontology asks what kinds of things exist; philosophy of mind asks how mental and physical relate.",
+      "Materialism holds everything is ultimately physical; dualism and idealism offer alternatives.",
+      "Social ontology studies collectively constructed realities like money, institutions, and markets.",
+      "Metaphysical assumptions shape economic theory — what 'preferences' and 'utility' really are, for instance."
+    ],
+    "real_world_examples": [
+      { "title": "What Is Money?", "description": "Money is a perfect metaphysical puzzle. A £20 note is physically just paper and ink — its value exists only because everyone collectively believes and acts as if it has value. This is what Searle calls a 'social fact' — real and causally powerful, but dependent on collective intentionality rather than physical properties. Understanding this is essential for understanding financial crises, in which 'value' can evaporate as collective belief collapses." },
+      { "title": "Corporate Personhood", "description": "In law, corporations are treated as legal persons — they can own property, enter contracts, and be sued. But what kind of entity is a corporation, metaphysically? It is not identical to any of its employees, shareholders, or directors. Social ontology helps clarify how collective entities can have genuine existence and causal power while being constituted by (but not reducible to) individual human beings." }
+    ],
+    "related_terms": ["ontology", "materialism", "dualism", "idealism", "social ontology", "social facts", "collective intentionality", "personal identity", "philosophy of mind"]
+  },
+
+  "meta-reality-existence": {
+    "section_number": "4.2",
+    "section_title": "Reality, Existence, and Being",
+    "subject": "Philosophy",
+    "topic": "Metaphysics",
+    "expanded_explanation": {
+      "introduction": "What does it mean for something to exist? Can we talk about things that don't exist — like unicorns or perfectly competitive markets — without implying that they do? Are there different ways of existing (physical objects, mathematical truths, social institutions, fictional characters)? These questions about existence and being have occupied philosophers from Parmenides and Plato to contemporary analytic metaphysics — and they have unexpected relevance to economics and the social sciences.",
+      "section_1": {
+        "heading": "The Ontological Question",
+        "content": "Aristotle distinguished different 'categories' of being — substance, quality, quantity, relation — as different ways something can exist. Contemporary metaphysics has multiplied these questions. Do abstract objects like numbers and sets exist? Mathematical Platonists say yes — numbers are real entities, not merely useful symbols. Nominalists say no — only particular physical things exist; numbers are convenient fictions. The dispute matters for economics: are economic models (like 'perfect competition' or 'rational agents') describing real structures in the world, or are they useful idealisations without independent existence?"
+      },
+      "section_2": {
+        "heading": "Possible Worlds and Modal Reality",
+        "content": "One of the most productive tools in modern metaphysics is the concept of possible worlds — ways the world could have been. When we say something is possible, we mean it is true in at least one possible world; when we say it is necessary, we mean it is true in all possible worlds. This framework, developed by Saul Kripke and David Lewis, has been extraordinarily fruitful for logic, language, and philosophy. For economics, counterfactual reasoning — 'what would have happened if the policy had not been implemented?' — is essential to causal analysis. Possible worlds offer a formal framework for making such counterfactuals rigorous."
+      },
+      "section_3": {
+        "heading": "Social Construction and Realism",
+        "content": "A central debate in the social sciences and metaphysics concerns social constructivism: are categories like race, gender, economic class, or national identity 'real' or 'merely socially constructed'? The metaphysical question is whether these are natural kinds (with mind-independent boundaries) or social kinds (whose existence depends on human practices and classifications). The answer matters: if 'race' has no biological reality but is a social construct, this shapes how we understand racial inequality and what remedies are appropriate. Social constructivism need not imply that socially constructed entities are unreal or unimportant — money is constructed, but it is not therefore trivial."
+      }
+    },
+    "key_takeaways": [
+      "Ontology asks what exists and how — whether abstract objects, social entities, and possibilities are real.",
+      "Mathematical Platonism vs. nominalism asks whether numbers are real or merely useful symbols.",
+      "Possible worlds provide a formal framework for necessity, possibility, and counterfactual reasoning.",
+      "Social constructivism argues that many categories are constituted by human practices, not nature.",
+      "A 'constructed' entity (like money or race) can be genuinely real and causally significant."
+    ],
+    "real_world_examples": [
+      { "title": "The Reality of Economic Models", "description": "Is 'perfect competition' a real phenomenon or a useful fiction? Economists disagree. Instrumentalists hold that models need only generate accurate predictions, regardless of whether their assumptions are realistic. Realists hold that good models should accurately represent underlying economic structures. This is a metaphysical dispute about what economic theory is doing." },
+      { "title": "Race as a Social Kind", "description": "Geneticists have shown that there is more genetic variation within racial groups than between them — suggesting race has no deep biological basis. Yet race is real in its social consequences: it shapes access to jobs, housing, education, and legal treatment. This illustrates the philosophical point that social construction does not equal social unreality." }
+    ],
+    "related_terms": ["ontology", "Platonism", "nominalism", "possible worlds", "social constructivism", "natural kinds", "social kinds", "modal logic", "counterfactuals", "realism"]
+  },
+
+  "meta-free-will": {
+    "section_number": "4.3",
+    "section_title": "Free Will and Determinism",
+    "subject": "Philosophy",
+    "topic": "Metaphysics",
+    "expanded_explanation": {
+      "introduction": "The problem of free will is one of philosophy's oldest and most practically consequential puzzles. Do human beings have genuine freedom of choice, or are our decisions the inevitable product of prior causes — genes, upbringing, brain states, and the laws of physics? The answer matters for ethics (can we be genuinely responsible for our actions?), law (does punishment make sense if we couldn't have chosen otherwise?), and economics (are 'preferences' genuine expressions of free agency or the output of causal processes we don't control?).",
+      "section_1": {
+        "heading": "The Determinist Challenge",
+        "content": "Hard determinism holds that every event — including every human decision — is the inevitable consequence of prior causes operating according to natural laws. Given the state of the universe at any moment and the laws of physics, everything that follows (including our 'choices') is fixed in advance. If determinism is true, then in a deep sense we could not have done otherwise than we did. This seems to undermine moral responsibility: how can we praise or blame people for actions they had no real choice about? Compatibilists respond that the kind of freedom that matters morally is not the freedom from causal determination but the freedom to act on one's own desires and reasons without external compulsion."
+      },
+      "section_2": {
+        "heading": "Compatibilism: Freedom Within Causation",
+        "content": "Compatibilism is the dominant position in contemporary philosophy. It holds that free will and determinism are not in conflict — what matters for freedom is whether your actions flow from your own deliberation, values, and character, not whether those deliberations are causally determined. A person who acts under coercion (gunpoint) is not free; a person who deliberates and acts on their own values is free, even if their deliberation was causally determined by prior brain states. This view has direct implications for economics: rational agency — the core assumption of economic theory — is compatible with a deterministic universe. What matters is the structure of the deliberative process, not its causal history."
+      },
+      "section_3": {
+        "heading": "Free Will and Economic Behaviour",
+        "content": "The free will debate connects to behavioural economics in a striking way. If our 'choices' are the products of cognitive biases, social contexts, and evolutionary pressures, are they genuinely free? When a nudge pushes someone toward a 'better' decision by exploiting their status quo bias, has it enhanced or undermined their autonomy? This is a live ethical and political debate about libertarian paternalism (covered in Economics Topic 4). More broadly, if human preferences are the product of marketing, social norms, and cultural conditioning rather than authentic individual reflection, does satisfying those preferences really maximise welfare? This question connects the metaphysics of free will directly to normative economics."
+      }
+    },
+    "key_takeaways": [
+      "Hard determinism: every decision is causally determined; this seems to undermine moral responsibility.",
+      "Compatibilism: free will and determinism are compatible; what matters is acting from your own reasons.",
+      "Libertarianism (not the political kind): some decisions are genuinely uncaused, preserving free will.",
+      "Free will connects to legal responsibility, punishment, and the meaning of moral praise and blame.",
+      "Behavioural economics raises a new version of the free will question: are nudged decisions freely made?"
+    ],
+    "real_world_examples": [
+      { "title": "Criminal Sentencing and Responsibility", "description": "Neuroscience has shown that brain damage can dramatically alter behaviour, including criminal behaviour. Courts increasingly consider neuroscientific evidence in sentencing. This raises the free will question directly: if a person's violence is partly the product of a brain tumour, does this reduce their moral and legal responsibility? Compatibilists say it depends on whether the action flows from deliberation; hard determinists would push for therapy over punishment across the board." },
+      { "title": "Addiction and Autonomy", "description": "Is a person who is addicted to heroin making free choices? Standard economics would say yes — they are expressing preferences. Critics argue that addiction undermines the deliberative processes that make choice genuinely free. This connects to debates about paternalistic policy: should the state restrict access to addictive substances to protect future selves from present impulsive choices? The answer hinges on the metaphysics of freedom and the ethics of self-regarding action." }
+    ],
+    "related_terms": ["free will", "determinism", "compatibilism", "libertarianism (philosophical)", "moral responsibility", "autonomy", "causal determinism", "neuroscience and law", "nudge and autonomy"]
   }
 }
