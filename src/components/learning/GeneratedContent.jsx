@@ -94,14 +94,19 @@ function StructuredExplanation({ explanation, mentalModel, subjectId }) {
       {sections.map(key => {
         const s = explanation[key];
         if (!s) return null;
+        const paragraphs = (s.content || '').split(/\n\n/).map(p => p.trim()).filter(Boolean);
         return (
           <div key={key}>
             <h3 className="font-serif text-xl md:text-[1.4rem] font-bold text-[#7B2235] mb-3">
               {s.heading}
             </h3>
-            <p className="text-foreground" style={{ fontSize: '17px', lineHeight: 1.7 }}>
-              {autoBoldKeyTerms(s.content, subjectId)}
-            </p>
+            <div className="space-y-4">
+              {paragraphs.map((para, pi) => (
+                <p key={pi} className="text-foreground" style={{ fontSize: '17px', lineHeight: 1.7 }}>
+                  {autoBoldKeyTerms(para, subjectId)}
+                </p>
+              ))}
+            </div>
           </div>
         );
       })}

@@ -126,30 +126,192 @@
     "section_title": "The Interconnectedness of the Social Sciences",
     "subject": "Social Sciences",
     "topic": "Introduction to Social Sciences",
-    "expanded_explanation": "",
-    "key_takeaways": [],
-    "real_world_examples": [],
-    "related_terms": []
+    "expanded_explanation": {
+      "introduction": "Section 1.1 introduced the social sciences as a family of disciplines — political science, economics, sociology, anthropology, geography, and international relations — each studying human society from a different angle. But this description risks leaving a misleading impression: that these disciplines are separate boxes, each sealed off from the others, each with its own questions and answers. In practice, the opposite is true. The social sciences are not just related. They are deeply interconnected and frequently overlap in practice. Understanding one often involves drawing on the others.",
+      "section_1": {
+        "heading": "The Artificial Borders Between Disciplines",
+        "content": "Academic disciplines have borders because universities and publishers need them. They determine which department hires you, which journal publishes you, and which curriculum trains you. But the phenomena these disciplines study do not respect those borders. Poverty is simultaneously an economic condition, a political problem, a sociological pattern, and a geographical reality. A revolution involves the collapse of political authority, the breakdown of economic systems, the mobilisation of social groups, and the transformation of cultural meaning. No single discipline owns these phenomena. They simply exist in the world, and the disciplines are different instruments we use to study them — each capturing something real, none capturing everything."
+      },
+      "section_2": {
+        "heading": "How the Disciplines Overlap",
+        "content": "The overlaps between the social sciences are not accidental. They follow from the nature of what is being studied. Political science and economics share so much ground that the subfield of political economy exists precisely to study their intersection — how markets shape governments and governments shape markets. Sociology and anthropology emerged from the same questions about culture and collective life, and they remain in close dialogue. Geography informs both international relations (where territorial disputes and resource geography drive conflict) and economics (where location shapes productivity and trade). These overlaps mean that important research questions often encourage interdisciplinary work, and that productive conversations in the social sciences frequently happen across disciplinary lines."
+      },
+      "section_3": {
+        "heading": "Interdisciplinarity as a Method, Not Just an Attitude",
+        "content": "Saying that the social sciences are interconnected is not just a philosophical point. It has practical consequences for how good analysis is done. When a government wants to understand the effects of a new immigration policy, it cannot rely on economics alone — economists can model labour market impacts, but they cannot explain how communities form, how cultural integration works, or how political backlash develops. When a city wants to understand why crime rates differ across neighbourhoods, it cannot rely on sociology alone — geography explains spatial patterns, economics explains resource constraints, and political science explains how policing is organised and funded. Genuine interdisciplinarity means using each discipline's tools where they are most powerful, and knowing when to reach for a different one."
+      },
+      "section_4": {
+        "heading": "Why This Matters for How You Study",
+        "content": "If the social sciences are deeply interconnected, then the most important skill for anyone studying them is the ability to move between frameworks without losing analytical precision. This means being able to ask: what is the political dimension of this economic problem? What is the sociological context behind this political event? What does the geography tell us about this historical pattern? The sections that follow in this course will take each discipline seriously on its own terms — because the tools and traditions of each are genuinely distinct. But the goal throughout is to build a mind that holds multiple lenses at once, and knows which one to pick up in a given situation."
+      }
+    },
+    "mental_model": {
+      "heading": "Think of it like this",
+      "content": "Imagine a team of doctors examining the same patient. The cardiologist looks at the heart, the neurologist looks at the brain, the orthopaedic surgeon looks at the skeleton. Each sees something real and important. But the patient is one person, and what happens in the heart affects the brain, and what happens in the brain affects how the patient moves. A good diagnosis requires the specialists to talk to each other. The social sciences work the same way. Each discipline is a specialist. The patient is society. Some of the strongest explanations emerge when specialists collaborate across disciplines."
+    },
+    "key_takeaways": [
+      "The borders between social science disciplines are partly organisational conveniences and partly genuine methodological distinctions — they reflect real differences in how each field approaches its subject, not just institutional history.",
+      "Major social phenomena — poverty, revolution, migration, conflict — are simultaneously political, economic, sociological, and geographical, and must be studied as such.",
+      "Overlapping subfields like political economy, economic sociology, and human geography exist precisely because the core disciplines need each other.",
+      "Genuine interdisciplinarity is a method: knowing which discipline's tools are most powerful for a given question, and combining them deliberately.",
+      "The goal of studying the social sciences is not to master one lens but to become fluent in several, and to know when to switch between them."
+    ],
+    "real_world_examples": [
+      {
+        "title": "The Opioid Crisis",
+        "description": "The opioid epidemic in the United States cannot be understood through any single discipline. Economics explains the pharmaceutical industry's incentives to aggressively market addictive painkillers and the role of patent law in pricing. Sociology explains how deindustrialisation and the erosion of working-class communities created conditions of despair that made addiction more likely. Political science explains the lobbying that weakened regulatory oversight. Geography maps the concentrated devastation in specific regions. Anthropology illuminates the cultural attitudes toward pain, medication, and healthcare-seeking behaviour. The crisis was produced by the intersection of all these forces — and any policy response that ignores any of them will fail."
+      },
+      {
+        "title": "The Rise of China",
+        "description": "Understanding China's rise as a global power requires moving constantly between disciplines. International relations provides frameworks for how rising powers challenge existing hegemonies. Economics explains how export-led growth and currency management built the resource base for that rise. Political science analyses the one-party system that allowed long-term industrial planning without electoral short-termism. Sociology examines the social contract the state offered — rapid material improvement in exchange for limited political participation. Geography explains why access to maritime trade routes and border security with multiple neighbours shapes Chinese strategic priorities. None of these explanations is complete on its own. Together they begin to form one."
+      },
+      {
+        "title": "Urban Inequality",
+        "description": "Why do some parts of a city thrive while others remain persistently poor, generation after generation? Geography provides the baseline — access to transport, proximity to employment, environmental quality. Economics explains how housing markets work and why property values compound advantage. Political science reveals how zoning laws, infrastructure investment decisions, and school funding formulas are made and who they serve. Sociology examines how residential segregation reproduces itself through social networks, hiring practices, and institutional trust. Anthropology asks what it means to grow up in a neighbourhood that the rest of the city has written off. The question seems local and concrete, but answering it requires the full range of the social sciences."
+      }
+    ],
+    "related_terms": [
+      "interdisciplinarity",
+      "political economy",
+      "social structure",
+      "cross-disciplinary analysis",
+      "methodological pluralism",
+      "systems thinking",
+      "sociology",
+      "political science",
+      "economics",
+      "geography",
+      "anthropology",
+      "international relations"
+    ]
   },
   "scientific-method-in-social-sciences": {
     "section_number": "1.4",
     "section_title": "The Scientific Method in the Social Sciences",
     "subject": "Social Sciences",
     "topic": "Introduction to Social Sciences",
-    "expanded_explanation": "",
-    "key_takeaways": [],
-    "real_world_examples": [],
-    "related_terms": []
+    "expanded_explanation": {
+      "introduction": "What does it mean to study human beings scientifically? The natural sciences offer a model: form a hypothesis, design an experiment, collect data, and revise the hypothesis in light of the evidence. The social sciences aspire to the same standard of rigour. But applying that standard to the study of human behaviour raises questions that do not arise when studying chemistry or physics. Humans think, react, and change their behaviour in response to being studied. Societies cannot be placed in controlled laboratory conditions. And the questions that drive social science research are often shaped by values and political commitments that natural scientists rarely have to navigate. Understanding what the scientific method means in the social sciences requires grappling with these complications — not as reasons to abandon rigour, but as reasons to think carefully about what rigour requires in this domain.",
+      "section_1": {
+        "heading": "The Empirical Commitment",
+        "content": "The social sciences share with the natural sciences a commitment to empiricism — the view that claims about the world should be grounded in observable evidence rather than intuition, tradition, or authority. This commitment shapes how social scientists collect data, construct arguments, and evaluate each other's work. A political scientist studying elections does not simply assert that economic conditions drive voting behaviour; they gather data on voting patterns and economic indicators, construct a testable hypothesis, and assess whether the evidence supports it. An economist studying the effects of a minimum wage increase does not argue from first principles alone; they examine what happened in places where the minimum wage was raised.\n\nThis empirical commitment distinguishes social science from journalism, philosophy, and political commentary, even when all four are addressing the same event or problem. Social scientists are bound by methods — ways of collecting and evaluating evidence — that constrain what they can claim and on what grounds. Those methods vary across disciplines and across research questions, but the underlying commitment to evidence-based reasoning is common to all of them."
+      },
+      "section_2": {
+        "heading": "The Distinctive Challenges",
+        "content": "Applying the scientific method to human behaviour involves challenges that do not arise in the same way in the natural sciences, and social scientists have had to develop approaches that account for them.\n\nThe first challenge is control. In chemistry, you can hold all variables constant except one and observe the effect. In social science, that kind of experimental control is rarely possible and often not ethical. A researcher cannot randomly assign countries to different political systems and observe the results. This makes establishing causation — rather than mere correlation — harder in the social sciences than in the natural sciences.\n\nThe second challenge is reflexivity. When people know they are being studied, they often change their behaviour. This is not a methodological flaw to be corrected; it is a feature of studying conscious, social beings. A survey about attitudes toward immigration does not simply measure those attitudes — it may also influence them. A sociologist observing a community can alter its dynamics simply by being present. Social scientists try to account for this, but it cannot be fully eliminated.\n\nThe third challenge is values. The questions social scientists ask — about inequality, power, governance, and identity — are not value-neutral. Choosing what to study, what counts as evidence, and how to interpret results all involve judgments shaped by the researcher's own perspective. The natural sciences face versions of this too, but it is more acute in the social sciences, where the subject matter is directly political."
+      },
+      "section_3": {
+        "heading": "The Range of Methods",
+        "content": "Because the classic controlled experiment is often unavailable, social scientists have developed a range of research approaches, each suited to different questions and contexts.\n\nRandomised controlled trials — the gold standard in medicine — can sometimes be used in social science, particularly in economics and development research. A research team might randomly assign households or villages to receive a particular intervention and measure the outcomes against a control group. Where achievable, these designs can provide strong evidence of causation.\n\nWhere experiments are not possible, researchers use quasi-experimental methods. Natural experiments occur when some external event — a policy change, a natural disaster, a boundary drawn through a population — creates conditions that approximate experimental control without deliberate design. Comparative case studies examine different societies or time periods to identify patterns and test explanations. Longitudinal studies follow the same individuals or communities over time, allowing researchers to observe how variables change in relation to one another. Qualitative methods — interviews, ethnography, archival analysis — generate deep understanding of particular cases and contexts that statistical methods alone cannot capture.\n\nNo single method is appropriate for every question. Specialised depth within a single method can be as valuable as methodological breadth, and the choice of method should follow from the research question rather than from habit or fashion."
+      },
+      "section_4": {
+        "heading": "What Social Science Can and Cannot Do",
+        "content": "A recurring question in the philosophy of social science is whether these disciplines can meet the standards that the term 'scientific' implies. The answer depends on what those standards are.\n\nSocial scientists can identify patterns, test hypotheses, build cumulative knowledge, and revise theories in light of evidence. In these respects, the social sciences function scientifically. What they cannot usually do is produce the precise, reliable predictions that physics or chemistry can. Human behaviour is shaped by many interacting variables, and societies change in ways that can alter the applicability of past findings. A model that accurately described economic behaviour in one era may perform less well in another, because the context has shifted.\n\nThis does not make the social sciences unscientific. It makes them sciences of a different kind — ones where explanation is often more achievable than prediction, and where understanding the mechanism behind an event can be more reliable than forecasting the next one. The goal is not certainty but well-grounded understanding, arrived at through methods that are transparent, replicable where possible, and open to revision when new evidence emerges."
+      }
+    },
+    "mental_model": {
+      "heading": "Think of it like this",
+      "content": "Think of a detective working a case. The detective cannot rerun the crime under controlled conditions or observe it directly. They work with evidence that is partial, ambiguous, and sometimes contradictory — witness accounts, physical traces, timelines. They form a hypothesis about what happened, test it against the evidence, and revise it when new information appears. They cannot prove their conclusion the way a mathematician proves a theorem, but they can build a case that is more or less compelling depending on how well it fits the available evidence. Social scientists work in a similar way. They often cannot run the ideal experiment. They work with the evidence available, apply rigorous methods to evaluate it, and draw conclusions that remain provisional and open to revision as knowledge accumulates."
+    },
+    "key_takeaways": [
+      "The social sciences share the natural sciences' commitment to empiricism — claims should be grounded in observable evidence rather than intuition or authority.",
+      "Applying the scientific method to human behaviour involves genuine challenges: limited experimental control, reflexivity, and the role of values in shaping research questions.",
+      "Social scientists have developed a range of methods — including experiments, natural experiments, comparative studies, and qualitative research — to gather evidence under these constraints.",
+      "Explanation is often more achievable in the social sciences than precise prediction, because human behaviour is shaped by many interacting variables that change over time.",
+      "The scientific status of the social sciences rests not on matching the methods of physics or chemistry, but on the rigour, transparency, and revisability of the methods actually used."
+    ],
+    "real_world_examples": [
+      {
+        "title": "The Minimum Wage Natural Experiment",
+        "description": "In 1994, economists David Card and Alan Krueger studied the effect of a minimum wage increase in New Jersey by comparing employment in fast food restaurants there with neighbouring Pennsylvania, which had not raised its minimum wage. This natural experiment provided evidence that challenged the prevailing prediction that minimum wage increases would reduce employment. The study became influential not only for its findings but for demonstrating how a natural experiment could produce credible causal evidence in a field where controlled experiments are rarely feasible."
+      },
+      {
+        "title": "The Milgram Obedience Studies",
+        "description": "Stanley Milgram's experiments in the 1960s investigated how far ordinary people would go in obeying authority figures, even when instructed to cause apparent harm to others. The studies produced widely cited findings about behaviour under authority and also prompted lasting debate about research ethics — the deception involved and the psychological distress caused to participants contributed to the development of formal ethics standards in social science research. The studies illustrate both what the scientific method can reveal about human behaviour and the ethical constraints that shape how that method can be applied."
+      },
+      {
+        "title": "Longitudinal Studies of Education and Earnings",
+        "description": "Economists and sociologists have used decades-long longitudinal datasets to study the relationship between educational attainment and lifetime earnings, following individuals from childhood through adulthood and controlling for a range of background variables. The findings have informed policy on schooling, early intervention, and inequality. They also illustrate a characteristic limit of social science research: even well-designed studies identify average patterns across large populations, and those patterns do not translate into reliable predictions about any individual."
+      }
+    ],
+    "related_terms": [
+      "empiricism",
+      "hypothesis",
+      "causation",
+      "correlation",
+      "natural experiment",
+      "randomised controlled trial",
+      "qualitative research",
+      "quantitative research",
+      "reflexivity",
+      "longitudinal study",
+      "replication",
+      "comparative method"
+    ]
   },
   "quantitative-vs-qualitative": {
     "section_number": "1.5",
     "section_title": "Quantitative vs. Qualitative Approaches",
     "subject": "Social Sciences",
     "topic": "Introduction to Social Sciences",
-    "expanded_explanation": "",
-    "key_takeaways": [],
-    "real_world_examples": [],
-    "related_terms": []
+    "expanded_explanation": {
+      "introduction": "Every social science research project must answer a fundamental methodological question: how will you collect and analyse your evidence? The two broad families of approach are quantitative and qualitative. Quantitative research works with numerical data — surveys, administrative records, structured observations — and uses statistical methods to identify patterns, test hypotheses, and measure relationships. Qualitative research works with non-numerical data — interviews, ethnographic observation, documents — and uses interpretive methods to understand meaning, context, and process. Both are rigorous when applied well, and both have genuine limitations. The question is not which approach is superior, but which is most appropriate for a given research question.",
+      "section_1": {
+        "heading": "Quantitative Research: Patterns and Measurement",
+        "content": "Quantitative research aims to measure social phenomena in ways that allow comparison, aggregation, and statistical testing. A researcher might survey ten thousand people about their political attitudes, record responses numerically, and use regression analysis to identify which variables predict voting behaviour. Another might use decades of economic data to test whether trade openness is associated with higher wages in developing countries. The strength of these approaches lies in their ability to identify patterns across large numbers of cases and to test whether those patterns are likely to be genuine rather than the result of chance.\n\nQuantitative methods are particularly well suited to questions that ask: how common is this? How much does X vary with Y? Does this relationship hold across different contexts? They can produce findings that are, in principle, reproducible — another researcher using the same dataset and methods should arrive at similar results. This replicability is a significant advantage, and it has made quantitative research the dominant mode in some disciplines, particularly economics and political science.\n\nThe limitations are real, however. Quantitative research primarily measures what can be counted or systematically coded, and this shapes — and sometimes distorts — what gets studied. Poverty can be measured by income thresholds, but income does not capture everything poverty involves. Political participation can be measured by voting rates, but voting is only one form of participation. Statistical associations between variables do not automatically establish causation, and the design of survey instruments can influence the responses they elicit."
+      },
+      "section_2": {
+        "heading": "Qualitative Research: Meaning and Mechanism",
+        "content": "Qualitative research works differently. Rather than seeking to measure and aggregate, it seeks to understand — how people make sense of their situation, why institutions work the way they do, what a particular historical event or social process meant to those who lived through it. A sociologist might spend a year in a factory, observing how workers negotiate their relationships with management and with each other. A political scientist might conduct in-depth interviews with senior officials to understand how foreign policy decisions are actually made, as distinct from how formal processes describe them.\n\nThe strength of qualitative approaches lies in their sensitivity to context and complexity. They can reveal mechanisms — the processes by which causes produce effects — that statistical analysis can identify but not explain. They can surface phenomena that researchers did not know to look for, generating hypotheses that quantitative work can later test at scale. They can access dimensions of social life — meaning, identity, experience, culture — that resist reduction to numbers.\n\nThe limitations are equally real. Findings from a small number of carefully studied cases may not generalise to broader populations. The researcher's presence in an ethnographic setting can affect what happens there. Interpretation of interviews or documents inevitably involves judgment, and two researchers working with the same material might reach different conclusions. These are not reasons to reject qualitative research, but they are reasons to be precise about what it can and cannot demonstrate."
+      },
+      "section_3": {
+        "heading": "The Relationship Between the Two",
+        "content": "Quantitative and qualitative approaches are not in competition. They are suited to different kinds of questions, and the appropriate choice depends on what a researcher is trying to know.\n\nSome questions are better suited to quantitative methods. What is the relationship between income inequality and health outcomes across a large number of countries? How has the gender wage gap changed over time? These questions require data that can be aggregated and compared statistically. Other questions are better suited to qualitative methods. How do people in a particular community understand the role of the state in their lives? Why did a specific policy fail despite strong political support? These questions require access to meaning, context, and process that numbers alone cannot readily provide.\n\nMixed-methods research — which combines both approaches within a single study — has grown in prominence across the social sciences. At its best, it can use quantitative findings to establish the scope of a pattern and qualitative work to explain the mechanism behind it, or use qualitative fieldwork to generate hypotheses that are then tested quantitatively at larger scale. Combining methods well, however, requires genuine competence in both and careful thought about how the two forms of evidence relate to each other. Mixed-methods work that is done carelessly can produce the weaknesses of both approaches without the strengths of either."
+      },
+      "section_4": {
+        "heading": "Choosing the Right Tool",
+        "content": "The most important principle in choosing between quantitative and qualitative approaches is that the research question should determine the method, not the other way around. A common error is to choose the method that feels most familiar or most valued within a discipline, and then to find questions it can answer. This tends to produce research that is methodologically confident but intellectually narrow.\n\nDifferent disciplines have strong methodological traditions that can make one approach feel like the default. Economics has historically favoured quantitative methods to a far greater degree than anthropology, which has favoured ethnographic and qualitative work. These traditions have produced genuine expertise, but they can also shape which questions get asked and what counts as an acceptable answer. Recognising this is part of developing a critical relationship with research.\n\nThe ability to evaluate work across methodological traditions — to assess whether a piece of quantitative research has adequately addressed its causal claims, or whether a qualitative study has been sufficiently rigorous in its interpretation — is a transferable skill that applies across the social sciences. No method is immune to poor execution, and familiarity with both makes it easier to recognise quality and weakness in either."
+      }
+    },
+    "mental_model": {
+      "heading": "Think of it like this",
+      "content": "Think of the difference between a map and a conversation. A map of a city can show you where every street is, how populations are distributed across neighbourhoods, how far things are from each other, and how those patterns have changed over decades. It gives you coverage and comparison. A conversation with someone who has lived in the city for thirty years tells you something the map cannot: what it felt like to watch a neighbourhood change, why people moved where they did, what the local institutions meant to those who depended on them. You need the map to see the pattern. You need the conversation to understand what the pattern means. Quantitative research is the map. Qualitative research is the conversation. Many research questions benefit from both — though not always within the same study."
+    },
+    "key_takeaways": [
+      "Quantitative research uses numerical data and statistical methods to identify patterns across large numbers of cases and test whether relationships between variables are systematic.",
+      "Qualitative research uses non-numerical data and interpretive methods to understand meaning, context, and process in depth.",
+      "Both approaches are rigorous when applied well, and both have genuine limitations — quantitative research can miss meaning and mechanism, while qualitative findings may not generalise broadly.",
+      "The choice of method should follow from the research question: some questions are inherently quantitative, others inherently qualitative, and applying the wrong method to a question tends to produce weak research.",
+      "Different social science disciplines have strong methodological traditions, but awareness of both approaches supports a more critical and flexible engagement with research across the field."
+    ],
+    "real_world_examples": [
+      {
+        "title": "Measuring Poverty vs. Understanding It",
+        "description": "Quantitative research using income data and national surveys has produced important findings about the distribution and persistence of poverty across countries and over time. These datasets allow comparisons that would otherwise be impossible. Qualitative research — including ethnographic work by sociologists who spend extended periods in poor communities — has revealed dimensions of poverty that income measures miss: the social stigma, the cognitive burden of financial precarity, and the way institutions interact with people in poverty day-to-day. Both bodies of work have produced genuine knowledge; they are studying different aspects of the same phenomenon."
+      },
+      {
+        "title": "Electoral Behaviour",
+        "description": "Large-scale survey research has identified robust statistical patterns in voting behaviour: income, education, age, and geography are all associated with political preferences in ways that can be measured and compared across elections and countries. But surveys are often less well suited to explaining why these patterns exist and what they mean to the individuals caught up in them. Qualitative interview studies and ethnographic work in communities have provided accounts of how people form their political identities and why they vote as they do — accounts that survey data alone cannot generate."
+      },
+      {
+        "title": "Evaluating Development Programmes",
+        "description": "Randomised controlled trials have been used extensively in development economics to measure whether specific interventions — cash transfers, microfinance schemes, educational programmes — produce the outcomes they aim for. These trials can provide strong evidence of causal effects. What they typically cannot do is explain why an intervention worked in one context but not another, or what happened to participants beyond the measured outcomes. Qualitative case studies of the same programmes have often provided those explanations, and in doing so have shaped how subsequent quantitative studies are designed."
+      }
+    ],
+    "related_terms": [
+      "quantitative research",
+      "qualitative research",
+      "mixed methods",
+      "ethnography",
+      "survey research",
+      "statistical analysis",
+      "regression",
+      "case study",
+      "hypothesis testing",
+      "generalisability",
+      "reflexivity",
+      "replication"
+    ]
   },
   "what-is-political-science": {
     "section_number": "2.1",
