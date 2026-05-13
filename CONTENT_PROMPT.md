@@ -98,3 +98,9 @@ When asked to generate a section, you will be given:
 - The exact JSON key to use in learningContent.json
 
 Generate the content, verify every factual claim before including it, then insert the completed entry into src/data/learningContent.json under the correct key. Do not change any other entries in the file.
+
+## Content Generation Lessons
+- Avoid ideological language like "interdisciplinarity is inherently superior." Present approaches as useful tools, not universal truths.
+- Acknowledge the validity of specialisation and disciplinary depth — interdisciplinarity solves some problems but creates others.
+- Avoid overstated universal claims ("the best," "always," "never"). Use qualified language ("often," "can," "some of the strongest").
+
