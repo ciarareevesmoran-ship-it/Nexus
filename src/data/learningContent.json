@@ -1034,30 +1034,176 @@
     "section_title": "What Is International Relations?",
     "subject": "Social Sciences",
     "topic": "International Relations",
-    "expanded_explanation": "",
-    "key_takeaways": [],
-    "real_world_examples": [],
-    "related_terms": []
+    "expanded_explanation": {
+      "introduction": "International relations is the study of politics beyond the borders of individual states — how states interact with one another, how international organisations function, and how cooperation and conflict unfold in a world without a single governing authority. It examines war and diplomacy, global trade and economic interdependence, international law, and the role of institutions in structuring world affairs; it also engages with questions of human rights and the conditions under which lasting peace is possible. As a discipline, it draws on political science, history, economics, and law, and it confronts a foundational puzzle that runs through all of these concerns: how order and cooperation can emerge among states in an arena where no supreme authority exists to enforce the rules.",
+      "section_1": {
+        "heading": "The World Without a Central Authority",
+        "content": "The defining structural feature of the international system is what scholars call anarchy — not chaos or disorder in the everyday sense, but the absence of any overarching authority above the level of the state. Unlike domestic politics, where governments, courts, and law enforcement can, in principle, enforce collective decisions, the international arena has no equivalent institution with comparable reach. States are formally equal in sovereignty, but they vary enormously in power and resources, and there is no reliable mechanism to compel even the most powerful to comply with rules they choose to reject. How cooperation and order are possible at all in such a setting is a foundational question in international relations, and different theoretical traditions offer quite different answers. Because there is no higher authority guaranteeing security, states operate in a condition of self-help: they must ultimately rely on their own capabilities and relationships for survival. This can produce a security dilemma, where defensive actions taken by one state may appear threatening to others and unintentionally increase tensions.\n\nThe study of international relations has traditionally centred on states as its primary actors, but the scope of the field has broadened considerably over the past several decades. International organisations such as the United Nations, the World Trade Organization, and the International Monetary Fund shape the rules governing state behaviour. Non-governmental organisations and transnational advocacy networks can influence policy and norms across borders. In areas such as international criminal law and human rights, individual persons have acquired a degree of legal standing they did not possess under the older, purely interstate framework. Most scholars still treat states as the most consequential actors in world politics, but the question of how much weight to assign to non-state actors remains genuinely contested."
+      },
+      "section_2": {
+        "heading": "How the Discipline Emerged",
+        "content": "International relations became an organised academic discipline primarily in the early twentieth century. The first dedicated chair in international politics was established in 1919 at the University of Wales, Aberystwyth, in the immediate aftermath of the First World War. The founding motivation was explicitly practical: scholars and policymakers hoped that systematic study of the causes of conflict could contribute to preventing future wars. This early tradition, often called idealism or liberal internationalism, emphasised the potential of international institutions, law, and diplomacy to constrain state behaviour and reduce the likelihood of armed conflict.\n\nThe catastrophic failure of the interwar order and the outbreak of the Second World War prompted a significant intellectual reaction. Thinkers associated with realism, including E.H. Carr and Hans Morgenthau, argued that interwar idealism had underestimated the importance of power and self-interest in international affairs and had placed excessive confidence in institutions and moral argument as constraints on state behaviour. This confrontation between idealist and realist perspectives is often described as the first great debate in the discipline, and it established tensions — between optimism and pessimism about international cooperation, between the role of material power and the role of norms and ideas — that continue to run through contemporary IR theory. The Cold War later shaped much of the discipline's development, directing attention toward nuclear deterrence, alliances, and superpower rivalry."
+      },
+      "section_3": {
+        "heading": "Levels of Analysis",
+        "content": "One of the most useful frameworks for organising explanation in international relations distinguishes three levels at which answers to questions can be sought. This framework is closely associated with Kenneth Waltz's Man, the State, and War (1959). At the individual level, analysts focus on the beliefs, psychology, and decisions of specific leaders or decision-makers; at the state level, they examine domestic politics, institutions, economic interests, or public opinion within a particular country; at the systemic level, they focus on the structure of the international system as a whole, particularly the distribution of power among states. Different explanations for the same event often operate at different levels: an account of why a particular conflict broke out might point to a leader's miscalculation, to domestic political pressures, or to structural shifts in the distribution of power — and these explanations are not necessarily mutually exclusive.\n\nThis framework does not resolve disputes in IR, but it helps to organise them. A complete account of a complex international event often requires drawing on several levels simultaneously, since individual decisions are shaped by domestic constraints, which are themselves situated within a broader international structure. The levels-of-analysis framework is most useful not as a theory but as a reminder that explaining international outcomes requires choices about where to look — and that those choices carry methodological and theoretical implications."
+      },
+      "section_4": {
+        "heading": "International Relations and Adjacent Disciplines",
+        "content": "International relations grew historically out of political science and continues to be taught within political science departments at many universities. The boundary between the two fields is partly administrative and partly reflects a genuine difference in focus: political science has traditionally concentrated on the organisation of authority within states, while international relations focuses on what happens between and beyond them. In practice, the two fields overlap substantially — comparative politics often draws directly on IR research when examining how external pressures shape domestic political outcomes, and IR draws on comparative work when analysing how domestic institutions shape foreign policy.\n\nIR also connects with economics, particularly in the subfield of international political economy, which studies trade, finance, and the relationship between markets and political authority at the global level. It engages with international law in its analysis of treaties, institutions, and the normative frameworks that govern state behaviour. It draws on history in examining the long-term evolution of the state system and the origins of specific conflicts. Like political science, international relations is methodologically diverse, drawing on formal models, statistical analysis, historical case studies, and interpretive approaches depending on the question being asked. These connections reflect the fact that world politics resists easy compartmentalisation into a single discipline."
+      }
+    },
+    "mental_model": {
+      "heading": "Think of it like this",
+      "content": "Think of the international system as a neighbourhood with no shared authority — no homeowners association, no police, no binding rules. The neighbours can trade, cooperate informally, and maintain arrangements that work well for years. But if one neighbour decides to fence off a shared path or take something that belongs to another, there is no authority to make them stop — only the reactions of the other neighbours, which may include negotiation, pressure, alliance, or conflict. International relations is the study of how such a neighbourhood actually functions: how order and cooperation emerge, why they sometimes break down, and what happens when the most powerful residents decide to rewrite the informal rules of the street."
+    },
+    "key_takeaways": [
+      "International relations studies politics beyond the state — how states, international organisations, and other actors interact in an arena without a central governing authority.",
+      "The defining structural feature of the international system is anarchy: the absence of a supreme authority capable of enforcing rules on all states.",
+      "The discipline emerged as an organised field after the First World War and has since developed several major theoretical traditions — including realism, liberalism, and constructivism — that offer competing explanations of state behaviour and international order.",
+      "The levels-of-analysis framework distinguishes three tiers of explanation — individual, state, and systemic — and helps scholars identify where the causes of international events are located.",
+      "International relations overlaps substantially with political science, economics, history, and international law, and is methodologically diverse, drawing on different tools depending on the question being asked."
+    ],
+    "real_world_examples": [
+      {
+        "title": "The United Nations and the Limits of Enforcement",
+        "description": "The United Nations Security Council can pass binding resolutions, but its effectiveness depends heavily on the political alignment of its five permanent members, each of which holds a veto. When permanent members disagree — as they have on many conflicts since the UN's founding in 1945 — the council can be blocked from acting. This structure illustrates a fundamental tension IR scholars study: even carefully designed international institutions face significant limits when powerful states choose not to comply. The UN remains a central case in ongoing debates about what international organisations can and cannot achieve in the absence of central enforcement."
+      },
+      {
+        "title": "NATO and the Logic of Alliances",
+        "description": "The North Atlantic Treaty Organization, founded in 1949, provides one of the most studied examples of a security alliance in international relations. Its central commitment — that an attack on one member would be treated as an attack on all — shaped European and transatlantic security for decades and has been debated, tested, and reaffirmed through changing circumstances. IR scholars have used NATO to examine why states form alliances, what sustains them when the original threat changes, and how alliance commitments affect the strategic calculations of rival powers. Ongoing debates about burden-sharing and the scope of membership obligations illustrate how institutional arrangements can generate their own political tensions over time."
+      },
+      {
+        "title": "The World Trade Organization and Rules-Based Trade",
+        "description": "The World Trade Organization, established in 1995, provides a framework of rules governing international trade and includes a dispute settlement mechanism through which member states can formally challenge one another's trade practices. It is a prominent example of how international institutions can shape state behaviour even without direct enforcement power: states have generally complied with WTO rulings largely because the benefits of participation in the rules-based trading system tend to outweigh the costs of non-compliance for most members. Scholars have also examined how the WTO's rules reflect the interests of powerful states and how rising economies have sought to revise the terms of the international trading order."
+      }
+    ],
+    "related_terms": [
+      "anarchy",
+      "sovereignty",
+      "state system",
+      "security dilemma",
+      "levels of analysis",
+      "international institutions"
+    ]
   },
   "the-international-system": {
     "section_number": "3.2",
     "section_title": "The International System: States, Sovereignty, and Anarchy",
     "subject": "Social Sciences",
     "topic": "International Relations",
-    "expanded_explanation": "",
-    "key_takeaways": [],
-    "real_world_examples": [],
-    "related_terms": []
+    "expanded_explanation": {
+      "introduction": "To study international relations is to study a particular kind of political world — one in which no single authority sits above all others, where the central units of power are sovereign states, and where order must emerge from below rather than being imposed from above. This section introduces the international system as a unit of analysis: the structural environment that shapes how states behave, what strategies they pursue, and what kinds of cooperation or conflict are possible. Three foundational concepts organise this environment — states as its primary actors, sovereignty as the principle that defines their status, and anarchy as the structural condition within which they operate.",
+      "section_1": {
+        "heading": "The International System as a Level of Analysis",
+        "content": "International relations scholars distinguish between different levels at which political life can be analysed. At the individual level, analysts focus on the beliefs and decisions of specific leaders. At the state level, they examine domestic politics, institutions, and interests within particular countries. At the systemic level, they focus on the structure of the international environment itself — the distribution of power among states and the conditions that all states face regardless of their internal differences. This systemic level is where the concept of the international system becomes central.\n\nThe international system, on this view, is not simply the sum of states and their relationships. It is the overarching structure within which states interact — a structure that creates common pressures and incentives even for states that differ greatly in size, wealth, or domestic organisation. Two states with very different governments and histories can nonetheless face similar strategic dilemmas because they inhabit the same international environment. Understanding that environment is, for many scholars, a prerequisite for understanding why states behave as they do.\n\nStates are the primary units of this system. In political and legal terms, a state is generally understood to require four elements: a permanent population, a defined territory, an effective government, and the capacity to enter into relations with other states — criteria codified in the 1933 Montevideo Convention on the Rights and Duties of States. Non-state actors — international organisations, corporations, and civil society groups among them — can also shape international affairs, but states occupy a distinctive position by virtue of their claims to sovereignty, which remains the constitutive norm of the international system."
+      },
+      "section_2": {
+        "heading": "Sovereignty as a Systemic Principle",
+        "content": "Within domestic political life, sovereignty refers to supreme authority — the idea that within a state's borders, no other political entity stands above it. In the context of the international system, sovereignty carries an additional and equally important dimension: it is the principle through which states recognise one another as equal, independent members of a community of states. Sovereignty at the systemic level is not only a domestic claim to authority; it is the basis on which states are admitted to the international order and entitled to conduct diplomacy, sign treaties, and participate in international organisations.\n\nThis mutual recognition gives rise to the norm of non-interference: the principle that states should refrain from intervening in one another's internal affairs. If all states are sovereign equals, then no state has the right to impose its will on another within that other state's own domain. The norm is reflected in the founding documents of the United Nations, which affirm the 'sovereign equality of all its Members.' In practice, the norm has been applied inconsistently, and more powerful states have frequently acted against it with respect to weaker ones. Nevertheless, it retains significant force as a standard against which behaviour is judged and as a resource that smaller states can invoke in their own defence.\n\nThe practical significance of sovereignty at the systemic level is that it determines who counts as a legitimate actor and what kinds of claims they can make. Recognising a new state extends the full set of rights and protections that come with membership in the international community. Withholding recognition, conversely, can be used as a form of political pressure. The question of which entities qualify for recognition remains contested in a number of cases today, revealing that while sovereignty is central to the system's logic, it does not automatically resolve every question about membership."
+      },
+      "section_3": {
+        "heading": "Anarchy and the Self-Help System",
+        "content": "The most consequential structural feature of the international system is what scholars call anarchy. In everyday language, anarchy tends to connote chaos or disorder. In international relations, the term carries a more precise meaning: the absence of a central authority with a legitimate monopoly on force above the level of the state. There is no world government, no international police force capable of compelling compliance, and no supranational court whose rulings states are automatically required to obey. States must ultimately rely on their own capabilities — or on alliances they choose to join — to protect their interests. Scholars describe this as a self-help system.\n\nAnarchy does not mean that the international system is perpetually violent or that cooperation is impossible. It means, rather, that states cannot fully outsource their security to a higher authority in the way that individuals can rely on a functioning state. This structural condition creates recurring strategic pressures. One of the most widely discussed is the security dilemma: when one state increases its military capabilities to feel more secure, neighbouring states may interpret this as a potential threat and respond by building up their own forces, leaving all parties in a situation of heightened tension and mutual distrust — even if no hostile intent existed on either side.\n\nThe contrast between the anarchic international system and the hierarchical domestic political order is one of the foundational distinctions in international relations scholarship. Within states, a recognised authority can, in principle, enforce rules and adjudicate disputes between citizens. Between states, no such authority exists. This difference in structure shapes the strategic environment — the incentives states face, the risks they calculate, and the forms of cooperation they are willing to pursue."
+      },
+      "section_4": {
+        "heading": "Order Without Government",
+        "content": "A central puzzle of the international system is how a recognisable order can persist in the absence of a governing authority. If no superior power can compel compliance, why do most states observe most international norms most of the time? Scholars working within different theoretical traditions offer different accounts. Realist thinkers tend to emphasise power as the source of order: dominant states can impose certain expectations on others, and weaker states find it costly to defy norms that powerful actors are willing to enforce. Liberal theorists focus on institutions and mutual interests: when states have overlapping goals and repeated interactions, cooperation can be rational even without enforcement, and international organisations can help states monitor compliance and reduce the risks of defection. Constructivist approaches emphasise that shared norms and identities can be deeply internalised — states may comply not because they fear punishment but because certain behaviours have come to be seen as legitimate within the international community.\n\nA recurring tension within the international system is between the principle of sovereignty — which protects states from interference — and the demands of collective action, which require states to accept constraints on their autonomy. This tension does not disappear as the system evolves. Many of the most pressing challenges in contemporary world politics — from nuclear proliferation to climate change — require sustained cooperation that can strain sovereign prerogatives. Understanding the international system as anarchic is not a counsel of pessimism; it is a starting point for understanding what makes these challenges genuinely difficult and what kinds of arrangements can nonetheless be constructed to address them."
+      }
+    },
+    "mental_model": {
+      "heading": "Think of it like this",
+      "content": "Think of the international system like a neighbourhood of houses with no governing body, no police force, and no enforceable rules. Each household is its own master — it runs its own affairs and answers to no external authority. Households can form voluntary agreements with neighbours, pool resources for shared security, and develop shared expectations about acceptable behaviour. But if a neighbour acts badly, there is no authority to call; each household must manage the situation itself or persuade others to help. The neighbourhood is not chaotic — norms, mutual recognition, and long-standing relationships create a degree of order — but that order is built from below rather than imposed from above."
+    },
+    "key_takeaways": [
+      "The international system is the structural environment within which states interact, characterised above all by the absence of a central governing authority.",
+      "States are the primary actors in the international system, distinguished from other actors by their claims to sovereignty over a defined territory and population.",
+      "Sovereignty functions at the systemic level as a principle of mutual recognition, entitling states to equal standing and protection from interference in their internal affairs.",
+      "Anarchy in international relations refers to the absence of a supreme authority above states, creating a self-help system in which states must manage their own security.",
+      "Order can emerge within anarchy through norms, institutions, and shared interests, but it rests on voluntary cooperation rather than enforceable law."
+    ],
+    "real_world_examples": [
+      {
+        "title": "The 2014 Annexation of Crimea",
+        "description": "In 2014, Russia annexed Crimea from Ukraine following a disputed referendum, and most members of the international community condemned the action as a violation of Ukrainian sovereignty. The UN General Assembly affirmed Ukraine's territorial integrity by resolution, yet no enforcement mechanism existed to reverse the annexation — the Security Council, where Russia holds a veto, could not authorise collective action. The episode illustrated both the normative weight that sovereignty carries in the international system and the structural limits that anarchy imposes on enforcement when a powerful state chooses to act against established norms."
+      },
+      {
+        "title": "NATO and the Logic of Alliances",
+        "description": "The North Atlantic Treaty Organization, founded in 1949, is one of the clearest examples of states attempting to build collective security within an anarchic system. Unable to fully rely on any central authority for protection, the United States, Canada, and Western European states created a voluntary military alliance in which an attack on one member would be treated as an attack on all. NATO illustrates how the self-help logic of anarchy does not preclude cooperation; it can drive states to seek allies precisely because no superior authority exists to guarantee their security independently."
+      },
+      {
+        "title": "The Cold War Arms Race",
+        "description": "During the Cold War, the United States and the Soviet Union engaged in a sustained expansion of their nuclear and conventional military capabilities, each responding to the other's buildup. Even as both sides expressed concerns about the dangers of escalation, neither felt able to unilaterally restrain its arsenal without risking strategic disadvantage. This dynamic is a widely cited illustration of the security dilemma: each side's efforts to increase its own security contributed to mutual insecurity, not because either sought war but because the anarchic structure of the international system made unilateral restraint difficult to sustain without credible assurances from the other party."
+      }
+    ],
+    "related_terms": [
+      "sovereignty",
+      "anarchy",
+      "self-help system",
+      "security dilemma",
+      "non-interference",
+      "Westphalian order"
+    ]
   },
   "realism-and-neorealism": {
     "section_number": "3.3",
     "section_title": "Realism and Neorealism",
     "subject": "Social Sciences",
     "topic": "International Relations",
-    "expanded_explanation": "",
-    "key_takeaways": [],
-    "real_world_examples": [],
-    "related_terms": []
+    "expanded_explanation": {
+      "introduction": "Realism is one of the oldest and most influential frameworks in international relations, built on the view that world politics is shaped primarily by competition among states in an anarchic environment — one without any central authority capable of enforcing rules. Rather than emphasising cooperation, shared norms, or the transformative potential of institutions, realism focuses on power, security, and the structural conditions that make conflict a persistent feature of international life. Neorealism, developed in the late twentieth century, reformulated this tradition by grounding its arguments not in human nature but in the structure of the international system itself.",
+      "section_1": {
+        "heading": "Classical Realism: Power, Interest, and Human Nature",
+        "content": "Classical realism draws on a long intellectual tradition. Thucydides' account of the Peloponnesian War, written in the fifth century BCE, contains one of its most cited passages: the claim, put in the mouths of Athenian envoys during the Melian Dialogue, that the strong do what they can while the weak suffer what they must. Thucydides is often claimed by realists as a forerunner, though his own views are complex and contested. Niccolò Machiavelli in the sixteenth century and Thomas Hobbes in the seventeenth century offered further arguments that politics in the absence of a sovereign tends toward competition, self-interest, and the priority of security — ideas that later theorists drew on in developing a systematic account of international relations.\n\nHans Morgenthau gave classical realism its modern, systematic form in Politics Among Nations, first published in 1948. Morgenthau argued that international politics is governed by the pursuit of power, and that statecraft must be guided by the national interest — understood primarily in terms of power. For Morgenthau, anarchy — the absence of any world government capable of enforcing rules among states — combined with the drive for power means that conflict is an enduring feature of international life. He did not present this as an endorsement of unlimited power politics; he believed that recognising these realities was necessary for prudent statecraft, which should moderate power struggles through diplomacy and balance rather than inflame them through idealism or overreach.\n\nClassical realism also emphasised the balance of power — the tendency of states to align against rising or threatening powers rather than allow any single state to dominate. For classical realists, this was less a mechanical law than a principle of statecraft: a skilled diplomat could manage the balance; an imprudent one would undermine it."
+      },
+      "section_2": {
+        "heading": "Neorealism: Structure Over Human Nature",
+        "content": "Kenneth Waltz reformulated realism in Theory of International Politics, published in 1979, by shifting its explanatory foundation from human nature to the structure of the international system. Waltz argued that classical realism's reliance on human nature was too variable to explain the regularities of international politics — why states behave similarly across very different historical periods and regardless of their domestic character. His alternative was to focus on systemic structure, defined primarily by its organising principle: anarchy. Because no authority exists above states, each state must ultimately rely on itself for security — a condition Waltz called self-help.\n\nWaltz also argued that the distribution of capabilities across the system shapes its overall character. A bipolar system, with two dominant powers, he argued tends toward greater stability and predictability than a multipolar one, because each major power can monitor the other directly and the management of deterrence is clearer. His analysis was shaped by the Cold War order, dominated by the United States and the Soviet Union, though his argument was primarily structural rather than a description of that specific period.\n\nA significant debate developed within neorealism between defensive and offensive variants. Waltz is generally associated with defensive realism, which holds that states primarily seek security and survival rather than unlimited power; rational states therefore pursue sufficient capability rather than maximum power, since aggressive expansion tends to provoke balancing coalitions. John Mearsheimer, in The Tragedy of Great Power Politics, published in 2001, developed offensive realism: the argument that the uncertainty inherent in anarchy leads states to maximise their relative power whenever possible. On this view, great power competition is not a product of misperception but a near-inescapable structural condition. These differences within neorealism remain actively debated among scholars."
+      },
+      "section_3": {
+        "heading": "Anarchy, the Security Dilemma, and Balance of Power",
+        "content": "Anarchy is the foundational condition in both classical and structural realism. It does not mean chaos or constant war; it means the absence of a central authority capable of making and enforcing binding rules among states. In a domestic political system, individuals and groups can appeal to courts and law enforcement when threatened. In the international system, no equivalent body exists with comparable enforcement capacity, and this absence shapes how states relate to one another even during periods of peace.\n\nThe security dilemma captures one of realism's most widely cited analytical insights: actions a state takes to increase its own security can make other states feel less secure, prompting them to respond in kind. A state that builds up its military for purely defensive reasons may be interpreted by its neighbours as preparing for aggression; they may then increase their own capabilities in response. The result can be arms races or heightened tensions that leave all parties less secure than before, even though each acted defensively. The concept has been developed extensively within the realist tradition and applied widely in studies of arms competition and interstate conflict.\n\nBalance of power — the tendency for states to align against a perceived threat or a dominant power — is another core realist concept. Neorealists tend to treat it as a structural tendency rather than a deliberate policy choice: the logic of anarchy and self-help should lead states to balance against rising powers rather than accommodate or align with them, because allowing any single state to achieve hegemony would leave all others highly vulnerable. Whether states reliably behave this way, and under what conditions, remains a subject of ongoing empirical debate."
+      },
+      "section_4": {
+        "heading": "Strengths and Criticisms",
+        "content": "Realism and neorealism have been influential partly because they offer a parsimonious framework — one that generates explanations from a relatively small set of assumptions — for patterns that recur across very different historical periods and political contexts. Great power competition, arms races, alliance formation in response to perceived threats, and the tendency of states to pursue strategic interests even at the expense of shared values are dynamics that realist frameworks engage with directly. Neorealism in particular has been valued for its theoretical clarity: by focusing on system structure rather than the intentions or domestic characteristics of individual states, it generates predictions that do not require detailed knowledge of specific governments.\n\nCritics have raised substantial objections from several directions. Liberal and institutionalist scholars argue that realism underestimates how international institutions can facilitate cooperation and alter state incentives even under anarchy. Constructivists argue that realism treats state identities, interests, and norms as fixed inputs, when in fact they are shaped by social interaction and can change significantly over time. Realism has also been criticised for treating states as unitary actors, which can obscure the domestic political processes that often shape foreign policy decisions. The democratic peace — the well-documented empirical tendency for liberal democracies to avoid war with one another — is difficult to account for within a structural realist framework that treats regime type as analytically secondary to the distribution of power.\n\nRealists respond that international cooperation tends to be fragile and often reflects underlying distributions of power rather than creating genuinely new conditions, and that the democratic peace may be more conditional or explicable in realist terms than critics suggest. These debates between realism and its competitors remain among the most active in international relations theory, and many scholars draw on multiple frameworks rather than committing exclusively to one."
+      }
+    },
+    "mental_model": {
+      "heading": "Think of it like this",
+      "content": "Imagine a remote frontier settlement with no sheriff, no courts, and no law enforcement. Every household has to protect itself and can never be fully certain about the intentions of its neighbours. Even if most families want peaceful relations, the absence of any authority that could reliably enforce an agreement means that caution and self-reliance become rational responses. If one family starts stockpiling supplies or building a larger fence, others may feel threatened and do the same — not because anyone is necessarily aggressive, but because the structure of the situation creates pressure in that direction. This is essentially the condition that realists argue states face in the international system: the absence of a central authority does not make conflict inevitable, but it does create persistent incentives to watch relative power carefully and to avoid dependence on others for security."
+    },
+    "key_takeaways": [
+      "Realism holds that international politics is shaped primarily by the absence of central authority, the pursuit of power and security, and the enduring competition among states for survival and influence.",
+      "Classical realism, associated with thinkers such as Hans Morgenthau, grounds this competition partly in human nature and defines statecraft around the national interest understood in terms of power.",
+      "Neorealism, developed by Kenneth Waltz in Theory of International Politics (1979), reformulated the tradition by locating the driver of state behaviour in the structure of the international system — particularly its anarchic character — rather than in human nature.",
+      "The security dilemma — the process by which states' defensive actions can provoke insecurity in others — is one of realism's most widely applied analytical concepts and captures a genuine tension in international politics.",
+      "Realism has been criticised for underestimating the role of institutions, ideas, and domestic politics, and for struggling to explain phenomena such as the democratic peace, though it continues to inform analysis of great power competition."
+    ],
+    "real_world_examples": [
+      {
+        "title": "Cold War Bipolarity",
+        "description": "Waltz used the US-Soviet bipolar system as a central illustration of his structural arguments, contending that two-power competition tends toward greater stability and predictability than a multipolar arrangement. He argued that each superpower could monitor the other directly and that the management of deterrence was relatively clear in a bipolar structure. The roughly forty-year absence of direct military conflict between the United States and the Soviet Union was consistent with this argument, though scholars debate how much of that outcome is attributable to nuclear deterrence, the caution of particular decision-makers, or the structural factors Waltz identified."
+      },
+      {
+        "title": "The Anglo-German Naval Arms Race before World War I",
+        "description": "In the decades before 1914, Britain and Germany engaged in an escalating competition to expand their naval fleets. Germany's naval buildup, driven partly by strategic ambition and partly by a desire for recognition as a great power, was interpreted by Britain as a direct challenge to its maritime dominance. Britain responded by accelerating its own shipbuilding programme, contributing to the atmosphere of mutual suspicion that intensified in the years before the war. Historians and international relations scholars frequently cite this episode as an example of the security dilemma: each side's actions, however motivated, reinforced the other's fears and produced an outcome of deepening insecurity that neither had fully intended."
+      },
+      {
+        "title": "NATO Expansion and Realist Debate",
+        "description": "Several realist scholars, most prominently John Mearsheimer, argued in the post-Cold War period that NATO's eastward expansion would be perceived by Russia as a strategic threat and could eventually provoke a serious military response. This argument became the subject of widespread debate, particularly following Russia's invasion of Ukraine in 2022. Critics contend that the realist reading underestimates Russian agency, the role of domestic politics in Moscow's decisions, and the genuine preferences of the states that sought NATO membership. The debate illustrates both the reach of realist frameworks in shaping policy discussion and the genuine difficulty of applying structural arguments to situations shaped by multiple, overlapping causal factors."
+      }
+    ],
+    "related_terms": [
+      "anarchy",
+      "balance of power",
+      "security dilemma",
+      "structural realism",
+      "offensive realism",
+      "self-help",
+      "polarity",
+      "national interest"
+    ]
   },
   "liberalism-and-neoliberalism": {
     "section_number": "3.4",
@@ -1469,7 +1615,6 @@
     "real_world_examples": [],
     "related_terms": []
   },
-
   "micro-intro": {
     "section_number": "1.1",
     "section_title": "What Is Microeconomics?",
@@ -1498,12 +1643,25 @@
       "Markets can be efficient but are also capable of systematic failure."
     ],
     "real_world_examples": [
-      { "title": "Surge Pricing", "description": "When demand for taxis spikes on New Year's Eve, Uber raises prices. This is microeconomics in action: higher prices incentivise more drivers to work and discourage some riders, restoring balance between supply and demand." },
-      { "title": "The Opportunity Cost of University", "description": "Choosing to study for four years isn't just about tuition fees — it's also the salary you forgo by not working full-time. Many economists argue this 'time cost' is the largest part of the true cost of higher education." }
+      {
+        "title": "Surge Pricing",
+        "description": "When demand for taxis spikes on New Year's Eve, Uber raises prices. This is microeconomics in action: higher prices incentivise more drivers to work and discourage some riders, restoring balance between supply and demand."
+      },
+      {
+        "title": "The Opportunity Cost of University",
+        "description": "Choosing to study for four years isn't just about tuition fees — it's also the salary you forgo by not working full-time. Many economists argue this 'time cost' is the largest part of the true cost of higher education."
+      }
     ],
-    "related_terms": ["scarcity", "opportunity cost", "incentives", "rational actor", "price mechanism", "trade-off", "marginal analysis"]
+    "related_terms": [
+      "scarcity",
+      "opportunity cost",
+      "incentives",
+      "rational actor",
+      "price mechanism",
+      "trade-off",
+      "marginal analysis"
+    ]
   },
-
   "micro-markets": {
     "section_number": "1.2",
     "section_title": "Markets, Supply, and Demand",
@@ -1532,12 +1690,26 @@
       "Government interventions like price controls can prevent markets from clearing."
     ],
     "real_world_examples": [
-      { "title": "Coffee Prices and Weather", "description": "A drought in Brazil — the world's largest coffee producer — destroys crops, shifting the supply curve left. With less coffee available at every price, the equilibrium price rises globally. Consumers feel this in their morning cup." },
-      { "title": "Rent Controls in Major Cities", "description": "When cities cap rents below market equilibrium, demand for housing exceeds supply. Landlords convert properties to other uses or stop maintaining them, and housing shortages deepen — a textbook example of a price ceiling's unintended consequences." }
+      {
+        "title": "Coffee Prices and Weather",
+        "description": "A drought in Brazil — the world's largest coffee producer — destroys crops, shifting the supply curve left. With less coffee available at every price, the equilibrium price rises globally. Consumers feel this in their morning cup."
+      },
+      {
+        "title": "Rent Controls in Major Cities",
+        "description": "When cities cap rents below market equilibrium, demand for housing exceeds supply. Landlords convert properties to other uses or stop maintaining them, and housing shortages deepen — a textbook example of a price ceiling's unintended consequences."
+      }
     ],
-    "related_terms": ["demand curve", "supply curve", "equilibrium price", "shortage", "surplus", "price ceiling", "price floor", "elasticity"]
+    "related_terms": [
+      "demand curve",
+      "supply curve",
+      "equilibrium price",
+      "shortage",
+      "surplus",
+      "price ceiling",
+      "price floor",
+      "elasticity"
+    ]
   },
-
   "micro-consumer-theory": {
     "section_number": "1.3",
     "section_title": "Consumer Theory and Choice",
@@ -1566,12 +1738,26 @@
       "Behavioural economics challenges the assumption of perfectly rational consumers."
     ],
     "real_world_examples": [
-      { "title": "Supermarket Own-Brand Products", "description": "When the price of branded cereal rises, many consumers switch to the own-brand equivalent. This substitution effect is consumer theory at work — the relative cost of the branded option has increased, making the alternative comparatively more attractive." },
-      { "title": "All-You-Can-Eat Buffets", "description": "Buffets exploit diminishing marginal utility. The first plate feels worth every penny; by the fourth, most diners stop — not because they're out of money, but because the marginal utility of another plate has fallen to near zero." }
+      {
+        "title": "Supermarket Own-Brand Products",
+        "description": "When the price of branded cereal rises, many consumers switch to the own-brand equivalent. This substitution effect is consumer theory at work — the relative cost of the branded option has increased, making the alternative comparatively more attractive."
+      },
+      {
+        "title": "All-You-Can-Eat Buffets",
+        "description": "Buffets exploit diminishing marginal utility. The first plate feels worth every penny; by the fourth, most diners stop — not because they're out of money, but because the marginal utility of another plate has fallen to near zero."
+      }
     ],
-    "related_terms": ["utility", "marginal utility", "diminishing returns", "budget constraint", "substitution effect", "income effect", "indifference curve", "rational choice"]
+    "related_terms": [
+      "utility",
+      "marginal utility",
+      "diminishing returns",
+      "budget constraint",
+      "substitution effect",
+      "income effect",
+      "indifference curve",
+      "rational choice"
+    ]
   },
-
   "macro-intro": {
     "section_number": "2.1",
     "section_title": "What Is Macroeconomics?",
@@ -1600,12 +1786,27 @@
       "Macroeconomic policy choices have direct consequences for living standards and employment."
     ],
     "real_world_examples": [
-      { "title": "The 2008 Financial Crisis", "description": "When US housing markets collapsed, the effects rippled through the entire global economy — banks failed, credit froze, businesses cut investment, and unemployment rose sharply. This was a macroeconomic event: a shock in one sector cascaded across the entire system in ways no individual actor could prevent or fully anticipate." },
-      { "title": "Japan's Lost Decade", "description": "After a financial bubble burst in 1991, Japan experienced a prolonged period of low growth and deflation. Despite low interest rates, spending remained weak — consumers and firms kept saving in anticipation of further price falls. This deflationary trap illustrated how macroeconomic expectations can become self-fulfilling." }
+      {
+        "title": "The 2008 Financial Crisis",
+        "description": "When US housing markets collapsed, the effects rippled through the entire global economy — banks failed, credit froze, businesses cut investment, and unemployment rose sharply. This was a macroeconomic event: a shock in one sector cascaded across the entire system in ways no individual actor could prevent or fully anticipate."
+      },
+      {
+        "title": "Japan's Lost Decade",
+        "description": "After a financial bubble burst in 1991, Japan experienced a prolonged period of low growth and deflation. Despite low interest rates, spending remained weak — consumers and firms kept saving in anticipation of further price falls. This deflationary trap illustrated how macroeconomic expectations can become self-fulfilling."
+      }
     ],
-    "related_terms": ["GDP", "inflation", "unemployment", "aggregate demand", "aggregate supply", "fiscal policy", "monetary policy", "Keynesian economics", "business cycle"]
+    "related_terms": [
+      "GDP",
+      "inflation",
+      "unemployment",
+      "aggregate demand",
+      "aggregate supply",
+      "fiscal policy",
+      "monetary policy",
+      "Keynesian economics",
+      "business cycle"
+    ]
   },
-
   "macro-gdp-inflation": {
     "section_number": "2.2",
     "section_title": "GDP, Inflation, and Unemployment",
@@ -1634,12 +1835,27 @@
       "These three indicators interact: low unemployment often pushes up inflation (the Phillips curve trade-off)."
     ],
     "real_world_examples": [
-      { "title": "Weimar Germany's Hyperinflation", "description": "In 1923, Germany's inflation became so extreme that prices doubled every few days. Workers collected wages in wheelbarrows. The collapse in the real value of money destroyed savings, destabilised society, and left lasting political scars — illustrating the devastating human cost of extreme inflation." },
-      { "title": "The Gig Economy and Unemployment Statistics", "description": "Official unemployment figures can mask underemployment. Many gig economy workers are technically 'employed' but work far fewer hours than they want, at lower pay. This has prompted economists to develop broader measures of labour market slack beyond the headline unemployment rate." }
+      {
+        "title": "Weimar Germany's Hyperinflation",
+        "description": "In 1923, Germany's inflation became so extreme that prices doubled every few days. Workers collected wages in wheelbarrows. The collapse in the real value of money destroyed savings, destabilised society, and left lasting political scars — illustrating the devastating human cost of extreme inflation."
+      },
+      {
+        "title": "The Gig Economy and Unemployment Statistics",
+        "description": "Official unemployment figures can mask underemployment. Many gig economy workers are technically 'employed' but work far fewer hours than they want, at lower pay. This has prompted economists to develop broader measures of labour market slack beyond the headline unemployment rate."
+      }
     ],
-    "related_terms": ["GDP", "real GDP", "inflation", "CPI", "deflation", "unemployment rate", "cyclical unemployment", "natural rate of unemployment", "Phillips curve"]
+    "related_terms": [
+      "GDP",
+      "real GDP",
+      "inflation",
+      "CPI",
+      "deflation",
+      "unemployment rate",
+      "cyclical unemployment",
+      "natural rate of unemployment",
+      "Phillips curve"
+    ]
   },
-
   "macro-fiscal-monetary": {
     "section_number": "2.3",
     "section_title": "Fiscal and Monetary Policy",
@@ -1668,12 +1884,27 @@
       "Coordination between fiscal and monetary authorities is crucial during major crises."
     ],
     "real_world_examples": [
-      { "title": "The 2008 Stimulus Packages", "description": "Following the financial crisis, governments worldwide launched large fiscal stimulus packages (the US passed an $800 billion package). Simultaneously, central banks cut interest rates to near zero. The combination helped prevent a repeat of the Great Depression, though it also left lasting questions about public debt and inequality." },
-      { "title": "The ECB's Quantitative Easing", "description": "When eurozone inflation fell dangerously low in 2015, the European Central Bank began purchasing hundreds of billions of euros in government bonds — 'printing money' to inject liquidity. This unprecedented monetary intervention remains controversial but is credited with preventing deflation and stabilising the eurozone." }
+      {
+        "title": "The 2008 Stimulus Packages",
+        "description": "Following the financial crisis, governments worldwide launched large fiscal stimulus packages (the US passed an $800 billion package). Simultaneously, central banks cut interest rates to near zero. The combination helped prevent a repeat of the Great Depression, though it also left lasting questions about public debt and inequality."
+      },
+      {
+        "title": "The ECB's Quantitative Easing",
+        "description": "When eurozone inflation fell dangerously low in 2015, the European Central Bank began purchasing hundreds of billions of euros in government bonds — 'printing money' to inject liquidity. This unprecedented monetary intervention remains controversial but is credited with preventing deflation and stabilising the eurozone."
+      }
     ],
-    "related_terms": ["fiscal policy", "monetary policy", "interest rate", "central bank", "quantitative easing", "budget deficit", "government debt", "inflation targeting", "automatic stabilisers"]
+    "related_terms": [
+      "fiscal policy",
+      "monetary policy",
+      "interest rate",
+      "central bank",
+      "quantitative easing",
+      "budget deficit",
+      "government debt",
+      "inflation targeting",
+      "automatic stabilisers"
+    ]
   },
-
   "dev-intro": {
     "section_number": "3.1",
     "section_title": "What Is Development Economics?",
@@ -1702,12 +1933,26 @@
       "Development economics is inherently normative: it is concerned with what ought to change, not just what is."
     ],
     "real_world_examples": [
-      { "title": "Botswana vs. Zimbabwe", "description": "Two neighbouring southern African countries with similar colonial histories diverged dramatically after independence. Botswana built strong institutions, managed its diamond wealth prudently, and grew into a middle-income country. Zimbabwe pursued destructive land policies and collapsed into hyperinflation. The contrast illustrates the importance of institutions over geography." },
-      { "title": "South Korea's Transformation", "description": "In 1960, South Korea had a per capita income comparable to Ghana. By 2000, it was a high-income country with world-class technology companies. This transformation — driven by industrial policy, investment in education, and export-led growth — is one of the most studied cases in development economics." }
+      {
+        "title": "Botswana vs. Zimbabwe",
+        "description": "Two neighbouring southern African countries with similar colonial histories diverged dramatically after independence. Botswana built strong institutions, managed its diamond wealth prudently, and grew into a middle-income country. Zimbabwe pursued destructive land policies and collapsed into hyperinflation. The contrast illustrates the importance of institutions over geography."
+      },
+      {
+        "title": "South Korea's Transformation",
+        "description": "In 1960, South Korea had a per capita income comparable to Ghana. By 2000, it was a high-income country with world-class technology companies. This transformation — driven by industrial policy, investment in education, and export-led growth — is one of the most studied cases in development economics."
+      }
     ],
-    "related_terms": ["GDP per capita", "Human Development Index", "poverty trap", "institutions", "colonial legacy", "inclusive growth", "multidimensional poverty", "Sustainable Development Goals"]
+    "related_terms": [
+      "GDP per capita",
+      "Human Development Index",
+      "poverty trap",
+      "institutions",
+      "colonial legacy",
+      "inclusive growth",
+      "multidimensional poverty",
+      "Sustainable Development Goals"
+    ]
   },
-
   "dev-inequality": {
     "section_number": "3.2",
     "section_title": "Inequality and Its Consequences",
@@ -1736,12 +1981,26 @@
       "Addressing inequality involves trade-offs between redistribution, efficiency, and incentives."
     ],
     "real_world_examples": [
-      { "title": "The Great Gatsby Curve", "description": "Economist Miles Corak documented a pattern now known as the 'Great Gatsby Curve': countries with higher inequality also tend to have lower social mobility. In highly unequal societies, where you start in life strongly predicts where you end up — the 'rags to riches' story becomes less common." },
-      { "title": "Nordic Equality", "description": "Scandinavian countries combine relatively high equality with strong economic performance, challenging the assumption that equality and efficiency inevitably trade off. Strong unions, universal public services, and progressive taxation produce relatively compressed wage distributions without sacrificing innovation or productivity." }
+      {
+        "title": "The Great Gatsby Curve",
+        "description": "Economist Miles Corak documented a pattern now known as the 'Great Gatsby Curve': countries with higher inequality also tend to have lower social mobility. In highly unequal societies, where you start in life strongly predicts where you end up — the 'rags to riches' story becomes less common."
+      },
+      {
+        "title": "Nordic Equality",
+        "description": "Scandinavian countries combine relatively high equality with strong economic performance, challenging the assumption that equality and efficiency inevitably trade off. Strong unions, universal public services, and progressive taxation produce relatively compressed wage distributions without sacrificing innovation or productivity."
+      }
     ],
-    "related_terms": ["Gini coefficient", "income distribution", "social mobility", "wealth inequality", "progressive taxation", "Kuznets curve", "relative poverty", "absolute poverty"]
+    "related_terms": [
+      "Gini coefficient",
+      "income distribution",
+      "social mobility",
+      "wealth inequality",
+      "progressive taxation",
+      "Kuznets curve",
+      "relative poverty",
+      "absolute poverty"
+    ]
   },
-
   "dev-global-poverty": {
     "section_number": "3.3",
     "section_title": "Global Poverty and Aid",
@@ -1770,12 +2029,27 @@
       "Global shocks like COVID-19 can reverse years of poverty reduction progress rapidly."
     ],
     "real_world_examples": [
-      { "title": "The GiveDirectly Experiment", "description": "GiveDirectly gives unconditional cash transfers directly to extremely poor households in Kenya and Uganda, bypassing traditional aid intermediaries. Studies show recipients use the money well — investing in assets, education, and health — challenging the assumption that poor people cannot be trusted to spend aid effectively." },
-      { "title": "China's Poverty Reduction", "description": "China lifted approximately 800 million people out of extreme poverty between 1978 and 2018 — the single largest poverty reduction in history. This was driven primarily by economic growth, not aid, though the state also made targeted investments in infrastructure, education, and rural development." }
+      {
+        "title": "The GiveDirectly Experiment",
+        "description": "GiveDirectly gives unconditional cash transfers directly to extremely poor households in Kenya and Uganda, bypassing traditional aid intermediaries. Studies show recipients use the money well — investing in assets, education, and health — challenging the assumption that poor people cannot be trusted to spend aid effectively."
+      },
+      {
+        "title": "China's Poverty Reduction",
+        "description": "China lifted approximately 800 million people out of extreme poverty between 1978 and 2018 — the single largest poverty reduction in history. This was driven primarily by economic growth, not aid, though the state also made targeted investments in infrastructure, education, and rural development."
+      }
     ],
-    "related_terms": ["extreme poverty", "poverty trap", "foreign aid", "randomised controlled trials", "remittances", "comparative advantage", "fragile states", "World Bank", "Millennium Development Goals"]
+    "related_terms": [
+      "extreme poverty",
+      "poverty trap",
+      "foreign aid",
+      "randomised controlled trials",
+      "remittances",
+      "comparative advantage",
+      "fragile states",
+      "World Bank",
+      "Millennium Development Goals"
+    ]
   },
-
   "beh-intro": {
     "section_number": "4.1",
     "section_title": "What Is Behavioural Economics?",
@@ -1804,12 +2078,27 @@
       "Behavioural economics raises philosophical questions about autonomy, manipulation, and what it means to choose freely."
     ],
     "real_world_examples": [
-      { "title": "Auto-Enrolment Pensions", "description": "When employers automatically enrol workers in pension schemes (with the option to opt out), participation rates jump dramatically — often from under 40% to over 90%. The decision to save hasn't changed; only the default has. This exploits status quo bias and has become a major tool of retirement policy worldwide." },
-      { "title": "The Endowment Effect", "description": "People consistently value objects more once they own them. In one famous experiment, participants randomly given a coffee mug demanded nearly twice as much to sell it as others were willing to pay. This 'endowment effect' — valuing things more once they're ours — cannot be explained by rational choice theory." }
+      {
+        "title": "Auto-Enrolment Pensions",
+        "description": "When employers automatically enrol workers in pension schemes (with the option to opt out), participation rates jump dramatically — often from under 40% to over 90%. The decision to save hasn't changed; only the default has. This exploits status quo bias and has become a major tool of retirement policy worldwide."
+      },
+      {
+        "title": "The Endowment Effect",
+        "description": "People consistently value objects more once they own them. In one famous experiment, participants randomly given a coffee mug demanded nearly twice as much to sell it as others were willing to pay. This 'endowment effect' — valuing things more once they're ours — cannot be explained by rational choice theory."
+      }
     ],
-    "related_terms": ["rational choice", "loss aversion", "cognitive bias", "heuristics", "dual process theory", "System 1 / System 2", "prospect theory", "behavioural policy", "nudge"]
+    "related_terms": [
+      "rational choice",
+      "loss aversion",
+      "cognitive bias",
+      "heuristics",
+      "dual process theory",
+      "System 1 / System 2",
+      "prospect theory",
+      "behavioural policy",
+      "nudge"
+    ]
   },
-
   "beh-biases": {
     "section_number": "4.2",
     "section_title": "Cognitive Biases and Heuristics",
@@ -1838,12 +2127,27 @@
       "Availability heuristic: we judge probability by ease of recall, not actual frequency."
     ],
     "real_world_examples": [
-      { "title": "Supermarket Pricing", "description": "Pricing a product at £9.99 rather than £10 exploits anchoring and the left-digit effect — buyers anchor on the 9 and perceive the price as significantly cheaper, even though the difference is trivial. Decades of research confirm this effect is robust across cultures and product types." },
-      { "title": "The Lottery and Risk Perception", "description": "Lottery tickets sell despite offering negative expected value because winners are vivid and memorable (availability heuristic) while losing is silent and forgettable. Meanwhile, many people vastly underestimate their risk of mundane killers like heart disease or car accidents — events that are common but rarely dramatised." }
+      {
+        "title": "Supermarket Pricing",
+        "description": "Pricing a product at £9.99 rather than £10 exploits anchoring and the left-digit effect — buyers anchor on the 9 and perceive the price as significantly cheaper, even though the difference is trivial. Decades of research confirm this effect is robust across cultures and product types."
+      },
+      {
+        "title": "The Lottery and Risk Perception",
+        "description": "Lottery tickets sell despite offering negative expected value because winners are vivid and memorable (availability heuristic) while losing is silent and forgettable. Meanwhile, many people vastly underestimate their risk of mundane killers like heart disease or car accidents — events that are common but rarely dramatised."
+      }
     ],
-    "related_terms": ["heuristic", "anchoring", "framing effect", "present bias", "hyperbolic discounting", "availability heuristic", "overconfidence", "status quo bias", "sunk cost fallacy"]
+    "related_terms": [
+      "heuristic",
+      "anchoring",
+      "framing effect",
+      "present bias",
+      "hyperbolic discounting",
+      "availability heuristic",
+      "overconfidence",
+      "status quo bias",
+      "sunk cost fallacy"
+    ]
   },
-
   "beh-nudge-theory": {
     "section_number": "4.3",
     "section_title": "Nudge Theory and Choice Architecture",
@@ -1872,12 +2176,27 @@
       "Nudging is ethically contested: does exploiting biases respect or undermine human autonomy?"
     ],
     "real_world_examples": [
-      { "title": "Organ Donation Defaults", "description": "Countries with opt-out organ donation (where you are a donor unless you register otherwise) have dramatically higher donation rates than opt-in countries. Spain, with opt-out, has among the world's highest donation rates; the UK recently shifted to opt-out. The difference in outcomes is driven entirely by the default, not by changed values." },
-      { "title": "Healthier School Canteens", "description": "Placing fruit at eye level and healthy options first in school cafeteria lines increases children's consumption of nutritious food — without removing any less healthy options. This real-world experiment by the Cornell Food and Brand Lab helped launch the behavioural approach to public health policy." }
+      {
+        "title": "Organ Donation Defaults",
+        "description": "Countries with opt-out organ donation (where you are a donor unless you register otherwise) have dramatically higher donation rates than opt-in countries. Spain, with opt-out, has among the world's highest donation rates; the UK recently shifted to opt-out. The difference in outcomes is driven entirely by the default, not by changed values."
+      },
+      {
+        "title": "Healthier School Canteens",
+        "description": "Placing fruit at eye level and healthy options first in school cafeteria lines increases children's consumption of nutritious food — without removing any less healthy options. This real-world experiment by the Cornell Food and Brand Lab helped launch the behavioural approach to public health policy."
+      }
     ],
-    "related_terms": ["nudge", "choice architecture", "default effect", "libertarian paternalism", "opt-in vs opt-out", "behavioural insights", "paternalism", "autonomy", "Thaler and Sunstein"]
+    "related_terms": [
+      "nudge",
+      "choice architecture",
+      "default effect",
+      "libertarian paternalism",
+      "opt-in vs opt-out",
+      "behavioural insights",
+      "paternalism",
+      "autonomy",
+      "Thaler and Sunstein"
+    ]
   },
-
   "ethics-intro": {
     "section_number": "1.1",
     "section_title": "What Is Ethics?",
@@ -1906,12 +2225,27 @@
       "Ethical reasoning is rigorous and requires argument, not just preference."
     ],
     "real_world_examples": [
-      { "title": "Whistleblowing", "description": "Is it ethical to leak classified government information that reveals illegal surveillance of citizens? Edward Snowden's case pits loyalty to law and institution against obligations to truth and the public interest. Ethics provides the framework for reasoning through the conflict — even if it doesn't supply a simple answer." },
-      { "title": "Historical Moral Progress", "description": "The abolition of slavery, the extension of voting rights to women, and the decriminalisation of homosexuality were all cases where ethical reasoning — the insistence that current practices were wrong — drove legal and social change. This is only possible if ethics is not merely a description of what people currently believe." }
+      {
+        "title": "Whistleblowing",
+        "description": "Is it ethical to leak classified government information that reveals illegal surveillance of citizens? Edward Snowden's case pits loyalty to law and institution against obligations to truth and the public interest. Ethics provides the framework for reasoning through the conflict — even if it doesn't supply a simple answer."
+      },
+      {
+        "title": "Historical Moral Progress",
+        "description": "The abolition of slavery, the extension of voting rights to women, and the decriminalisation of homosexuality were all cases where ethical reasoning — the insistence that current practices were wrong — drove legal and social change. This is only possible if ethics is not merely a description of what people currently believe."
+      }
     ],
-    "related_terms": ["normative ethics", "metaethics", "applied ethics", "moral relativism", "moral realism", "value", "obligation", "right action", "moral progress"]
+    "related_terms": [
+      "normative ethics",
+      "metaethics",
+      "applied ethics",
+      "moral relativism",
+      "moral realism",
+      "value",
+      "obligation",
+      "right action",
+      "moral progress"
+    ]
   },
-
   "ethics-normative": {
     "section_number": "1.2",
     "section_title": "Normative Ethical Theories",
@@ -1940,12 +2274,29 @@
       "Each theory captures genuine moral insights; using them as complementary lenses is typically more useful than picking one."
     ],
     "real_world_examples": [
-      { "title": "The Trolley Problem", "description": "A runaway trolley will kill five people unless you divert it to a side track where it will kill one. Most people say divert — a consequentialist verdict. But would you push a large man off a bridge to stop the trolley with his body, killing him but saving five? Most people say no, even though the arithmetic is identical. This inconsistency has driven decades of research into moral intuition." },
-      { "title": "Tax Evasion", "description": "A consequentialist might permit tax evasion if a wealthy individual genuinely believes they will spend the money more effectively than the government. A Kantian would refuse: the principle 'I will evade taxes when convenient' cannot be universalised — if everyone did it, taxation would collapse. The deontological perspective captures why rule-following matters even when individual calculations favour bending them." }
+      {
+        "title": "The Trolley Problem",
+        "description": "A runaway trolley will kill five people unless you divert it to a side track where it will kill one. Most people say divert — a consequentialist verdict. But would you push a large man off a bridge to stop the trolley with his body, killing him but saving five? Most people say no, even though the arithmetic is identical. This inconsistency has driven decades of research into moral intuition."
+      },
+      {
+        "title": "Tax Evasion",
+        "description": "A consequentialist might permit tax evasion if a wealthy individual genuinely believes they will spend the money more effectively than the government. A Kantian would refuse: the principle 'I will evade taxes when convenient' cannot be universalised — if everyone did it, taxation would collapse. The deontological perspective captures why rule-following matters even when individual calculations favour bending them."
+      }
     ],
-    "related_terms": ["consequentialism", "utilitarianism", "deontology", "categorical imperative", "virtue ethics", "Aristotle", "Kant", "Bentham", "Mill", "moral intuition", "the good life"]
+    "related_terms": [
+      "consequentialism",
+      "utilitarianism",
+      "deontology",
+      "categorical imperative",
+      "virtue ethics",
+      "Aristotle",
+      "Kant",
+      "Bentham",
+      "Mill",
+      "moral intuition",
+      "the good life"
+    ]
   },
-
   "ethics-applied": {
     "section_number": "1.3",
     "section_title": "Applied Ethics",
@@ -1974,12 +2325,27 @@
       "Emerging technologies (AI, social media, biotech) generate new ethical frontiers requiring careful analysis."
     ],
     "real_world_examples": [
-      { "title": "Organ Markets", "description": "Currently it is illegal to sell kidneys in most countries, though organ shortages kill thousands each year. Should we legalise organ markets? Consequentialists might say yes if it saves lives. Deontologists worry it treats the body as a commodity. Others worry markets for organs would exploit the poor — raising justice concerns that straight utilitarian calculus misses." },
-      { "title": "Climate Justice", "description": "Rich countries industrialised by burning fossil fuels and are responsible for most cumulative emissions, yet poor countries suffer most from the consequences. Applied ethics asks: what obligations does this history create? Answers range from financial reparations to technology transfers to more stringent emissions commitments from wealthy nations." }
+      {
+        "title": "Organ Markets",
+        "description": "Currently it is illegal to sell kidneys in most countries, though organ shortages kill thousands each year. Should we legalise organ markets? Consequentialists might say yes if it saves lives. Deontologists worry it treats the body as a commodity. Others worry markets for organs would exploit the poor — raising justice concerns that straight utilitarian calculus misses."
+      },
+      {
+        "title": "Climate Justice",
+        "description": "Rich countries industrialised by burning fossil fuels and are responsible for most cumulative emissions, yet poor countries suffer most from the consequences. Applied ethics asks: what obligations does this history create? Answers range from financial reparations to technology transfers to more stringent emissions commitments from wealthy nations."
+      }
     ],
-    "related_terms": ["applied ethics", "Rawls", "veil of ignorance", "distributive justice", "organ markets", "climate ethics", "future generations", "algorithmic ethics", "moral intuition"]
+    "related_terms": [
+      "applied ethics",
+      "Rawls",
+      "veil of ignorance",
+      "distributive justice",
+      "organ markets",
+      "climate ethics",
+      "future generations",
+      "algorithmic ethics",
+      "moral intuition"
+    ]
   },
-
   "logic-intro": {
     "section_number": "2.1",
     "section_title": "What Is Logic?",
@@ -2008,12 +2374,28 @@
       "Logical literacy is essential for critical thinking in any domain."
     ],
     "real_world_examples": [
-      { "title": "Legal Reasoning", "description": "Courtroom argument is a form of applied logic. A lawyer presenting a case is offering premises (evidence) and arguing that a conclusion (guilt or innocence) follows from them. Judges and juries must evaluate whether the conclusion genuinely follows from the evidence — a fundamentally logical task." },
-      { "title": "Scientific Hypotheses", "description": "The falsifiability criterion in science (associated with Karl Popper) is a logical claim: a hypothesis is scientific only if it can, in principle, be contradicted by evidence. This is a statement about the logical relationship between hypothesis and evidence — between a general claim and the particular observations that could refute it." }
+      {
+        "title": "Legal Reasoning",
+        "description": "Courtroom argument is a form of applied logic. A lawyer presenting a case is offering premises (evidence) and arguing that a conclusion (guilt or innocence) follows from them. Judges and juries must evaluate whether the conclusion genuinely follows from the evidence — a fundamentally logical task."
+      },
+      {
+        "title": "Scientific Hypotheses",
+        "description": "The falsifiability criterion in science (associated with Karl Popper) is a logical claim: a hypothesis is scientific only if it can, in principle, be contradicted by evidence. This is a statement about the logical relationship between hypothesis and evidence — between a general claim and the particular observations that could refute it."
+      }
     ],
-    "related_terms": ["argument", "premise", "conclusion", "validity", "soundness", "deductive reasoning", "inductive reasoning", "syllogism", "formal logic", "critical thinking"]
+    "related_terms": [
+      "argument",
+      "premise",
+      "conclusion",
+      "validity",
+      "soundness",
+      "deductive reasoning",
+      "inductive reasoning",
+      "syllogism",
+      "formal logic",
+      "critical thinking"
+    ]
   },
-
   "logic-arguments": {
     "section_number": "2.2",
     "section_title": "Arguments, Validity, and Soundness",
@@ -2042,12 +2424,27 @@
       "Inductive arguments support conclusions with evidence without guaranteeing them; science relies on induction."
     ],
     "real_world_examples": [
-      { "title": "Climate Change Arguments", "description": "The argument for human-caused climate change is essentially: (P1) CO₂ causes atmospheric warming; (P2) human activity significantly increases CO₂ levels; (C) therefore human activity causes atmospheric warming. The logical form is valid. The debate is about the truth of the premises — which is why it is an empirical, not a logical, dispute." },
-      { "title": "Economic Policy Debate", "description": "Arguments about minimum wages often have the form: (P1) Price ceilings reduce supply; (P2) minimum wages are price floors on labour; (C) minimum wages reduce employment. The form is valid, but both premises are contested. The real debate is over whether labour markets behave like simple commodity markets — an empirical question, not a logical one." }
+      {
+        "title": "Climate Change Arguments",
+        "description": "The argument for human-caused climate change is essentially: (P1) CO₂ causes atmospheric warming; (P2) human activity significantly increases CO₂ levels; (C) therefore human activity causes atmospheric warming. The logical form is valid. The debate is about the truth of the premises — which is why it is an empirical, not a logical, dispute."
+      },
+      {
+        "title": "Economic Policy Debate",
+        "description": "Arguments about minimum wages often have the form: (P1) Price ceilings reduce supply; (P2) minimum wages are price floors on labour; (C) minimum wages reduce employment. The form is valid, but both premises are contested. The real debate is over whether labour markets behave like simple commodity markets — an empirical question, not a logical one."
+      }
     ],
-    "related_terms": ["deductive validity", "soundness", "inductive reasoning", "modus ponens", "modus tollens", "premise", "conclusion", "inference", "falsifiability"]
+    "related_terms": [
+      "deductive validity",
+      "soundness",
+      "inductive reasoning",
+      "modus ponens",
+      "modus tollens",
+      "premise",
+      "conclusion",
+      "inference",
+      "falsifiability"
+    ]
   },
-
   "logic-fallacies": {
     "section_number": "2.3",
     "section_title": "Logical Fallacies",
@@ -2076,12 +2473,27 @@
       "Identifying fallacies improves argument quality and political/scientific discourse."
     ],
     "real_world_examples": [
-      { "title": "Political Debate Ad Hominems", "description": "Dismissing an economic argument because the economist who made it once worked for a bank is ad hominem — it attacks the person rather than the argument. Even if the economist's motives are suspect, the argument must be evaluated on its merits." },
-      { "title": "The Correlation/Causation Problem", "description": "Ice cream sales and drowning deaths are positively correlated. The cause is a third variable (hot weather increases both). In social science, failing to account for confounding variables — assuming correlation implies causation — produces consistently wrong conclusions, from vaccine safety panics to misguided economic policies." }
+      {
+        "title": "Political Debate Ad Hominems",
+        "description": "Dismissing an economic argument because the economist who made it once worked for a bank is ad hominem — it attacks the person rather than the argument. Even if the economist's motives are suspect, the argument must be evaluated on its merits."
+      },
+      {
+        "title": "The Correlation/Causation Problem",
+        "description": "Ice cream sales and drowning deaths are positively correlated. The cause is a third variable (hot weather increases both). In social science, failing to account for confounding variables — assuming correlation implies causation — produces consistently wrong conclusions, from vaccine safety panics to misguided economic policies."
+      }
     ],
-    "related_terms": ["ad hominem", "straw man", "false dichotomy", "affirming the consequent", "slippery slope", "correlation vs causation", "appeal to authority", "red herring", "begging the question"]
+    "related_terms": [
+      "ad hominem",
+      "straw man",
+      "false dichotomy",
+      "affirming the consequent",
+      "slippery slope",
+      "correlation vs causation",
+      "appeal to authority",
+      "red herring",
+      "begging the question"
+    ]
   },
-
   "epist-intro": {
     "section_number": "3.1",
     "section_title": "What Is Epistemology?",
@@ -2110,12 +2522,28 @@
       "Epistemology connects to economics in questions about model knowledge, uncertainty, and rational belief."
     ],
     "real_world_examples": [
-      { "title": "The Replication Crisis in Science", "description": "Many findings in psychology and economics have failed to replicate when re-tested. This is an epistemological crisis: which of our 'knowledge' claims were actually just statistical noise? The crisis has prompted epistemological reflection on methodology, publication bias, and the conditions under which scientific knowledge can be trusted." },
-      { "title": "COVID-19 and Expert Disagreement", "description": "The pandemic saw genuine, well-credentialed experts publicly disagreeing on the appropriate policy responses. This created an epistemological challenge for ordinary citizens: how to form reasonable beliefs when the experts disagree? Epistemology offers tools — assessing expert consensus, understanding uncertainty, recognising motivated reasoning — for navigating such situations." }
+      {
+        "title": "The Replication Crisis in Science",
+        "description": "Many findings in psychology and economics have failed to replicate when re-tested. This is an epistemological crisis: which of our 'knowledge' claims were actually just statistical noise? The crisis has prompted epistemological reflection on methodology, publication bias, and the conditions under which scientific knowledge can be trusted."
+      },
+      {
+        "title": "COVID-19 and Expert Disagreement",
+        "description": "The pandemic saw genuine, well-credentialed experts publicly disagreeing on the appropriate policy responses. This created an epistemological challenge for ordinary citizens: how to form reasonable beliefs when the experts disagree? Epistemology offers tools — assessing expert consensus, understanding uncertainty, recognising motivated reasoning — for navigating such situations."
+      }
     ],
-    "related_terms": ["knowledge", "belief", "justification", "rationalism", "empiricism", "testimony", "epistemology of expertise", "scepticism", "a priori", "a posteriori"]
+    "related_terms": [
+      "knowledge",
+      "belief",
+      "justification",
+      "rationalism",
+      "empiricism",
+      "testimony",
+      "epistemology of expertise",
+      "scepticism",
+      "a priori",
+      "a posteriori"
+    ]
   },
-
   "epist-knowledge-justified": {
     "section_number": "3.2",
     "section_title": "Knowledge, Belief, and Justification",
@@ -2144,12 +2572,27 @@
       "Justification can be internalist (based on what the believer is aware of) or externalist (based on external reliability)."
     ],
     "real_world_examples": [
-      { "title": "Economic Forecasting", "description": "An economist predicts a recession for incorrect reasons — but a recession happens anyway due to a cause they didn't identify. Is this 'knowledge' of a coming recession? The Gettier problem in epistemology suggests not — getting the right answer for the wrong reasons is not the same as genuine understanding or reliable prediction." },
-      { "title": "Legal Standards of Proof", "description": "Law distinguishes between 'beyond reasonable doubt' (criminal) and 'balance of probabilities' (civil) standards — these are essentially epistemological standards for what counts as adequate justification before acting. The legal system explicitly recognises that different contexts require different thresholds for justified belief before consequential action." }
+      {
+        "title": "Economic Forecasting",
+        "description": "An economist predicts a recession for incorrect reasons — but a recession happens anyway due to a cause they didn't identify. Is this 'knowledge' of a coming recession? The Gettier problem in epistemology suggests not — getting the right answer for the wrong reasons is not the same as genuine understanding or reliable prediction."
+      },
+      {
+        "title": "Legal Standards of Proof",
+        "description": "Law distinguishes between 'beyond reasonable doubt' (criminal) and 'balance of probabilities' (civil) standards — these are essentially epistemological standards for what counts as adequate justification before acting. The legal system explicitly recognises that different contexts require different thresholds for justified belief before consequential action."
+      }
     ],
-    "related_terms": ["justified true belief", "Gettier problem", "reliabilism", "epistemic justification", "internalism", "externalism", "epistemic luck", "truth", "belief"]
+    "related_terms": [
+      "justified true belief",
+      "Gettier problem",
+      "reliabilism",
+      "epistemic justification",
+      "internalism",
+      "externalism",
+      "epistemic luck",
+      "truth",
+      "belief"
+    ]
   },
-
   "epist-limits": {
     "section_number": "3.3",
     "section_title": "The Limits of Knowledge",
@@ -2178,12 +2621,27 @@
       "Intellectual humility and epistemic honesty are practical virtues, not just philosophical ideals."
     ],
     "real_world_examples": [
-      { "title": "The 2008 Financial Crisis and Model Overconfidence", "description": "Financial models used in the run-up to the 2008 crisis assumed that risks were calculable and that historical correlations would hold. They failed to account for genuine uncertainty — the possibility of a global deleveraging event outside the model's parameters. This was epistemic hubris: treating fundamental uncertainty as tractable risk." },
-      { "title": "Hayek vs. Keynes", "description": "The great 20th-century economic debate between Hayek and Keynes was partly an epistemological dispute. Hayek argued that economies coordinate distributed knowledge through prices — a process no central authority can replicate. Keynes argued that under uncertainty, market expectations can be self-defeating and government intervention can coordinate expectations more effectively. Both were making claims about what economic actors can and cannot know." }
+      {
+        "title": "The 2008 Financial Crisis and Model Overconfidence",
+        "description": "Financial models used in the run-up to the 2008 crisis assumed that risks were calculable and that historical correlations would hold. They failed to account for genuine uncertainty — the possibility of a global deleveraging event outside the model's parameters. This was epistemic hubris: treating fundamental uncertainty as tractable risk."
+      },
+      {
+        "title": "Hayek vs. Keynes",
+        "description": "The great 20th-century economic debate between Hayek and Keynes was partly an epistemological dispute. Hayek argued that economies coordinate distributed knowledge through prices — a process no central authority can replicate. Keynes argued that under uncertainty, market expectations can be self-defeating and government intervention can coordinate expectations more effectively. Both were making claims about what economic actors can and cannot know."
+      }
     ],
-    "related_terms": ["scepticism", "Hayek's knowledge problem", "tacit knowledge", "risk vs uncertainty", "Knightian uncertainty", "animal spirits", "epistemic humility", "distributed knowledge", "falsificationism"]
+    "related_terms": [
+      "scepticism",
+      "Hayek's knowledge problem",
+      "tacit knowledge",
+      "risk vs uncertainty",
+      "Knightian uncertainty",
+      "animal spirits",
+      "epistemic humility",
+      "distributed knowledge",
+      "falsificationism"
+    ]
   },
-
   "meta-intro": {
     "section_number": "4.1",
     "section_title": "What Is Metaphysics?",
@@ -2212,12 +2670,27 @@
       "Metaphysical assumptions shape economic theory — what 'preferences' and 'utility' really are, for instance."
     ],
     "real_world_examples": [
-      { "title": "What Is Money?", "description": "Money is a perfect metaphysical puzzle. A £20 note is physically just paper and ink — its value exists only because everyone collectively believes and acts as if it has value. This is what Searle calls a 'social fact' — real and causally powerful, but dependent on collective intentionality rather than physical properties. Understanding this is essential for understanding financial crises, in which 'value' can evaporate as collective belief collapses." },
-      { "title": "Corporate Personhood", "description": "In law, corporations are treated as legal persons — they can own property, enter contracts, and be sued. But what kind of entity is a corporation, metaphysically? It is not identical to any of its employees, shareholders, or directors. Social ontology helps clarify how collective entities can have genuine existence and causal power while being constituted by (but not reducible to) individual human beings." }
+      {
+        "title": "What Is Money?",
+        "description": "Money is a perfect metaphysical puzzle. A £20 note is physically just paper and ink — its value exists only because everyone collectively believes and acts as if it has value. This is what Searle calls a 'social fact' — real and causally powerful, but dependent on collective intentionality rather than physical properties. Understanding this is essential for understanding financial crises, in which 'value' can evaporate as collective belief collapses."
+      },
+      {
+        "title": "Corporate Personhood",
+        "description": "In law, corporations are treated as legal persons — they can own property, enter contracts, and be sued. But what kind of entity is a corporation, metaphysically? It is not identical to any of its employees, shareholders, or directors. Social ontology helps clarify how collective entities can have genuine existence and causal power while being constituted by (but not reducible to) individual human beings."
+      }
     ],
-    "related_terms": ["ontology", "materialism", "dualism", "idealism", "social ontology", "social facts", "collective intentionality", "personal identity", "philosophy of mind"]
+    "related_terms": [
+      "ontology",
+      "materialism",
+      "dualism",
+      "idealism",
+      "social ontology",
+      "social facts",
+      "collective intentionality",
+      "personal identity",
+      "philosophy of mind"
+    ]
   },
-
   "meta-reality-existence": {
     "section_number": "4.2",
     "section_title": "Reality, Existence, and Being",
@@ -2246,12 +2719,28 @@
       "A 'constructed' entity (like money or race) can be genuinely real and causally significant."
     ],
     "real_world_examples": [
-      { "title": "The Reality of Economic Models", "description": "Is 'perfect competition' a real phenomenon or a useful fiction? Economists disagree. Instrumentalists hold that models need only generate accurate predictions, regardless of whether their assumptions are realistic. Realists hold that good models should accurately represent underlying economic structures. This is a metaphysical dispute about what economic theory is doing." },
-      { "title": "Race as a Social Kind", "description": "Geneticists have shown that there is more genetic variation within racial groups than between them — suggesting race has no deep biological basis. Yet race is real in its social consequences: it shapes access to jobs, housing, education, and legal treatment. This illustrates the philosophical point that social construction does not equal social unreality." }
+      {
+        "title": "The Reality of Economic Models",
+        "description": "Is 'perfect competition' a real phenomenon or a useful fiction? Economists disagree. Instrumentalists hold that models need only generate accurate predictions, regardless of whether their assumptions are realistic. Realists hold that good models should accurately represent underlying economic structures. This is a metaphysical dispute about what economic theory is doing."
+      },
+      {
+        "title": "Race as a Social Kind",
+        "description": "Geneticists have shown that there is more genetic variation within racial groups than between them — suggesting race has no deep biological basis. Yet race is real in its social consequences: it shapes access to jobs, housing, education, and legal treatment. This illustrates the philosophical point that social construction does not equal social unreality."
+      }
     ],
-    "related_terms": ["ontology", "Platonism", "nominalism", "possible worlds", "social constructivism", "natural kinds", "social kinds", "modal logic", "counterfactuals", "realism"]
+    "related_terms": [
+      "ontology",
+      "Platonism",
+      "nominalism",
+      "possible worlds",
+      "social constructivism",
+      "natural kinds",
+      "social kinds",
+      "modal logic",
+      "counterfactuals",
+      "realism"
+    ]
   },
-
   "meta-free-will": {
     "section_number": "4.3",
     "section_title": "Free Will and Determinism",
@@ -2280,9 +2769,25 @@
       "Behavioural economics raises a new version of the free will question: are nudged decisions freely made?"
     ],
     "real_world_examples": [
-      { "title": "Criminal Sentencing and Responsibility", "description": "Neuroscience has shown that brain damage can dramatically alter behaviour, including criminal behaviour. Courts increasingly consider neuroscientific evidence in sentencing. This raises the free will question directly: if a person's violence is partly the product of a brain tumour, does this reduce their moral and legal responsibility? Compatibilists say it depends on whether the action flows from deliberation; hard determinists would push for therapy over punishment across the board." },
-      { "title": "Addiction and Autonomy", "description": "Is a person who is addicted to heroin making free choices? Standard economics would say yes — they are expressing preferences. Critics argue that addiction undermines the deliberative processes that make choice genuinely free. This connects to debates about paternalistic policy: should the state restrict access to addictive substances to protect future selves from present impulsive choices? The answer hinges on the metaphysics of freedom and the ethics of self-regarding action." }
+      {
+        "title": "Criminal Sentencing and Responsibility",
+        "description": "Neuroscience has shown that brain damage can dramatically alter behaviour, including criminal behaviour. Courts increasingly consider neuroscientific evidence in sentencing. This raises the free will question directly: if a person's violence is partly the product of a brain tumour, does this reduce their moral and legal responsibility? Compatibilists say it depends on whether the action flows from deliberation; hard determinists would push for therapy over punishment across the board."
+      },
+      {
+        "title": "Addiction and Autonomy",
+        "description": "Is a person who is addicted to heroin making free choices? Standard economics would say yes — they are expressing preferences. Critics argue that addiction undermines the deliberative processes that make choice genuinely free. This connects to debates about paternalistic policy: should the state restrict access to addictive substances to protect future selves from present impulsive choices? The answer hinges on the metaphysics of freedom and the ethics of self-regarding action."
+      }
     ],
-    "related_terms": ["free will", "determinism", "compatibilism", "libertarianism (philosophical)", "moral responsibility", "autonomy", "causal determinism", "neuroscience and law", "nudge and autonomy"]
+    "related_terms": [
+      "free will",
+      "determinism",
+      "compatibilism",
+      "libertarianism (philosophical)",
+      "moral responsibility",
+      "autonomy",
+      "causal determinism",
+      "neuroscience and law",
+      "nudge and autonomy"
+    ]
   }
 }
